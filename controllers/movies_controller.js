@@ -1,31 +1,25 @@
-var express = require("express");
-
-var router = express.Router();
-
-// *********************************************************************************
+// ***************************************************************
 // api-routes.js - this file offers a set of routes for displaying and saving data to the db
-// *********************************************************************************
-
+// ***************************************************************
 // Dependencies
 // =============================================================
+var express = require("express");
+var router = express.Router();
 var Movie = require("../models/movie_dbSync.js");
+var User = require("../models/movie_dbSync.js");
 var cheerio = require("cheerio");
+var db = require("../models");
+var request = require("request");
 
+// Routes
+// =============================================================
+//display index page
 router.get('/', function(req,res){
   res.render('index');
 });
 
-// Routes
-// =============================================================
-// module.exports = function(app) {
-
-  // Get all chirps
+// Get all chirps
 router.get("/api/all", function(req, res) {
-
-    // Finding all Chirps, and then returning them to the user as JSON.
-    // Sequelize queries are aynchronous, which helps with percieved speed.
-    // If we want something to be guaranteed to happen after the query, we'll use
-    // the .then function
     // Movie.findAll({}).then(function(results) {
     //   // results are available to us inside the .then
     //   // res.json(results);
@@ -34,92 +28,293 @@ router.get("/api/all", function(req, res) {
     // res.render("index");
 });
 
-  // Add a chirp
+// Search for a movie
 router.post("/api/new", function(req, res) {
+  //local variables
+  var year = "";
+  var createdAt = req.body.created_at;
+  var movieNameOmdbandTmdb = req.body.movie;
+  var movieNameTmdbandRottenTomatoes = "";
+  var movieNameRottenTomatoes = "";
+  var movieDetailsOmdb = {};
+  var recommendations = [];
+  var tmdbId = "";
+  var poster = "";
+  var userArrayOfNamesForDb = [];
+  var userArrayOfLikesForDb = [];
+  var userArrayOfUserNamesForDb = [];
+  var criticPassword = "12lkn43lkn6343l43k4n";
+  var guideboxID = "";
+  checkDb(req, res);
+  // omdbCall(req, res);
+  
+  function returnToHtml(message) {
+    console.log("sent message to html");
+    res.send(message);
+  }
 
-  var request = require("request");
-  var movieName = "";
+  // check to see if movie already in database.
+  function checkDb(req, res) {
 
-  movieName = req.body.movie;
+    db.movie.findAll({
+      where: {title: req.body.movie}
+    }).then(function(results) {
+      //if movie not in database
 
-  var queryUrl = "https://www.rottentomatoes.com/m/frozen_2013/reviews/?type=top_critics"
+      if (results.length === 0) {
 
-  request(queryUrl, function(error, response, body) {
-
-    var $ = cheerio.load(body);
-    var names, reviews;
-    var json = {name: "", reviews: ""};
-    $(".critic_name").filter(function(){
-      var data = $(this);
-
-      name = data.children().first().text();
-      console.log("name " + name);
-
+        omdbCall(req, res);
+      }
+      //if movie is in database
+      else {
+        console.log("headers set 1");
+        var message = "already in db";
+        return returnToHtml(message);
+      }
     });
+  }
 
-    $(".review_icon").filter(function(){
-      var image = $(this).hasClass("fresh");
-      if (image) {
-        console.log("fresh");
+  // run a request to the OMDB API with the movie specified
+  function omdbCall (req, res) {
+    var queryUrl = "http://www.omdbapi.com/?t=" + movieNameOmdbandTmdb + "&y=&plot=short&r=json";
+
+  // Then create a request to the queryUrl
+    request(queryUrl, function(error, response, body) {
+
+      // If the request is successful
+      if (!error && response.statusCode === 200) {
+
+      // Then fill the details into array for later use
+        movieDetailsOmdb = {omdb: body}
+        console.log("omdb details ", movieDetailsOmdb);
+        
+        // return res.json(body);
+        res.json(body);
+        movieNameTmdbandRottenTomatoes = JSON.parse(body).Title;
+        year = "_" + JSON.parse(body).Year;
+        getGuideboxID(JSON.parse(body).imdbID);
+        tmdbCall();
+        rottenTomatoes();
+        
       }
       else {
-        console.log("rotten");
+        console.log("headers set 2");
+        var message = "Sorry that movie doesn't exist";
+        return returnToHtml(message);
       }
       
-    });    
-
-    // If the request is successful
+    });
+  }
+  
+function getGuideboxID (imdbID) {
+  var queryUrl = 'http://api-public.guidebox.com/v2/search?api_key=a4966dc9db26e3695465a5340bb66b205267cdc2&type=movie&field=id&id_type=imdb&query=' + imdbID;
+  request(queryUrl, function (error, response, body) {
     if (!error && response.statusCode === 200) {
-
+      guideboxID = JSON.parse(body).id;
     }
-    else {
-      console.log("didn't work");
-    }
+      else if (err) {
+        return err;
+      }
   });
+}
 
+  //call rotten tomatoes for user information
+  function rottenTomatoes () {
+    //format user input for rotten tomatoes api call
+    for (i=0; i < movieNameTmdbandRottenTomatoes.length; i++) {
 
-
-// Then run a request to the OMDB API with the movie specified
-
-  var queryUrl = "http://www.omdbapi.com/?t=" + movieName + "&y=&plot=short&r=json";
-
-// Then create a request to the queryUrl
-  request(queryUrl, function(error, response, body) {
-
-    // If the request is successful
-    if (!error && response.statusCode === 200) {
-
-    // Then log the Release Year for the movie
-      
-      // console.log("Release Year " + JSON.parse(body).Title);
-      // console.log("Release Year " + JSON.parse(body).Year);
-      // console.log("Release Year " + JSON.parse(body).Rated);
-      // console.log("Release Year " + JSON.parse(body).Released);
-      // console.log("Release Year " + JSON.parse(body).Genre);
-      // console.log("Release Year " + JSON.parse(body).Runtime);
-      // console.log("Release Year " + JSON.parse(body).Director);
-      // console.log("Release Year " + JSON.parse(body).Writer);
-      // console.log(body);
-      
-      // return res.json(body);
-      res.json(body);
+      if (movieNameTmdbandRottenTomatoes[i] === " ") {
+        movieNameRottenTomatoes += "_";
+      }
+      else {
+        movieNameRottenTomatoes += req.body.movie[i];
+      }
     }
-    console.log("sent headers / ended omdb query");
-  });
 
-  // }
-  // }).then(function(results) {
-  //       // `results` here would be the newly created chirp
-  //       res.end();
-  //     });
-  // console.log("Movie Data:");
-  //     console.log(req.body);
+    var queryUrl = "https://www.rottentomatoes.com/m/"+ movieNameRottenTomatoes + year +"/reviews/?type=top_critics"
+    rottenTomatoesQuery(queryUrl);
 
-  //     Movie.create({
-  //       author: req.body.author,
-  //       body: req.body.body,
-  //       created_at: req.body.created_at
-  //     })
+    function rottenTomatoesQuery (queryUrl) {
+    
+      request(queryUrl, function(error, response, body) {
+        
+        //set up for webscraper for critic names and opinions
+        var $ = cheerio.load(body);
+        var names, reviews;
+        var json = {name: "", reviews: ""};
+        $(".critic_name").filter(function(){
+          var data = $(this);
 
-});
+          name = data.children().first().text();
+          console.log("name " + name);
+          userArrayOfNamesForDb.push(name);
+          //format user names for db based on critic names
+          var tempName ="";
+          for (i=0; i < name.length; i++) {
+
+            if (name[i] === " ") {
+              tempName += "_";
+            }
+            else {
+              tempName += name[i];
+            }
+          }
+          userArrayOfUserNamesForDb.push("CR_"+ tempName);
+          
+        });
+
+        $(".review_icon").filter(function(){
+          var image = $(this).hasClass("fresh");
+          if (image) {
+            console.log("fresh");
+            userArrayOfLikesForDb.push(1);
+          }
+          else {
+            console.log("rotten");
+            userArrayOfLikesForDb.push(0);
+          }
+        }); 
+        // db input on movie
+        
+        
+        // If the request query is not successful
+        if (!error && response.statusCode === 404) {
+          //reset query to not include the year for rotten tomatoes formatting.
+          var queryUrl = "https://www.rottentomatoes.com/m/"+ movieNameRottenTomatoes +"/reviews/?type=top_critics"
+          rottenTomatoesQuery(queryUrl);
+        }
+        else if (!error && response.statusCode === 200) {
+          // add to user db
+          for (var i=0; i<userArrayOfUserNamesForDb.length; i++) {
+            userInformation(userArrayOfLikesForDb[i], userArrayOfUserNamesForDb[i], userArrayOfNamesForDb[i]);
+          }
+        }
+        else {
+          console.log("status 2 " + response.statusCode);
+          console.log("headers set 3");
+         var message = "Sorry no reviews currently exist";
+          return returnToHtml(message);
+        }
+      }); //end request query
+    } // function rottenTomatoesQuery
+  } // function rottenTomatoes
+
+  function userInformation(like, uName, na) {
+    //check to see if user exists
+    db.user.findOne({
+      where: {userName: uName}
+    }).then(function (userName) {
+
+      //if user does not exist
+      if (userName === null) {
+        //user disliked the movie
+        if (like === 0) {
+          db.user.create({
+            userName: uName,
+            password: criticPassword,
+            name: na,
+            dislikes: tmdbId
+          });
+        }
+        //user liked the movie
+        else {
+          db.user.create({
+            userName: uName,
+            password: criticPassword,
+            name: na,
+            likes: tmdbId
+          });
+        }
+      }
+      //if user does exist
+      else {
+        //user disliked the movie
+        if (like === 0) {
+          var dislikes = userName.dataValues.dislikes + ", " + tmdbId;
+          //add movie to user's dislike list
+          db.user.update({
+            dislikes: dislikes
+            }, {where: {userName: uName}
+          });
+        }
+        //user liked the movie
+        else {
+          var likes = userName.dataValues.likes + ", " + tmdbId;
+          //add movie to user's like list
+          db.user.update({
+            likes: likes
+            }, {where: {userName: uName}
+          });
+        }
+      }
+    }); //.then for find user
+  } // function userInformation
+  
+  // gets recommendations, trailers, and tmdbID
+  function tmdbCall() {
+    var queryUrl = "http://api.themoviedb.org/3/search/movie?api_key=c825fc2242a8f468025d866ecfc40a11&query=" + movieNameTmdbandRottenTomatoes;
+    // gets the internal TMDB ID
+    request(queryUrl, function(error, response, body) {
+
+      // If the request is successful
+      if (!error && response.statusCode === 200) {
+
+        tmdbId = JSON.parse(body).results[0].id;
+        poster = "http://image.tmdb.org/t/p/w185" + JSON.parse(body).results[0].poster_path;
+        // 
+        var queryUrl = "https://api.themoviedb.org/3/movie/"+ tmdbId +"?api_key=c825fc2242a8f468025d866ecfc40a11&append_to_response=videos,recommendations";
+        
+        //uses the TMDB ID to find trailers and recommendations
+        request(queryUrl, function(error, respons, bod) {
+
+          // If the request is successful
+          if (!error && respons.statusCode === 200) {
+
+            trailer = "https://www.youtube.com/watch?v=" + JSON.parse(bod).videos.results[0].key;
+            if(JSON.parse(bod).recommendations.results.length !== 0) {
+
+              for(i = 0; i <3; i++) {
+                recommendations.push(
+                  JSON.parse(bod).recommendations.results[i].title + ", " + 
+                  JSON.parse(bod).recommendations.results[i].id + ", " + 
+                  "http://image.tmdb.org/t/p/w185" + JSON.parse(bod).recommendations.results[i].poster_path);       
+              }
+            }
+            console.log("trailer " + trailer);
+            console.log(recommendations);
+            addMovie();
+          }
+          else {
+            var message = "Sorry no trailers or recs";
+            // return returnToHtml(message);
+          }
+          
+        }); // second request query
+      }
+      else {
+        console.log("headers set 5");
+        var message = "Sorry that movie doesn't exist";
+        return returnToHtml(message);
+      }
+    }); // first request query
+  } // function tmdbCall
+  function addMovie() {
+    db.movie.create({
+      tmdbId: parseInt(tmdbId),
+      guideBoxId: parseInt(guideboxID),
+      title: JSON.parse(movieDetailsOmdb.omdb).Title,
+      year: JSON.parse(movieDetailsOmdb.omdb).Year,
+      genre: JSON.parse(movieDetailsOmdb.omdb).Genre,
+      director: JSON.parse(movieDetailsOmdb.omdb).Director,
+      actors: JSON.parse(movieDetailsOmdb.omdb).Actors,
+      poster: poster,
+      trailer: trailer,
+      rec1: recommendations[0],
+      rec2: recommendations[1],
+      rec3: recommendations[2],
+      created_at: createdAt
+    });
+  }
+}); // end of route for post
+
 module.exports = router;
