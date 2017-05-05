@@ -10,13 +10,88 @@ var User = require("../models/movie_dbSync.js");
 var cheerio = require("cheerio");
 var db = require("../models");
 var request = require("request");
+var passport = require("../config/passport");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Routes
 // =============================================================
 //display index page
 router.get('/', function(req,res){
-  res.render('index');
+  res.render('login');
 });
+
+
+router.get("/signup", function(req, res) {
+  // If the user already has an account send them to the members page
+  if (req.user) {
+    res.redirect("/members");
+  }
+  res.render('signup');
+});
+
+router.get("/login", function(req, res) {
+  // If the user already has an account send them to the members page
+  if (req.user) {
+    res.redirect("/members");
+  }
+  res.render('login');
+});
+
+// Here we've add our isAuthenticated middleware to this route.
+// If a user who is not logged in tries to access this route they will be redirected to the signup page
+router.get("/members", isAuthenticated, function(req, res) {
+  res.render('members');
+});
+
+router.post("/api/login", passport.authenticate("local"), function(req, res) {
+  // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
+  // So we're sending the user back the route to the members page because the redirect will happen on the front end
+  // They won't get this or even be able to access this page if they aren't authed
+
+  res.json('/members');
+});
+
+// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
+// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
+// otherwise send back an error
+router.post("/api/signup", function(req, res) {
+  // console.log(req.body);
+  db.user.findOrCreate({ 
+    where: {userName: req.body.userName}, 
+    userName: req.body.userName,
+    password: req.body.password,
+    name: req.body.name
+  
+  }).then(function() {
+    res.redirect(307, "/api/login");
+  }).catch(function(err) {
+    res.json(err);
+  });
+});
+
+// Route for logging user out
+router.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/login");
+});
+
+// Route for getting some data about our user to be used client side
+router.get("/api/user_data", function(req, res) {
+  if (!req.user) {
+    // The user is not logged in, send back an empty object
+    res.json({});
+  }
+  else {
+    // Otherwise send back the user's email and id
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      userName: req.user.userName,
+      id: req.user.id
+    });
+  }
+});
+
+
 
 // Get all chirps
 router.get("/api/all", function(req, res) {
