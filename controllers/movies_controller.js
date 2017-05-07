@@ -378,7 +378,7 @@ function getGuideboxID (imdbID) {
                     recommendations.push(
                       JSON.parse(bod).recommendations.results[i].title + ", " + 
                       JSON.parse(bod).recommendations.results[i].id + ", " + 
-                      "http://image.tmdb.org/t/p/w185" + JSON.parse(bod).recommendations.results[i].poster_path);       
+                      "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).recommendations.results[i].poster_path);       
                   }
                    console.log(recommendations);
                 }
