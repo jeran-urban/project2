@@ -17,7 +17,27 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 // =============================================================
 //display index page
 router.get('/', function(req,res){
-  res.render('login');
+  
+  var fs = require("fs");
+  db.movie.findAll({}).then(function(result) {
+    fs.writeFile("./movie.json", JSON.stringify(result), function(err) {
+
+      // If an error was experienced we say it.
+      if (err) {
+        console.log(err);
+      }
+    });
+  });
+  db.user.findAll({}).then(function(result) {
+    fs.writeFile("./user.json", JSON.stringify(result), function(err) {
+
+      // If an error was experienced we say it.
+      if (err) {
+        console.log(err);
+      }
+    });
+  });
+  res.render('index');
 });
 
 
@@ -55,16 +75,17 @@ router.post("/api/login", passport.authenticate("local"), function(req, res) {
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
 router.post("/api/signup", function(req, res) {
-  // console.log(req.body);
+  console.log(req.body);
+  console.log(req.body.userName, req.body.password, req.body.name);
   db.user.findOrCreate({ 
     where: {userName: req.body.userName}, 
-    userName: req.body.userName,
-    password: req.body.password,
-    name: req.body.name
-  
+    defaults: {password: req.body.password, name: req.body.name}
   }).then(function() {
+    console.log("sent to html");
     res.redirect(307, "/api/login");
   }).catch(function(err) {
+    console.log("got an error");
+    console.log(err);
     res.json(err);
   });
 });
@@ -120,6 +141,7 @@ router.post("/api/new", function(req, res) {
   var userArrayOfUserNamesForDb = [];
   var criticPassword = "12lkn43lkn6343l43k4n";
   var guideboxID = "";
+  var trailer = "";
   checkDb(req, res);
   // omdbCall(req, res);
   
@@ -157,19 +179,21 @@ router.post("/api/new", function(req, res) {
     request(queryUrl, function(error, response, body) {
 
       // If the request is successful
-      if (!error && response.statusCode === 200) {
+      if (!error && response.statusCode === 200 && JSON.parse(body).Error !== "Movie not found!") {
 
       // Then fill the details into array for later use
         movieDetailsOmdb = {omdb: body}
+        console.log("here");
+        console.log(response.statusCode);
+        console.log(JSON.parse(body).Error);
         console.log("omdb details ", movieDetailsOmdb);
         
         // return res.json(body);
-        res.json(body);
+        // res.json(body);
         movieNameTmdbandRottenTomatoes = JSON.parse(body).Title;
         year = "_" + JSON.parse(body).Year;
         getGuideboxID(JSON.parse(body).imdbID);
         tmdbCall();
-        rottenTomatoes();
         
       }
       else {
@@ -195,6 +219,7 @@ function getGuideboxID (imdbID) {
 
   //call rotten tomatoes for user information
   function rottenTomatoes () {
+    console.log("ran rotten tomatoes");
     //format user input for rotten tomatoes api call
     for (i=0; i < movieNameTmdbandRottenTomatoes.length; i++) {
 
@@ -333,38 +358,42 @@ function getGuideboxID (imdbID) {
 
       // If the request is successful
       if (!error && response.statusCode === 200) {
-
-        tmdbId = JSON.parse(body).results[0].id;
-        poster = "http://image.tmdb.org/t/p/w185" + JSON.parse(body).results[0].poster_path;
-        // 
-        var queryUrl = "https://api.themoviedb.org/3/movie/"+ tmdbId +"?api_key=c825fc2242a8f468025d866ecfc40a11&append_to_response=videos,recommendations";
-        
-        //uses the TMDB ID to find trailers and recommendations
-        request(queryUrl, function(error, respons, bod) {
-
-          // If the request is successful
-          if (!error && respons.statusCode === 200) {
-
-            trailer = "https://www.youtube.com/watch?v=" + JSON.parse(bod).videos.results[0].key;
-            if(JSON.parse(bod).recommendations.results.length !== 0) {
-
-              for(i = 0; i <3; i++) {
-                recommendations.push(
-                  JSON.parse(bod).recommendations.results[i].title + ", " + 
-                  JSON.parse(bod).recommendations.results[i].id + ", " + 
-                  "http://image.tmdb.org/t/p/w185" + JSON.parse(bod).recommendations.results[i].poster_path);       
-              }
-            }
-            console.log("trailer " + trailer);
-            console.log(recommendations);
-            addMovie();
-          }
-          else {
-            var message = "Sorry no trailers or recs";
-            // return returnToHtml(message);
-          }
+        if (JSON.parse(body).results.length !== 0) {
+          tmdbId = JSON.parse(body).results[0].id;
+          poster = "http://image.tmdb.org/t/p/w185" + JSON.parse(body).results[0].poster_path;
+          // 
+          var queryUrl = "https://api.themoviedb.org/3/movie/"+ tmdbId +"?api_key=c825fc2242a8f468025d866ecfc40a11&append_to_response=videos,recommendations";
           
-        }); // second request query
+          //uses the TMDB ID to find trailers and recommendations
+          request(queryUrl, function(error, respons, bod) {
+
+            // If the request is successful
+            if (!error && respons.statusCode === 200) {
+              if (JSON.parse(bod).videos.results.length !== 0) {
+              trailer = "https://www.youtube.com/watch?v=" + JSON.parse(bod).videos.results[0].key;
+              console.log("trailer " + trailer);
+                if(JSON.parse(bod).recommendations.results.length !== 0) {
+
+                  for(i = 0; i <3; i++) {
+                    recommendations.push(
+                      JSON.parse(bod).recommendations.results[i].title + ", " + 
+                      JSON.parse(bod).recommendations.results[i].id + ", " + 
+                      "http://image.tmdb.org/t/p/w185" + JSON.parse(bod).recommendations.results[i].poster_path);       
+                  }
+                   console.log(recommendations);
+                }
+              }
+              
+             
+              addMovie();
+            }
+            else {
+              var message = "Sorry no trailers or recs";
+              // return returnToHtml(message);
+            }
+            
+          }); // second request query
+        }
       }
       else {
         console.log("headers set 5");
@@ -374,6 +403,21 @@ function getGuideboxID (imdbID) {
     }); // first request query
   } // function tmdbCall
   function addMovie() {
+    // console.log("=================================");
+    // console.log("tmdbId: " + parseInt(tmdbId));
+    // console.log("guideBoxId: " + parseInt(guideboxID));
+    // console.log("title: " + JSON.parse(movieDetailsOmdb.omdb).Title);
+    // console.log("year: " + JSON.parse(movieDetailsOmdb.omdb).Year);
+    // console.log("genre: " + JSON.parse(movieDetailsOmdb.omdb).Genre);
+    // console.log("director: " + JSON.parse(movieDetailsOmdb.omdb).Director);
+    // console.log("actors: " + JSON.parse(movieDetailsOmdb.omdb).Actors);
+    // console.log("poster: " + poster);
+    // console.log("trailer: " + trailer);
+    // console.log("rec1: " + recommendations[0]);
+    // console.log("rec2: " + recommendations[1]);
+    // console.log("rec3: " + recommendations[2]);
+    // console.log("created_at: " + createdAt);
+    // console.log("=================================");
     db.movie.create({
       tmdbId: parseInt(tmdbId),
       guideBoxId: parseInt(guideboxID),
@@ -388,6 +432,15 @@ function getGuideboxID (imdbID) {
       rec2: recommendations[1],
       rec3: recommendations[2],
       created_at: createdAt
+    }).then(function(result) {
+      console.log("bad result ", result);
+      rottenTomatoes ();
+      // if (result)
+    }).catch(function(err) {
+      console.log("got an error");
+      console.log("headers set 6");
+      var message = "Sorry that movie doesn't exist";
+        return returnToHtml(message);
     });
   }
 }); // end of route for post
