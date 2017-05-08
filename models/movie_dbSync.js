@@ -79,14 +79,14 @@ module.exports = function(sequelize, DataTypes) {
     },
     rec2: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
       validate: {
         len: [1]
       }
     },
     rec3: {
       type: DataTypes.STRING,
-      allowNull: true,
+      allowNull: false,
       validate: {
         len: [1]
       }
