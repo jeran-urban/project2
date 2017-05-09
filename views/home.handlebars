@@ -9,7 +9,7 @@
           </div>
           {{#each photo}}
           <div class="item">
-            <div class="col-xs-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive"></a></div>
+            <div class="col-xs-4 poster video" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive"></a></div>
           </div>
           {{/each}}
         </div>
@@ -44,13 +44,14 @@ $('.multi-item-carousel .item').each(function(){
 });
 
 $(".poster").on("click", function(event) {
-  
+  var eThis = this;
   var movieId = {id: this.id};
+  var trailer = "";
   console.log(movieId);
 
   $.post("/api/find", movieId, function(data) {
     }).then(function(data) {
-      // console.log("data ", data);
+      console.log("data ", data);
       console.log(data[0].title);
       console.log(data[0].trailer);
       console.log(data[0].year);
@@ -62,7 +63,10 @@ $(".poster").on("click", function(event) {
       console.log(data[0].rec1);
       console.log(data[0].rec2);
       console.log(data[0].rec3);
-    })
+      trailer = data[0].trailer;
+    }).then(function() {
+    eThis.innerHTML ="<iframe src='"+trailer+"' width='320' height='240' frameborder='0' allowfullscreen='false'>";
+  });
 });
 
 

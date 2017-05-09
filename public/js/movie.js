@@ -74,24 +74,3 @@ $("#movie-submit").on("click", function(event) {
 
 });
 
-// When the page loads, grab all of our chirps
-$.get("/api/all", function(data) {
-
-  if (data.length !== 0) {
-
-    for (var i = 0; i < data.length; i++) {
-
-      var row = $("<div>");
-      row.addClass("movie");
-
-      row.append("<p>" + data[i].movie + " movied.. </p>");
-      row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
-
-      $("#movie-area").prepend(row);
-      console.log(data);
-
-    }
-
-  }
-
-});
