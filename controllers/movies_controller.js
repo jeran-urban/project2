@@ -17,7 +17,11 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 // =============================================================
 //display index page
 router.get('/', function(req,res){
-  res.render('index');
+  res.redirect("/index");
+});
+
+router.get('/search', function(req,res){
+  res.render('search');
 });
 
 router.get("/signup", function(req, res) {
@@ -36,7 +40,7 @@ router.get("/login", function(req, res) {
   res.render('login');
 });
 
-router.get("/home", function(req, res) {
+router.get("/index", function(req, res) {
   // db.movie.findAll({}).then(function(result) {
   //   sendBack = []
   //   for (i=0; i < result.length; i++) {
@@ -64,7 +68,7 @@ router.get("/home", function(req, res) {
     // console.log("trying ", result);
     var photos = {photo: sendBack}
     console.log("photos ", photos)
-    res.render('home', photos);
+    res.render('index', photos);
     // res.json(result);
   }).catch(function(err) {
     console.log(err);
@@ -91,14 +95,13 @@ router.post("/api/login", passport.authenticate("local"), function(req, res) {
 router.post("/api/signup", function(req, res) {
   // console.log(req.body);
   db.user.findOrCreate({
-    where: {userName: req.body.userName},
-    userName: req.body.userName,
-    password: req.body.password,
-    name: req.body.name
+    where: {userName: req.body.userName}, 
+    defaults:{password: req.body.password, name: req.body.name}
 
   }).then(function() {
     res.redirect(307, "/api/login");
   }).catch(function(err) {
+    console.log(err);
     res.json(err);
   });
 });
