@@ -29,6 +29,7 @@ app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true 
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // Static directory
 app.use(express.static(process.cwd() + "/public"));
 // Routes
@@ -36,6 +37,20 @@ app.use(express.static(process.cwd() + "/public"));
 var routes = require("./controllers/movies_controller.js");
 
 app.use("/", routes);
+
+app.use(function(req, res) {
+    if (res.status(404)) {
+        res.render('404');
+    }
+    else if (res.status(500)) {
+       res.render('500'); 
+    }
+});
+
+// app.use(function(req, res) {
+//   res.status(500);
+//   res.render('500');
+// });
 
 // Starts the server to begin listening
 // =============================================================

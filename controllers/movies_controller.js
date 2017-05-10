@@ -11,16 +11,19 @@ var cheerio = require("cheerio");
 var db = require("../models");
 var request = require("request");
 var passport = require("../config/passport");
+var session = require("express-session");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Routes
 // =============================================================
 //display index page
+
 router.get('/', function(req,res){
   res.redirect("/index");
 });
 
 router.get('/search', function(req,res){
+  console.log("user ", req.user);
   res.render('search');
 });
 
@@ -33,11 +36,189 @@ router.get("/signup", function(req, res) {
 });
 
 router.get("/login", function(req, res) {
+  console.log("++++++++++++++++++++++++++++");
+  console.log("status 1: " + res.statusCode);
+  console.log("++++++++++++++++++++++++++++");
+
+  // lkj
   // If the user already has an account send them to the members page
   if (req.user) {
-    res.redirect("/members");
+    // res.redirect("/members");
   }
   res.render('login');
+});
+
+router.get("/profile", function(req, res) {
+  console.log("user ", req.user);
+  console.log("++++++++++++++++++++++++++++");
+  console.log("status 2: " + res.statusCode);
+  console.log("++++++++++++++++++++++++++++");
+  var user = {name: req.user.name}
+  db.movie.findAll({}).then(function(result) {
+    sendBack = []
+    for (i=0; i < 10; i++) {
+
+      // console.log("please ", result[i].dataValues.poster);
+      sendBack.push(result[i].dataValues);
+    }
+    // console.log("please ", result[0].dataValues.poster);
+    // console.log("trying ", result);
+    var photos = {photo: sendBack, user: user}
+    // console.log("photos ", photos)
+    res.render('profile', photos);
+    // res.json(result);
+  }).catch(function(err) {
+    console.log(err);
+  });
+});
+
+router.post("/profile", function(req, res) {
+  console.log("++++++++++++++++++++++++++++");
+  console.log("status 3: " + res.statusCode);
+  console.log("++++++++++++++++++++++++++++");
+  var userId = req.user.id;
+  console.log("user ", req.user);
+  var opinion = req.body.opinion
+  var movieId = req.body.id;
+  // var userId = 4;
+  var likes = [];
+  var dislikes = [];
+  var likesToPush = "";
+  var dislikesToPush = "";
+  var likeExist = false;
+  var dislikeExist = false;
+  db.user.findOne({ 
+    where: {id: userId}
+  }).then(function(result1) {
+    console.log("opinion: " + opinion);
+    console.log("likes: ", result1.dataValues.likes);
+    console.log(typeof result1.dataValues.likes);
+    console.log("dislikes: ", result1.dataValues.dislikes);
+    console.log(typeof result1.dataValues.likes);
+    if (result1.dataValues.likes !== null){
+      likes = result1.dataValues.likes.split(", ");
+    }
+    if (result1.dataValues.dislikes !== null){
+      dislikes = result1.dataValues.dislikes.split(", ");
+    }
+    if (likes.indexOf(movieId) !== -1) {
+      likeExist = true;
+    }
+    else if (dislikes.indexOf(movieId) !== -1) {
+      dislikeExist = true;
+    }
+    console.log("arrayLikes ", likes);
+    console.log("arrayDislikes ", dislikes);
+    console.log("exists in likes: ", likeExist);
+    console.log("exists in dislikes: ", dislikeExist);
+
+    if (opinion === "like" && likeExist === true) {
+      //do nothing
+    }
+    else if (opinion === "dislike" && dislikeExist === true) {
+      //do nothing
+    }
+    else if (likeExist === false && dislikeExist === false) {
+      //add opinion of movie id wherever
+      if (opinion === "like") {
+        if (result1.dataValues.likes !== null) {
+            likesToPush = result1.dataValues.likes + ", " + movieId;
+        }
+        else {
+          likesToPush = movieId;
+        }
+        db.user.update({
+          likes: likesToPush},
+          {
+          where: {
+            id: userId
+          }
+        }).then(function(results) {
+          // `results` here would be the newly created chirp
+          res.json(results);
+        });
+      }
+      else {
+        if (result1.dataValues.dislikes !== null) {
+          dislikesToPush = result1.dataValues.dislikes + ", " + movieId;
+        }
+        else {
+          dislikesToPush = movieId;
+        }
+        db.user.update({
+          dislikes: dislikesToPush},
+          {
+          where: {
+            id: userId
+          }
+        }).then(function(results) {
+          // `results` here would be the newly created chirp
+          res.json(results);
+        });
+      }
+    }
+    else if (opinion === "dislike" && likeExist === true) {
+      //take out from like and add to dislike
+      var ix = likes.indexOf(movieId);
+      likes.splice(ix, 1);
+      if (likes.length !== 0) {
+        likesToPush = likes.join(", ");
+      }
+      else {
+        likesToPush = null;
+      }
+      if (result1.dataValues.dislikes !== null) {
+        dislikesToPush = result1.dataValues.dislikes + ", " + movieId;
+      }
+      else {
+        dislikesToPush = movieId;
+      }
+      console.log(likesToPush);
+      console.log(dislikesToPush);
+      db.user.update({
+          dislikes: dislikesToPush,
+          likes: likesToPush},
+          {
+          where: {
+            id: userId
+          }
+      }).then(function(results) {
+        // `results` here would be the newly created chirp
+        res.json(results);
+      });
+    }
+
+    else if (opinion === "like" && dislikeExist === true) {
+      //take out from dislike and add to like
+      var ix = dislikes.indexOf(movieId);
+      dislikes.splice(ix, 1);
+      if (likes.length !== 0) {
+        dislikesToPush = dislikes.join(", ");
+      }
+      else {
+        dislikesToPush = null;
+      }
+      if (result1.dataValues.likes !== null) {
+          likesToPush = result1.dataValues.likes + ", " + movieId;
+      }
+      else {
+        likesToPush = movieId;
+      }
+      console.log(likesToPush);
+      console.log(dislikesToPush);
+      db.user.update({
+          dislikes: dislikesToPush,
+          likes: likesToPush},
+          {
+          where: {
+            id: userId
+          }
+      }).then(function(results) {
+        // `results` here would be the newly created chirp
+        res.json(results);
+      });
+    }
+  });
 });
 
 router.get("/index", function(req, res) {
@@ -78,14 +259,24 @@ router.get("/index", function(req, res) {
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
 router.get("/members", isAuthenticated, function(req, res) {
-  res.render('members');
+  console.log("++++++++++++++++++++++++++++");
+  console.log("status 4: " + res.statusCode);
+  console.log("++++++++++++++++++++++++++++");
+  console.log("user ", req.user);
+  var user = {name: req.user.name}
+  res.render('members', user);
 });
 
 router.post("/api/login", passport.authenticate("local"), function(req, res) {
+  console.log("++++++++++++++++++++++++++++");
+  console.log("status 5: " + res.statusCode);
+  console.log("++++++++++++++++++++++++++++");
   // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
   // So we're sending the user back the route to the members page because the redirect will happen on the front end
   // They won't get this or even be able to access this page if they aren't authed
-
+  console.log("====================================");
+  console.log("login ", req.user.name);
+  console.log("====================================");
   res.json('/members');
 });
 
@@ -229,8 +420,8 @@ function getGuideboxID (imdbID) {
       console.log("tmdbid " + tmdbId);
       tmdbCall();
     }
-    if (err) {
-      return err;
+    if (error) {
+      return error;
     }
   });
 }
@@ -347,7 +538,12 @@ function getGuideboxID (imdbID) {
       else {
         //user disliked the movie
         if (like === 0) {
-          var dislikes = userName.dataValues.dislikes + ", " + tmdbId;
+          if (userName.dataValues.dislikes !== null) {
+            var dislikes = userName.dataValues.dislikes + ", " + tmdbId;
+          }
+          else {
+            var dislikes = tmdbId;
+          }
           //add movie to user's dislike list
           db.user.update({
             dislikes: dislikes
@@ -356,7 +552,12 @@ function getGuideboxID (imdbID) {
         }
         //user liked the movie
         else {
-          var likes = userName.dataValues.likes + ", " + tmdbId;
+          if (userName.dataValues.likes !== null) {
+            var likes = userName.dataValues.likes + ", " + tmdbId;
+          }
+          else {
+            var likes = tmdbId;
+          }
           //add movie to user's like list
           db.user.update({
             likes: likes
@@ -378,8 +579,16 @@ function getGuideboxID (imdbID) {
 
           // If the request is successful
           if (!error && respons.statusCode === 200) {
-
+            console.log("movie ", JSON.parse(movieDetailsOmdb.omdb).Title);
+            console.log("error ", JSON.parse(bod).videos.results);
+            console.log(tmdbId);
+            console.log("bod ", bod);
+            if (JSON.parse(bod).videos.results.length !== 0) {
             trailer = "http://www.youtube.com/embed/" + JSON.parse(bod).videos.results[0].key + "?rel=0&autoplay=1";
+            }
+            else {
+              trailer = "Sorry, No trailer is currently available";
+            }
             if(JSON.parse(bod).recommendations.results.length !== 0) {
               poster = "http://image.tmdb.org/t/p/w185" + JSON.parse(bod).poster_path
               for(i = 0; i <3; i++) {

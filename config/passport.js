@@ -4,6 +4,7 @@ var LocalStrategy = require("passport-local").Strategy;
 var db = require("../models");
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/userName and password
+
 passport.use(new LocalStrategy(
   // Our user will sign in using an userName, rather than a "username"
   {
@@ -39,7 +40,10 @@ passport.use(new LocalStrategy(
 // Sequelize needs to serialize and deserialize the user
 // Just consider this part boilerplate needed to make it all work
 passport.serializeUser(function(user, cb) {
-  cb(null, user);
+  cb(null, {
+    id: user["id"],
+    userName: user["userName"],
+    name: user["name"]});
 });
 
 passport.deserializeUser(function(obj, cb) {
