@@ -258,13 +258,75 @@ router.get("/index", function(req, res) {
 
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
+// router.get("/members", isAuthenticated, function(req, res) {
+//   console.log("++++++++++++++++++++++++++++");
+//   console.log("status 4: " + res.statusCode);
+//   console.log("++++++++++++++++++++++++++++");
+//   console.log("user ", req.user);
+//   var user = {name: req.user.name}
+//   db.movie.findAll({}).then(function(result) {
+//     var allGenres = [];
+//     for (var i = 0; i < result.length; i++) {
+//       allGenres = result[i].dataValues.genre.split(", ");
+//     }
+
+//     }
+//     var photos = {photo: sendBack, user:user}
+//     res.render('members', photos);
+//   }).catch(function(err) {
+//     console.log(err);
+//   });
+// });
 router.get("/members", isAuthenticated, function(req, res) {
   console.log("++++++++++++++++++++++++++++");
   console.log("status 4: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
   console.log("user ", req.user);
   var user = {name: req.user.name}
-  res.render('members', user);
+  db.movie.findAll({}).then(function(result) {
+    var action = [];
+    var comedy = [];
+    var drama = [];
+    var horror = [];
+    var animation = [];
+    
+    for (var i = 0; i < result.length; i++) {
+      var genres = result[i].dataValues.genre.split(", ");
+      
+      if (genres.indexOf("Action") !== -1){
+        action.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Comedy") !== -1){
+        comedy.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Drama") !== -1){
+        drama.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Horror") !== -1){
+        horror.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Animation") !== -1){
+        animation.push(result[i].dataValues);
+      }
+    }
+    console.log("action: ", action.length);
+    console.log("comedy: ", comedy.length);
+    console.log("drama: ", drama.length);
+    console.log("horror: ", horror.length);
+    console.log("animation: ", animation.length);
+
+    var genreToHtml = {
+      action: action,
+      comedy: comedy,
+      drama: drama,
+      horror: horror,
+      animation: animation,
+      user: user
+    }
+    res.render('members', genreToHtml);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 router.post("/api/login", passport.authenticate("local"), function(req, res) {
@@ -356,7 +418,7 @@ router.post("/api/new", function(req, res) {
 
   function returnToHtml(message) {
     console.log("sent message to html");
-    res.send(message);
+    res.json(message);
   }
 
   // check to see if movie already in database.
@@ -374,7 +436,7 @@ router.post("/api/new", function(req, res) {
       //if movie is in database
       else {
         console.log("headers set 1");
-        var message = "already in db";
+        var message = results;
         return returnToHtml(message);
       }
     });
@@ -395,7 +457,7 @@ router.post("/api/new", function(req, res) {
         console.log("omdb details ", movieDetailsOmdb);
 
         // return res.json(body);
-        res.json(body);
+        // res.json(body);
         movieNameTmdbandRottenTomatoes = JSON.parse(body).Title;
         year = "_" + JSON.parse(body).Year;
         getGuideboxID(JSON.parse(body).imdbID);
@@ -612,6 +674,7 @@ function getGuideboxID (imdbID) {
   } // function tmdbCall
   function addMovie() {
     console.log("added to db");
+
     db.movie.create({
       tmdbId: parseInt(tmdbId),
       guideBoxId: parseInt(guideboxID),
@@ -627,6 +690,11 @@ function getGuideboxID (imdbID) {
       rec2: recommendations[1],
       rec3: recommendations[2],
       created_at: createdAt
+    }).then(function(result) {
+      console.log("=====++++++++!!!!!!!!!", result.dataValues);
+      var message = result.dataValues;
+      return returnToHtml(message);
+
     }).catch(function(err){
       if (err){
         console.log(err);

@@ -1,19 +1,165 @@
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+<div class="container">
+  <h1 class="member-welcome">Welcome {{user.name}}</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel1">
+      <h3>Action</h3>
+        <div class="carousel-inner col-md-4">
+          {{#each action}}
+          {{#if @first}}
+          <div class="item active">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/if}}
+          {{#unless @first}}
+          <div class="item">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+        <a class="left carousel-control" href="#theCarousel1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
     </div>
-  </div>
-</nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome {{name}}<span class="member-name"></span></h2>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel2">
+      <h3>Comedy</h3>
+        <div class="carousel-inner col-md-4">
+          {{#each comedy}}
+          {{#if @first}}
+          <div class="item active">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/if}}
+          {{#unless @first}}
+          <div class="item">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+        <a class="left carousel-control" href="#theCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel3">
+      <h3>Drama</h3>
+        <div class="carousel-inner col-md-4">
+          {{#each drama}}
+          {{#if @first}}
+          <div class="item active">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/if}}
+          {{#unless @first}}
+          <div class="item">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+        <a class="left carousel-control" href="#theCarousel3" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel3" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      </div>
+    </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="carousel slide multi-item-carousel" id="theCarousel4">
+      <h3>Animation</h3>
+        <div class="carousel-inner col-md-4">
+          {{#each animation}}
+          {{#if @first}}
+          <div class="item active">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/if}}
+          {{#unless @first}}
+          <div class="item">
+            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+          </div>
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+        <a class="left carousel-control" href="#theCarousel4" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+        <a class="right carousel-control" href="#theCarousel4" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
       </div>
     </div>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script type="text/javascript" src="js/members.js"></script>
+
+  <!-- Poster Modal -->
+  <div id="posterModal" class="modal fade">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Movie Details</h4>
+              </div>
+              <div class="modal-body">
+                  <p id="posterModalTitle"></p>
+                  <p id="posterModalYear"></p>
+                  <p id="posterModalPlot"></p>
+                  <p id="posterModalGenre"></p>
+                  <p id="posterModalDirector"></p>
+                  <p id="posterModalCast"></p>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<script type="text/javascript">
+
+// Instantiate the Bootstrap carousel
+$('.multi-item-carousel').carousel({
+  interval: false
+});
+
+// for every slide in carousel, copy the next slide's item in the slide.
+// Do the same for the next, next item.
+$('.multi-item-carousel .item').each(function(){
+  var next = $(this).next();
+  if (!next.length) {
+    next = $(this).siblings(':first');
+  }
+  next.children(':first-child').clone().appendTo($(this));
+
+  if (next.next().length>0) {
+    next.next().children(':first-child').clone().appendTo($(this));
+  } else {
+    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+  }
+});
+
+$(".poster").on("click", function(event) {
+
+  var movieId = {id: this.id};
+  console.log(movieId);
+
+  $.post("/api/find", movieId, function(data) {
+    }).then(function(data) {
+        var movieTrailer = data[0].title;
+        var movieYear = data[0].year;
+        var moviePlot = data[0].plot;
+        var movieGenre = data[0].genre;
+        var movieActors = data[0].actors;
+        var movieDirector = data[0].director;
+        $("#posterModalTitle").text(movieTrailer);
+        $("#posterModalYear").text(movieYear);
+        $("#posterModalPlot").text(moviePlot);
+        $("#posterModalGenre").text(movieGenre);
+        $("#posterModalDirector").text("Director: " +movieDirector);
+        $("#posterModalCast").text("Cast: " + movieActors);
+    });
+});
+</script>
