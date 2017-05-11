@@ -1,15 +1,19 @@
-<h2>Welcome {{user.name}}<span class="member-name"></span></h2>
+{{> headerUser}}
 
-<ui>
+<div class="container footerspace">
+  <h2>Welcome {{user.name}}<span class="member-name"></span></h2>
+
+  <ui>
     {{#each photo}}
-        <ul>
-            <img src="{{poster}}">
-            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
-            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button> 
-        </ul>
+      <ul>
+        <img src="{{poster}}">
+        <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+        <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+        <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+      </ul>
     {{/each}}
-</ui>
+  </ui>
+</div>
 
 <script>
 $(".btn").on("click", function(event) {

@@ -20,6 +20,11 @@ $("#movie-submit").on("click", function(event) {
     console.log(data);
     if (typeof data === "string") {
       console.log(data);
+      var row = $("<div>");
+          row.addClass("movie");
+          row.append("<p>" + data + "</p>");
+          row.append("</div>")
+          $("#movie-area").html(row);
     }
     else if (data.length !== undefined) {
         var row = $("<div>");
@@ -39,7 +44,7 @@ $("#movie-submit").on("click", function(event) {
           row.append("<p>trailer link: " + data[0].trailer +  "</p>");
           row.append("<p>Year: " + data[0].year +  "</p>");
           row.append("</div>")
-          $("#movie-area").prepend(row);
+          $("#movie-area").html(row);
     }
     else if (data.length === undefined) {
       var row = $("<div>");
@@ -59,7 +64,7 @@ $("#movie-submit").on("click", function(event) {
           row.append("<p>trailer link: " + data.trailer +  "</p>");
           row.append("<p>Year: " + data.year +  "</p>");
           row.append("</div>")
-          $("#movie-area").prepend(row);
+          $("#movie-area").html(row);
     }
     
 

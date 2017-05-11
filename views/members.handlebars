@@ -1,9 +1,11 @@
-<div class="container">
+{{> headerUser}}
+
+<div class="container footerspace">
   <h1 class="member-welcome">Welcome {{user.name}}</h1>
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel1">
-      <h3>Action</h3>
+        <h3>Action</h3>
         <div class="carousel-inner col-md-4">
           {{#each action}}
           {{#if @first}}
@@ -21,13 +23,13 @@
       </div>
         <a class="left carousel-control" href="#theCarousel1" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
         <a class="right carousel-control" href="#theCarousel1" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div>
     </div>
+  </div>
 
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel2">
-      <h3>Comedy</h3>
+        <h3>Comedy</h3>
         <div class="carousel-inner col-md-4">
           {{#each comedy}}
           {{#if @first}}
@@ -45,13 +47,13 @@
       </div>
         <a class="left carousel-control" href="#theCarousel2" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
         <a class="right carousel-control" href="#theCarousel2" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div>
     </div>
+  </div>
 
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel3">
-      <h3>Drama</h3>
+        <h3>Drama</h3>
         <div class="carousel-inner col-md-4">
           {{#each drama}}
           {{#if @first}}
@@ -69,13 +71,13 @@
       </div>
         <a class="left carousel-control" href="#theCarousel3" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
         <a class="right carousel-control" href="#theCarousel3" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div>
     </div>
+  </div>
 
   <div class="row">
     <div class="col-md-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel4">
-      <h3>Animation</h3>
+        <h3>Animation</h3>
         <div class="carousel-inner col-md-4">
           {{#each animation}}
           {{#if @first}}
@@ -93,7 +95,6 @@
       </div>
         <a class="left carousel-control" href="#theCarousel4" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
         <a class="right carousel-control" href="#theCarousel4" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-      </div>
     </div>
   </div>
 
@@ -117,6 +118,7 @@
           </div>
       </div>
   </div>
+</div>
 
 <script type="text/javascript">
 

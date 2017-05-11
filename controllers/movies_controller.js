@@ -19,10 +19,25 @@ var isAuthenticated = require("../config/middleware/isAuthenticated");
 //display index page
 
 router.get('/', function(req,res){
-  res.redirect("/index");
+  db.movie.findAll({limit: 5, order: [["created_at", "DESC"]]}).then(function(result) {
+    sendBack = []
+    for (i=0; i < result.length; i++) {
+
+      // console.log("please ", result[i].dataValues.poster);
+      sendBack.push(result[i].dataValues);
+    }
+    // console.log("please ", result[0].dataValues.poster);
+    // console.log("trying ", result);
+    var photos = {photo: sendBack}
+    console.log("photos ", photos)
+    res.render('index', photos);
+    // res.json(result);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
-router.get('/search', function(req,res){
+router.get('/search', isAuthenticated, function(req,res){
   console.log("user ", req.user);
   res.render('search');
 });
@@ -48,7 +63,7 @@ router.get("/login", function(req, res) {
   res.render('login');
 });
 
-router.get("/profile", function(req, res) {
+router.get("/profile", isAuthenticated, function(req, res) {
   console.log("user ", req.user);
   console.log("++++++++++++++++++++++++++++");
   console.log("status 2: " + res.statusCode);
@@ -222,61 +237,12 @@ router.post("/profile", function(req, res) {
 });
 
 router.get("/index", function(req, res) {
-  // db.movie.findAll({}).then(function(result) {
-  //   sendBack = []
-  //   for (i=0; i < result.length; i++) {
-
-  //     // console.log("please ", result[i].dataValues.poster);
-  //     sendBack.push(result[i].dataValues);
-  //   }
-  //   // console.log("please ", result[0].dataValues.poster);
-  //   // console.log("trying ", result);
-  //   var photos = {photo: sendBack}
-  //   console.log("photos ", photos)
-  //   res.render('home', photos);
-  //   // res.json(result);
-  // }).catch(function(err) {
-  //   console.log(err);
-  // });
-  db.movie.findAll({limit: 5, order: [["created_at", "DESC"]]}).then(function(result) {
-    sendBack = []
-    for (i=0; i < result.length; i++) {
-
-      // console.log("please ", result[i].dataValues.poster);
-      sendBack.push(result[i].dataValues);
-    }
-    // console.log("please ", result[0].dataValues.poster);
-    // console.log("trying ", result);
-    var photos = {photo: sendBack}
-    console.log("photos ", photos)
-    res.render('index', photos);
-    // res.json(result);
-  }).catch(function(err) {
-    console.log(err);
-  });
+  res.redirect("/");
 });
 
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
-// router.get("/members", isAuthenticated, function(req, res) {
-//   console.log("++++++++++++++++++++++++++++");
-//   console.log("status 4: " + res.statusCode);
-//   console.log("++++++++++++++++++++++++++++");
-//   console.log("user ", req.user);
-//   var user = {name: req.user.name}
-//   db.movie.findAll({}).then(function(result) {
-//     var allGenres = [];
-//     for (var i = 0; i < result.length; i++) {
-//       allGenres = result[i].dataValues.genre.split(", ");
-//     }
 
-//     }
-//     var photos = {photo: sendBack, user:user}
-//     res.render('members', photos);
-//   }).catch(function(err) {
-//     console.log(err);
-//   });
-// });
 router.get("/members", isAuthenticated, function(req, res) {
   console.log("++++++++++++++++++++++++++++");
   console.log("status 4: " + res.statusCode);
@@ -436,7 +402,7 @@ router.post("/api/new", function(req, res) {
       //if movie is in database
       else {
         console.log("headers set 1");
-        var message = {result: results};
+        var message = results;
         return returnToHtml(message);
       }
     });
