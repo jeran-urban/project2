@@ -436,7 +436,7 @@ router.post("/api/new", function(req, res) {
       //if movie is in database
       else {
         console.log("headers set 1");
-        var message = results;
+        var message = {result: results};
         return returnToHtml(message);
       }
     });
@@ -450,12 +450,13 @@ router.post("/api/new", function(req, res) {
     request(queryUrl, function(error, response, body) {
 
       // If the request is successful
-      if (!error && response.statusCode === 200) {
+      if (!error && response.statusCode === 200 && JSON.parse(body).Error !== "Movie not found!") {
 
       // Then fill the details into array for later use
         movieDetailsOmdb = {omdb: body}
+        console.log(JSON.parse(body).Error);
         console.log("omdb details ", movieDetailsOmdb);
-
+        
         // return res.json(body);
         // res.json(body);
         movieNameTmdbandRottenTomatoes = JSON.parse(body).Title;
@@ -476,14 +477,20 @@ router.post("/api/new", function(req, res) {
 function getGuideboxID (imdbID) {
   var queryUrl = 'http://api-public.guidebox.com/v2/search?api_key=a4966dc9db26e3695465a5340bb66b205267cdc2&type=movie&field=id&id_type=imdb&query=' + imdbID;
   request(queryUrl, function (error, response, body) {
-    if (!error && response.statusCode === 200) {
+    if (!error && response.statusCode === 200 && JSON.parse(body).themoviedb !== undefined) {
+      console.log(body !== null);
       guideboxID = JSON.parse(body).id;
       tmdbId = JSON.parse(body).themoviedb;
+      console.log(body);
       console.log("tmdbid " + tmdbId);
       tmdbCall();
     }
-    if (error) {
+    else if (error) {
       return error;
+    }
+    else {
+      var message = "Sorry that movie doesn't exist";
+      return returnToHtml(message);
     }
   });
 }
