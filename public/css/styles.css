@@ -83,3 +83,14 @@ footer {
   text-align: left;
   vertical-align: middle;
 }
+
+/* ============================ */
+/*          SEARCH              */
+/* ============================ */
+
+.moviePoster {
+  display: none;
+}
+.view-trailer, .view-sources {
+  display: none;
+}

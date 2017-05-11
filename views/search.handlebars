@@ -2,7 +2,7 @@
 
 <h1 class="text-center">Find the movie you're looking for!</h1>
 
-<div class="container footerspace">
+<div class="container search-button">
   <div class="row">
     <div class="col-sm-6 col-xs-offset-2">
       <input class="form-control" type="text" id="movie" placeholder="Enter a movie name">
@@ -16,3 +16,80 @@
     </div>
   </div>
 </div>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+              <img class="img-responsive moviePoster">
+            </div>
+            <div class="col-md-8">
+              <div> <p class="movieTitle"></p></div>
+              <div> <p class="movieYear"></p></div>
+              <div> <p class="movieGenre"></p></div>
+              <div> <p class="moviePlot"></p></div>
+                <div class="col-md-6"> <p class="movieDirector">  </p></div>
+                <div class="col-md-6"> <p class="movieCast"> </p></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+          <div class="bs-example col-md-6">
+              <!-- Button HTML (to Trigger Modal) -->
+              <a href="#trailerModal" class="btn btn-lg btn-primary view-trailer" data-toggle="modal">View Trailer</a> </div>
+              <div class="bs-example col-md-6">
+                  <!-- Button HTML (to Trigger Modal) -->
+                  <a href="#sourcesModal" class="btn btn-lg btn-primary view-sources" data-toggle="modal">View Available Sources</a> </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+              <img id="rec1">
+            </div>
+            <div class="col-md-4">
+              <img id="rec2">
+            </div>
+            <div class="col-md-4">
+              <img id="rec3">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Trailer Modal -->
+    <div id="trailerModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Trailer</h4>
+                </div>
+                <div class="modal-body">
+                    <iframe id="movieTrailer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Sources Modal -->
+    <div id="sourcesModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">Available Sources</h4>
+                </div>
+                <div class="modal-body">
+                    <p> iTunes: $3.99 </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script type="text/javascript" src="js/movie.js"> </script>
