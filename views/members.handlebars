@@ -1,21 +1,22 @@
-{{> headerUser}}
 
-<div class="container footerspace">
-  <h1 class="member-welcome">Welcome {{user.name}}</h1>
+{{> headerUser}}
+<!-- Action Carousel -->
+<div class="container">
+  <h3 class="member-welcome">Logged in as {{user.name}}</h1>
   <div class="row">
-    <div class="col-md-12">
+    <h3 id="genreTitle"> Action </h3>
+    <div class="col-md-12 members-col-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel1">
-        <h3>Action</h3>
         <div class="carousel-inner col-md-4">
           {{#each action}}
           {{#if @first}}
           <div class="item active">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/if}}
           {{#unless @first}}
           <div class="item">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/unless}}
           {{/each}}
@@ -26,20 +27,21 @@
     </div>
   </div>
 
+<!-- Comedy Carousel -->
   <div class="row">
-    <div class="col-md-12">
+    <h3 id="genreTitle"> Comedy </h3>
+    <div class="col-md-12 members-col-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel2">
-        <h3>Comedy</h3>
         <div class="carousel-inner col-md-4">
           {{#each comedy}}
           {{#if @first}}
           <div class="item active">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/if}}
           {{#unless @first}}
           <div class="item">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/unless}}
           {{/each}}
@@ -50,20 +52,21 @@
     </div>
   </div>
 
+<!-- Drama Carousel -->
   <div class="row">
-    <div class="col-md-12">
+    <h3 id="genreTitle"> Drama </h3>
+    <div class="col-md-12 members-col-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel3">
-        <h3>Drama</h3>
         <div class="carousel-inner col-md-4">
           {{#each drama}}
           {{#if @first}}
           <div class="item active">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/if}}
           {{#unless @first}}
           <div class="item">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/unless}}
           {{/each}}
@@ -74,20 +77,21 @@
     </div>
   </div>
 
+<!-- Animation Carousel -->
   <div class="row">
-    <div class="col-md-12">
+    <h3 id="genreTitle"> Animation </h3>
+    <div class="col-md-12 members-col-12">
       <div class="carousel slide multi-item-carousel" id="theCarousel4">
-        <h3>Animation</h3>
         <div class="carousel-inner col-md-4">
           {{#each animation}}
           {{#if @first}}
           <div class="item active">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/if}}
           {{#unless @first}}
           <div class="item">
-            <div class="col-xs-4 col-lg-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
+            <div class="col-xs-4 col-md-4 poster" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive" href="#posterModal" data-toggle="modal"></a></div>
           </div>
           {{/unless}}
           {{/each}}
@@ -105,10 +109,9 @@
           <div class="modal-content">
               <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h4 class="modal-title">Movie Details</h4>
+                  <h4 id="posterModalTitle"></h4>
               </div>
               <div class="modal-body">
-                  <p id="posterModalTitle"></p>
                   <p id="posterModalYear"></p>
                   <p id="posterModalPlot"></p>
                   <p id="posterModalGenre"></p>
@@ -125,6 +128,20 @@
 // Instantiate the Bootstrap carousel
 $('.multi-item-carousel').carousel({
   interval: false
+});
+// Carousel Hover Scroll
+var i;
+
+$('.carousel-control').on("mouseover", function () {
+    var control = $(this),
+        interval = 500;
+
+    i = setInterval(function () {
+        control.trigger("click");
+    }, interval);
+})
+.on("mouseout", function () {
+    clearInterval(i);
 });
 
 // for every slide in carousel, copy the next slide's item in the slide.
@@ -143,6 +160,7 @@ $('.multi-item-carousel .item').each(function(){
   }
 });
 
+// Populate data to modal
 $(".poster").on("click", function(event) {
 
   var movieId = {id: this.id};
@@ -160,7 +178,7 @@ $(".poster").on("click", function(event) {
         $("#posterModalYear").text(movieYear);
         $("#posterModalPlot").text(moviePlot);
         $("#posterModalGenre").text(movieGenre);
-        $("#posterModalDirector").text("Director: " +movieDirector);
+        $("#posterModalDirector").text("Director: " + movieDirector);
         $("#posterModalCast").text("Cast: " + movieActors);
     });
 });
