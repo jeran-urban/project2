@@ -6,7 +6,6 @@ var bodyParser = require("body-parser");
 var exphbs = require("express-handlebars");
 var methodOverride = require("method-override");
 var session = require("express-session");
-
 var passport = require("./config/passport");
 
 var db = require("./models");
@@ -32,6 +31,7 @@ app.use(passport.session());
 
 // Static directory
 app.use(express.static(process.cwd() + "/public"));
+
 // Routes
 // =============================================================
 var routes = require("./controllers/movies_controller.js");
@@ -39,12 +39,14 @@ var routes = require("./controllers/movies_controller.js");
 app.use("/", routes);
 
 app.use(function(req, res) {
-    if (res.status(404)) {
-        res.render('404');
-    }
-    else if (res.status(500)) {
-       res.render('500'); 
-    }
+  res.status(404);
+  res.render('404');
+});
+
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('500', {
+    });
 });
 
 // app.use(function(req, res) {
