@@ -2,8 +2,8 @@
 // When user clicks add-btn
 $("#movie-submit").on("click", function(event) {
   event.preventDefault();
-  var movieTitle
-  
+  var movieTitle;
+
 
   // Make a newChirp object
   var newMovie = {
@@ -11,7 +11,7 @@ $("#movie-submit").on("click", function(event) {
     created_at: moment().format("YYYY-MM-DD HH:mm:ss")
   };
 
-  
+
   console.log(newMovie);
 
   // Send an AJAX POST-request with jQuery
@@ -62,7 +62,7 @@ else {
       row.append("</div>")
       $("#movie-area").prepend(row);
 }
-    
+
 
       // console.log(data);
       // console.log(JSON.parse(data).Title);
@@ -77,13 +77,13 @@ else {
       //     url: url,
       //     method: 'GET',
       //   }).done(function(result) {
-          
+
 
       //     console.log(result.results);
       //   }).fail(function(err) {
       //     throw err;
       //   });
-      
+
   });
     // On success, run the following code
     // .done(function() {
@@ -103,4 +103,3 @@ else {
   $("#movie").val("");
 
 });
-
