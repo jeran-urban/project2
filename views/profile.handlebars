@@ -1,34 +1,86 @@
 {{> headerUser}}
-
-<div class="container footerspace">
-  <h2>Welcome {{user.name}}<span class="member-name"></span></h2>
-
-  <ui>
-    {{#each photo}}
-      <ul>
-        <img src="{{poster}}">
-        <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-        <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
-        <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-      </ul>
-    {{/each}}
-  </ui>
+<div class= "container">
+<div class="row">
+<div class="col-lg-3 text">
+<h2 class= "text">Welcome {{user.name}}<span class="member-name"></span></h2>
+<h4 class="text"> # of Movies Reviewed : </h4>
+<h4 class="text"> Favorite Genre : </h4>
+<h4 class="text"> Favorite Director : </h4>
+<h4 class="text"> Favorite Critic : </h4>
 </div>
+<div class="col-lg-9">
+<h2 class= "text"> Your Reccomendations</h2>
+<div class= "display">
+    {{#each photo}}
+            <div class= "connect">
+            <img src="{{poster}}" class="rec float">
+            <div class= "options">
+            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+            </div>
+            </div>
 
+    {{/each}}
+</div>
+</div>
+</div>
+<div class= "row">
+<div class="col-lg-12">
+<h2 class= "text"> Movies To Review </h2>
+<div class= "display">
+    {{#each photo}}
+            <div class= "connect">
+            <img src="{{poster}}" class="sizing float">
+            <div class= "options">
+            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+            </div>
+            </div>
+
+    {{/each}}
+</div>
+</div>
+</div>
+</div>
 <script>
+
 $(".btn").on("click", function(event) {
   var eThis = this;
   var movieInfo = {id: this.id, opinion: $(this).val()};
   var opinion = {opinion: $(this).val()};
   // console.log(movieId);
-  console.log(opinion);
-
+  // console.log(opinion);
+  var holder= $(this).parents()[1];
+  console.log(holder);
+  $(holder).hide();
   $.post("/profile", movieInfo, function(data) {
     }).then(function(data) {
-      console.log("data ", data);
+      // console.log("data ", data);
     }).then(function() {
-    
+
   });
 });
+// $("body").dblclick( function()
+// {if ( $('img').length ){
 
+//   console.log("works")}
+//   else{
+//     console.log("not yet");
+//   }
+// })
+$("body").on("click", function(){
+if($('.float').children(':visible').length == 0) {
+   console.log("It works");
+   //insert new call for next 10 movies//
+
+}});
+$(".options").on("mouseenter", function(){
+  $(this).children().css("opacity", 0.9);
+
+});
+$(".options").on("mouseleave", function(){
+  $(this).children().css("opacity", 0.2)
+});
 </script>

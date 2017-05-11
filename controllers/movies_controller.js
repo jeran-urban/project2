@@ -71,7 +71,7 @@ router.get("/profile", isAuthenticated, function(req, res) {
   var user = {name: req.user.name}
   db.movie.findAll({}).then(function(result) {
     sendBack = []
-    for (i=0; i < 10; i++) {
+    for (i=0; i < 5; i++) {
 
       // console.log("please ", result[i].dataValues.poster);
       sendBack.push(result[i].dataValues);
@@ -102,7 +102,7 @@ router.post("/profile", function(req, res) {
   var dislikesToPush = "";
   var likeExist = false;
   var dislikeExist = false;
-  db.user.findOne({ 
+  db.user.findOne({
     where: {id: userId}
   }).then(function(result1) {
     console.log("opinion: " + opinion);
@@ -255,10 +255,10 @@ router.get("/members", isAuthenticated, function(req, res) {
     var drama = [];
     var horror = [];
     var animation = [];
-    
+
     for (var i = 0; i < result.length; i++) {
       var genres = result[i].dataValues.genre.split(", ");
-      
+
       if (genres.indexOf("Action") !== -1){
         action.push(result[i].dataValues);
       }
@@ -314,7 +314,7 @@ router.post("/api/login", passport.authenticate("local"), function(req, res) {
 router.post("/api/signup", function(req, res) {
   // console.log(req.body);
   db.user.findOrCreate({
-    where: {userName: req.body.userName}, 
+    where: {userName: req.body.userName},
     defaults:{password: req.body.password, name: req.body.name}
 
   }).then(function() {
@@ -359,7 +359,7 @@ router.post("/api/find", function(req, res) {
   }).catch(function(err) {
     console.log(err);
   });
-  
+
 });
 
 // Search for a movie
@@ -422,7 +422,7 @@ router.post("/api/new", function(req, res) {
         movieDetailsOmdb = {omdb: body}
         console.log(JSON.parse(body).Error);
         console.log("omdb details ", movieDetailsOmdb);
-        
+
         // return res.json(body);
         // res.json(body);
         movieNameTmdbandRottenTomatoes = JSON.parse(body).Title;

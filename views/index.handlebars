@@ -1,75 +1,95 @@
-{{> headerGuest}}
-
-<div class="container footerspace">
+{{> headerUser}}
+<div class="container">
   <h1>Most recently added movies</h1>
+
   <div class="row">
-    <div class="col-md-12">
-      <div class="carousel slide multi-item-carousel" id="theCarousel">
-        <div class="carousel-inner">
-          <div class="item active">
-            <!-- <div class="col-xs-4"><a href="#1"><img src="http://image.tmdb.org/t/p/w185/nnVA3Nmry9furen0NDmJa0QTn2F.jpg" class="img-responsive"></a></div> -->
+    <div class = "col-lg-12">
+      <div class="row__inner">
+      {{#each photo}}
+        <div class="tile poster" id="{{tmdbId}}" value="{{tmdbId}}">
+          <div class="tile__media">
+            <img class="tile__img" src="{{poster}}"/>
+            <iframe class = "video" src= "{{trailer}}" width="400" height="250" ></iframe>
           </div>
-          {{#each photo}}
-            <div class="item">
-              <div class="col-xs-4 poster video" id="{{tmdbId}}" value="{{tmdbId}}"><img src="{{poster}}" class="img-responsive"></div>
-            </div>
-          {{/each}}
         </div>
-        <a class="left carousel-control" href="#theCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-        <a class="right carousel-control" href="#theCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+      {{/each}}
       </div>
     </div>
   </div>
 </div>
-
 <script type="text/javascript">
+//   var trailer = "";
+//   var poster= "";
+// var movieId={};
+$(document).on( "mouseenter", ".poster", function(event) {
+      // console.log($(this).children()[0]);
+      // var holder= $(this).children()[0];
+      // console.log(holder);
+      // console.log($(holder).children()[1]);
+      // $(holder).children()[0].hide();
+      // ($(holder).children()[1]).show();
+      $(this).find("iframe").show();
+      $(this).find("img").hide();
+       $("#overlay").animate({backgroundColor: "black"}, 150);
+//    movieId = {id: this.id};
+      // $(this).hide();
+      // console.log($(this).children());
+      // $(".video").show();
+//   console.log(movieId);
+//   $.post("/api/find", movieId, function(data) {
+//     }).then(function(data) {
+//       // console.log("data ", data);
+//       // console.log(data[0].title);
+//       console.log(data[0].trailer);
+//       trailer = data[0].trailer;
+//       // console.log(data[0].year);
+//       // console.log(data[0].actors);
+//       // console.log("undefined : " + this.innerHTML);
 
-// Instantiate the Bootstrap carousel
-$('.multi-item-carousel').carousel({
-  interval: false
+//       // console.log(data[0].director);
+//       // console.log(data[0].genre);
+//       // console.log(data[0].guideBoxId);
+//       console.log(data[0].poster);
+//       poster= data[0].poster;
+//       // console.log(data[0].rec1);
+//       // console.log(data[0].rec2);
+//       // console.log(data[0].rec3);
+//     })
+//     // this.innerHTML ="<iframe src='" + trailer + "?rel=0&autoplay=1\'" width=\"320\" height=\"240\" frameborder=\"0\" allowfullscreen=\"false\">";
+//     $(this).hide(150, function() { $(this).replaceWith("<div class='tile video' id= '"+ movieId  + "' value=" +movieId + "' ><div class='tile__media video' ><iframe src='" + trailer + "?rel=0&autoplay=1\' width=\"320\" height=\"240\" frameborder=\"0\" allowfullscreen=\"false\"></iframe> </div></div>").show(150);
+// console.log(movieId);
+// return movieId;
+// })
+// console.log(movieId);
+// return movieId;
 });
+$(document).on( "mouseleave", ".poster", function(event){
+    // var movieId = {id: this.id};
+    // console.log(this);
+ $(this).find("iframe").hide();
+    $(this).find("img").show();
+  // console.log( "second", movieId);
+  // // $.post("/api/find", movieId, function(data) {
+  // //   }).then(function(data) {
+  // //     // console.log("data ", data);
+  // //     // console.log(data[0].title);
+  // //     console.log(data[0].trailer);
+  // //     trailer = data[0].trailer;
+  // //     // console.log(data[0].year);
+  // //     // console.log(data[0].actors);
+  // //     // console.log("undefined : " + this.innerHTML);
 
-// for every slide in carousel, copy the next slide's item in the slide.
-// Do the same for the next, next item.
-$('.multi-item-carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-
-  if (next.next().length>0) {
-    next.next().children(':first-child').clone().appendTo($(this));
-  } else {
-  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-  }
-});
-
-$(".poster").on("click", function(event) {
-  var eThis = this;
-  var movieId = {id: this.id};
-  var trailer = "";
-  console.log(movieId);
-
-  $.post("/api/find", movieId, function(data) {
-    }).then(function(data) {
-      console.log("data ", data);
-      console.log(data[0].title);
-      console.log(data[0].trailer);
-      console.log(data[0].year);
-      console.log(data[0].actors);
-      console.log(data[0].director);
-      console.log(data[0].genre);
-      console.log(data[0].guideBoxId);
-      console.log(data[0].poster);
-      console.log(data[0].rec1);
-      console.log(data[0].rec2);
-      console.log(data[0].rec3);
-      trailer = data[0].trailer;
-    }).then(function() {
-    eThis.innerHTML ="<iframe src='"+trailer+"' width='320' height='240' frameborder='0' allowfullscreen='false'>";
+  // //     // console.log(data[0].director);
+  // //     // console.log(data[0].genre);
+  // //     // console.log(data[0].guideBoxId);
+  // //     console.log(data[0].poster);
+  // //     poster= data[0].poster;
+  // //     // console.log(data[0].rec1);
+  // //     // console.log(data[0].rec2);
+  // //     // console.log(data[0].rec3);
+  // //   })
+  //   $(this).hide(150, function() { $(this).replaceWith("<div class='tile poster' id= '"+ movieId  + "' value=" +movieId + "' ><div class='tile__media'><img class='tile__img' src='"+ poster + "'></div><div class='tile__details'><div class='tile__title'>Top Gear</div></div></div>").show(150);
+    $("#overlay").animate({backgroundColor: ""}, 150);
+  // })
   });
-});
-
-
 </script>
