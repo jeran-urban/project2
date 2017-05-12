@@ -1,22 +1,20 @@
 /* global moment */
 // When user clicks add-btn
+var guideboxID = "";
 $("#movie-submit").on("click", function(event) {
   event.preventDefault();
-  var movieTitle;
-
-
-  // Make a newChirp object
+  var movieTitle
   var newMovie = {
     movie: $("#movie").val().trim(),
     created_at: moment().format("YYYY-MM-DD HH:mm:ss")
   };
+
   console.log(newMovie);
 
   // Send an AJAX POST-request with jQuery
   $.post("/api/new", newMovie, function(data) {
     // console.log(data);
     console.log(data);
-
     if (typeof data === "string") {
       console.log(data);
       var row = $("<div>");
@@ -26,6 +24,8 @@ $("#movie-submit").on("click", function(event) {
           $("#movie-area").html(row);
     }
     else if (data.length !== undefined) {
+      guideboxID = data[0].guideBoxId;
+
         var row = $("<div>");
           row.addClass("movie");
           row.append("<p>Actors: " + data[0].actors +  "</p>");
@@ -46,6 +46,7 @@ $("#movie-submit").on("click", function(event) {
           $("#movie-area").html(row);
     }
     else if (data.length === undefined) {
+      guideboxID = data.guideBoxId;
       var row = $("<div>");
           row.addClass("movie");
           row.append("<p>Actors: " + data.actors +  "</p>");
@@ -65,14 +66,6 @@ $("#movie-submit").on("click", function(event) {
           row.append("</div>")
           $("#movie-area").html(row);
     }
-
-
-
-
-      // console.log(data);
-      // console.log(JSON.parse(data).Title);
-
-
       // var url = "https://api.nytimes.com/svc/movies/v2/reviews/search.json";
       //   url += '?' + $.param({
       //     'api-key': "b4d652b1cd22416d93554a013e92dca8",
@@ -82,29 +75,23 @@ $("#movie-submit").on("click", function(event) {
       //     url: url,
       //     method: 'GET',
       //   }).done(function(result) {
-
+          
 
       //     console.log(result.results);
       //   }).fail(function(err) {
       //     throw err;
       //   });
-
   });
-    // On success, run the following code
-    // .done(function() {
-
-    //   var row = $("<div>");
-    //   row.addClass("chirp");
-
-    //   row.append("<p>" + newMovie.author + " chirped: </p>");
-    //   row.append("<p>" + newMovie.body + "</p>");
-    //   row.append("<p>At " + moment(newMovie.created_at).format("h:mma on dddd") + "</p>");
-
-    //   $("#chirp-area").prepend(row);
-
-    // });
-
   // Empty each input box by replacing the value with an empty string
   $("#movie").val("");
-
 });
+
+$("#guide-submit").on("click", function(event) {
+  event.preventDefault();
+  var guideID = {guideboxID: guideboxID} 
+
+  $.post("/api/findmovie", guideID, function(data) {
+    console.log(data);
+  });
+});
+

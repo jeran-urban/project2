@@ -13,12 +13,31 @@ var request = require("request");
 var passport = require("../config/passport");
 var session = require("express-session");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var fs = require("fs");
 
 // Routes
 // =============================================================
 //display index page
 
 router.get('/', function(req,res){
+    db.movie.findAll({}).then(function(result) {
+      fs.writeFile("./movie.json", JSON.stringify(result), function(err) {
+
+        // If an error was experienced we say it.
+        if (err) {
+          console.log(err);
+        }
+      });
+    });
+    db.user.findAll({}).then(function(result) {
+      fs.writeFile("./user.json", JSON.stringify(result), function(err) {
+
+        // If an error was experienced we say it.
+        if (err) {
+          console.log(err);
+        }
+      });
+    });
   db.movie.findAll({limit: 5, order: [["created_at", "DESC"]]}).then(function(result) {
     sendBack = []
     for (i=0; i < result.length; i++) {
@@ -102,7 +121,7 @@ router.post("/profile", function(req, res) {
   var dislikesToPush = "";
   var likeExist = false;
   var dislikeExist = false;
-  db.user.findOne({
+  db.user.findOne({ 
     where: {id: userId}
   }).then(function(result1) {
     console.log("opinion: " + opinion);
@@ -255,10 +274,10 @@ router.get("/members", isAuthenticated, function(req, res) {
     var drama = [];
     var horror = [];
     var animation = [];
-
+    
     for (var i = 0; i < result.length; i++) {
       var genres = result[i].dataValues.genre.split(", ");
-
+      
       if (genres.indexOf("Action") !== -1){
         action.push(result[i].dataValues);
       }
@@ -314,7 +333,7 @@ router.post("/api/login", passport.authenticate("local"), function(req, res) {
 router.post("/api/signup", function(req, res) {
   // console.log(req.body);
   db.user.findOrCreate({
-    where: {userName: req.body.userName},
+    where: {userName: req.body.userName}, 
     defaults:{password: req.body.password, name: req.body.name}
 
   }).then(function() {
@@ -359,7 +378,7 @@ router.post("/api/find", function(req, res) {
   }).catch(function(err) {
     console.log(err);
   });
-
+  
 });
 
 // Search for a movie
@@ -422,7 +441,7 @@ router.post("/api/new", function(req, res) {
         movieDetailsOmdb = {omdb: body}
         console.log(JSON.parse(body).Error);
         console.log("omdb details ", movieDetailsOmdb);
-
+        
         // return res.json(body);
         // res.json(body);
         movieNameTmdbandRottenTomatoes = JSON.parse(body).Title;
@@ -675,5 +694,56 @@ function getGuideboxID (imdbID) {
     });
   }
 }); // end of route for post
+
+router.post("/api/findmovie", function(req, res) {
+  console.log("got to guidebox post path");
+  var guideboxID = req.body.guideboxID;
+  // function getAvailableSources() {
+    var purchase = [];
+    var subscribe = [];
+  var queryUrl = 'http://api-public.guidebox.com/v2/movies/' + guideboxID + '?api_key=a4966dc9db26e3695465a5340bb66b205267cdc2';
+
+  request(queryUrl, function(error, response, body) {
+    var info = JSON.parse(body); // store parse string to variable
+
+  // Retreiving 'Purchase Web Sources' as strings, e.g. iTunes, Google Play, Amazon, YouTube.
+  // If the price does not exist or is not returned, we ignore that vendor.
+    for (var i = 0; i < info.purchase_web_sources.length; i++) {
+      var purchaseWebSources = info.purchase_web_sources[i].display_name;
+      var purchaseWebLink = info.purchase_web_sources[i].link;
+      console.log("puchasewebsource: ", purchaseWebSources);
+      console.log("purchaseweblink: ", purchaseWebLink);
+        if (info.purchase_web_sources[i].formats.length !== 0) {
+          var purchaseWebPrice = info.purchase_web_sources[i].formats[0].price;
+          var purchaseWebType = info.purchase_web_sources[i].formats[0].type;
+          purchase.push(purchaseWebSources + ", " + purchaseWebLink + ", " + purchaseWebPrice + ", " + purchaseWebType);
+          }
+        else {
+          purchase.push(purchaseWebSources + ", " + purchaseWebLink);
+        }
+          console.log("purchasewebprice: ", purchaseWebPrice);
+          console.log("purchasewebtype: ", purchaseWebType);
+        }
+        
+
+  // Retreiving 'Subscription Web Sources' - e.g Netflix, HBO Go, Hulu etc.
+    for (var i = 0; i < info.subscription_web_sources.length; i++) {
+      if (info.subscription_web_sources[i].length !== 0) {
+      var subWebSource = info.subscription_web_sources[i].display_name;
+      var subWebLink = info.subscription_web_sources[i].link;
+      subscribe.push(subWebSource + ", " + subWebLink);
+        }
+      console.log("web source: ", subWebSource);
+      console.log("web link: ", subWebLink);
+      }
+      var whereToBuy = {
+    purchase: purchase,
+    subscribe: subscribe
+  }
+  res.json(whereToBuy);
+    }); // End of request
+  // } // End of function
+  
+});
 
 module.exports = router;

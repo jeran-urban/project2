@@ -1,19 +1,8 @@
-.chirp {
-  padding: 10px;
-  margin: 10px;
-  background-color: #e8f9ff;
-}
 
 .cool-font {
   font-family: Shrikhand, cursive;
   font-size: 24px;
   color: #1da1f2;
-}
-
-.jumbotron {
-  font-family: Shrikhand, cursive;
-  color: white;
-  background-color: #1da1f2;
 }
 
 input,
