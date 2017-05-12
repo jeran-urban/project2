@@ -88,13 +88,3 @@ $(".view-sources").on("click", function(event) {
       console.log(data);
     });
 });
-
-
-
-// $("#guide-submit").on("click", function(event) {
-//   event.preventDefault();
-//   var guideID = {guideboxID: guideboxID}
-//   $.post("/api/findmovie", guideID, function(data) {
-//     console.log(data);
-//   });
-// });
