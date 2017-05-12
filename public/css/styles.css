@@ -98,3 +98,26 @@ footer {
 .view-trailer, .view-sources {
   display: none;
 }
+/* ============================ */
+/* SEARCH PAGE MODAL            */
+/* ============================ */
+th, td {
+    font-weight:normal;
+    padding:5px;
+    width:120px;
+    vertical-align:top;
+}
+th {
+    background:#00B0F0;
+}
+tr + tr th, tbody th {
+    background:#DAEEF3;
+}
+tr + tr, tbody {
+    text-align:center;
+}
+table, th, td {
+    border:solid 1px;
+    border-collapse:collapse;
+    table-layout:fixed;
+}

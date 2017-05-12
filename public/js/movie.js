@@ -3,6 +3,8 @@ var rec1;
 var rec2;
 var rec3;
 var guideID = "";
+var string;
+var array;
 
 /* global moment */
 // When user clicks add-btn
@@ -87,6 +89,29 @@ $(".view-sources").on("click", function(event) {
   event.preventDefault();
   var guideBID = {guideboxID: guideID}
     $.post("/api/findmovie", guideBID, function(data) {
-      console.log(data);
-    });
+      // console.log(data.purchase);
+      // console.log(data.subscribe);
+      for (var i = 0; i < data.purchase.length; i++) {
+        if (data.purchase.length !== 0) {
+          console.log(data.purchase[i]);
+          var newPurchaseArray = data.purchase[i].split(", ");
+          
+          if (data.subscribe.length !== 0) {
+            var newSubscribeArray = data.subscribe[i].split(", ");
+            $("#modalTable").append('<tr><td><img src="../images/' + newPurchaseArray[0] + '.jpg" href="'+ newPurchaseArray[1] +'"></td><td>' + newPurchaseArray[2] + '</td><td>' + newPurchaseArray[3] + '</td><td><img src="../images/' + newSubscribeArray[0] + '.jpg" href="'+ newSubscribeArray[1] +'"></td></tr>');
+          }
+          else {
+            $("#modalTable").append('<tr><td><img src="../images/' + newPurchaseArray[0] + '.jpg" href="'+ newPurchaseArray[1] +'"></td><td>' + newPurchaseArray[2] + '</td><td>' + newPurchaseArray[3] + '</td><tr>');
+          }
+        /*  newArray[0] = Source
+            newArray[1] = Link
+            newArray[2] = Price
+            newArray[3] = Rent/Buy
+        */
+
+
+
+      }
+    }
+  });
 });

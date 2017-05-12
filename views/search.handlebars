@@ -42,7 +42,7 @@
               <a href="#trailerModal" class="btn btn-lg btn-primary view-trailer" data-toggle="modal">View Trailer</a> </div>
               <div class="bs-example col-md-6">
                   <!-- Button HTML (to Trigger Modal) -->
-                  <a href="#sourcesModal" class="btn btn-lg btn-primary view-sources" data-toggle="modal">View Available Sources</a> </div>
+                  <a href="#sourcesModal" class="btn btn-lg btn-primary view-sources" data-toggle="modal">View Purchase Sources</a> </div>
         </div>
     </div>
 </div>
@@ -83,16 +83,35 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    <h4 class="modal-title">Available Sources</h4>
+                    <h4 class="modal-title">View Sources</h4>
                 </div>
                 <div class="modal-body">
-                    <p></p>
+                    <!-- <p class="purchase-modal-text"> </p> -->
+                    <table id="modalTable">
+                      <thead>
+                        <tr>
+                          <th colspan="3">Purchase Sources</th>
+                          <th colspan="1">Streaming Sources</th>
+                        </tr>
+                          <tr>
+                            <th>Source</th>
+                            <th>Price</th>
+                            <th>Rent/Purchase</th>
+                            <th>Source</th>
+                          </tr>
+                        </thead>
+                  <!--       <tbody>
+                    <tr>
+                    <td id="source"> </td>
+                    <td> </td>
+                    <td> </td>
+                    <td> </td>
+                  </tbody> -->
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-
-
   </div>
 
 <script type="text/javascript" src="js/movie.js"> </script>
