@@ -10,6 +10,7 @@ html {
 }
 body {
     margin: 0 0 100px;
+    position: relative;
 }
 footer {
   position: absolute;
@@ -90,6 +91,9 @@ footer {
 
 .moviePoster {
   display: none;
+  margin-left: 25%;
+  border-style: none;
+
 }
 .view-trailer, .view-sources {
   display: none;

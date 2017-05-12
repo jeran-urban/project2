@@ -4,7 +4,6 @@ var rec2;
 var rec3;
 
 // On movie search click...
-
 $("#movie-submit").on("click", function(event) {
   event.preventDefault();
   var movieTitle;
@@ -54,29 +53,41 @@ $("#movie-submit").on("click", function(event) {
             FETCH GUIDEBOX DATA
           */
           console.log(data[0].guideBoxId);
+          console.log("DEFINED");
 
 
     }
     else if (data.length === undefined) {
-          $(".movieTitle").show().append("<p>Title: " + data[0].title + "</p>");
-          // row.append("<p>Actors: " + data.actors +  "</p>");
-          // row.append("<p>At " + data.created_at + "</p>");
-          // row.append("<p>Director(s): " + data.director +  "</p>");
-          // row.append("<p>Genre(s): " + data.genre +  "</p>");
-          // row.append("<p>guidebox id: " + data.guideBoxId +  "</p>");
-          // row.append("<p>plot: " + data.plot +  "</p>");
-          // row.append("<p>poster:<img src='" + data.poster + "'><p>");
-          // row.append("<p>rec1: " + data.rec1 + "<p>");
-          // row.append("<p>rec2: " + data.rec2 + "<p>");
-          // row.append("<p>rec3: " + data.rec3 + "<p>");
-          // row.append("<p>Title: " + data.title +  "</p>");
-          // row.append("<p>tmdbid: " + data.tmdbId +  "</p>");
-          // row.append("<p>trailer link: " + data.trailer +  "</p>");
-          // row.append("<p>Year: " + data.year +  "</p>");
-          // row.append("</div>")
-          // $("#movie-area").html(row);
-    }
+      $(".moviePoster").show().attr("src", data.poster);
+      $(".movieTitle").html(data.title);
+      $(".movieYear").html(data.year);
+      $(".movieGenre").html(data.genre);
+      $(".moviePlot").html(data.plot);
+      $(".movieDirector").html(data.director);
+      $(".movieCast").html(data.actors);
+      $(".view-trailer").show();
+      $(".view-sources").show();
+      // Recommendation Poster 1
+      rec1 = data.rec1.split(",");
+      console.log(rec1[2])
+      $("#rec1").attr("src", rec1[2]);
+      // Recommendation Poster 2
+      rec2 = data.rec2.split(",");
+      console.log(rec1[2])
+      $("#rec2").attr("src", rec2[2]);
+      // Recommendation Poster 3
+      rec3 = data.rec3.split(",");
+      console.log(rec1[2])
+      $("#rec3").attr("src", rec3[2]);
+      $("#movieTrailer").attr("src", data.trailer);
 
+      /*
+        FETCH GUIDEBOX DATA
+      */
+      console.log(data[0].guideBoxId);
+      console.log("UNDEFINED");
+    }
+console.log("ok")
   });
 
   $("#movieSearchField").val("");

@@ -362,6 +362,25 @@ router.post("/api/find", function(req, res) {
 
 });
 
+// search guidebox
+
+router.post("/api/guidebox", function(req, res) {
+  var people = [
+      { name: 'Dave', location: 'Atlanta' },
+      { name: 'Santa Claus', location: 'North Pole' },
+      { name: 'Man in the Moon', location: 'The Moon' }
+    ];
+
+    // Since the request is for a JSON representation of the people, we
+    //  should JSON serialize them. The built-in JSON.stringify() function
+    //  does that.
+    var peopleJSON = JSON.stringify(people);
+
+    // Now, we can use the response object's send method to push that string
+    //  of people JSON back to the browser in response to this request:
+    res.send(peopleJSON);
+});
+
 // Search for a movie
 router.post("/api/new", function(req, res) {
   //local variables
@@ -674,6 +693,7 @@ function getGuideboxID (imdbID) {
       }
     });
   }
+
 }); // end of route for post
 
 module.exports = router;
