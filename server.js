@@ -49,11 +49,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-// app.use(function(req, res) {
-//   res.status(500);
-//   res.render('500');
-// });
-
 // Starts the server to begin listening
 // =============================================================
 app.listen(process.env.PORT || 8080,function(){

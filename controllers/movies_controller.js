@@ -13,12 +13,31 @@ var request = require("request");
 var passport = require("../config/passport");
 var session = require("express-session");
 var isAuthenticated = require("../config/middleware/isAuthenticated");
+var fs = require("fs");
 
 // Routes
 // =============================================================
 //display index page
 
 router.get('/', function(req,res){
+    db.movie.findAll({}).then(function(result) {
+      fs.writeFile("./movie.json", JSON.stringify(result), function(err) {
+
+        // If an error was experienced we say it.
+        if (err) {
+          console.log(err);
+        }
+      });
+    });
+    db.user.findAll({}).then(function(result) {
+      fs.writeFile("./user.json", JSON.stringify(result), function(err) {
+
+        // If an error was experienced we say it.
+        if (err) {
+          console.log(err);
+        }
+      });
+    });
   db.movie.findAll({limit: 5, order: [["created_at", "DESC"]]}).then(function(result) {
     sendBack = []
     for (i=0; i < result.length; i++) {
@@ -678,14 +697,17 @@ function getGuideboxID (imdbID) {
 
 }); // end of route for post
 
-
 router.post("/api/findmovie", function(req, res) {
-var guideboxID = req.body.guideboxID;
-var purchase = [];
-var subscribe = [];
-var queryUrl = 'http://api-public.guidebox.com/v2/movies/' + guideboxID + '?api_key=a4966dc9db26e3695465a5340bb66b205267cdc2';
+  console.log("got to guidebox post path");
+  var guideboxID = req.body.guideboxID;
+  // function getAvailableSources() {
+    var purchase = [];
+    var subscribe = [];
+  var queryUrl = 'http://api-public.guidebox.com/v2/movies/' + guideboxID + '?api_key=a4966dc9db26e3695465a5340bb66b205267cdc2';
+
   request(queryUrl, function(error, response, body) {
     var info = JSON.parse(body); // store parse string to variable
+
   // Retreiving 'Purchase Web Sources' as strings, e.g. iTunes, Google Play, Amazon, YouTube.
   // If the price does not exist or is not returned, we ignore that vendor.
     for (var i = 0; i < info.purchase_web_sources.length; i++) {
@@ -704,6 +726,7 @@ var queryUrl = 'http://api-public.guidebox.com/v2/movies/' + guideboxID + '?api_
           console.log("purchasewebprice: ", purchaseWebPrice);
           console.log("purchasewebtype: ", purchaseWebType);
         }
+
 
   // Retreiving 'Subscription Web Sources' - e.g Netflix, HBO Go, Hulu etc.
     for (var i = 0; i < info.subscription_web_sources.length; i++) {
