@@ -2,11 +2,11 @@
 var rec1;
 var rec2;
 var rec3;
+var guideID = "";
 
 // On movie search click...
 $("#movie-submit").on("click", function(event) {
   event.preventDefault();
-  var movieTitle;
 
 // Capture title of movie searched
   var newMovie = {
@@ -26,6 +26,7 @@ $("#movie-submit").on("click", function(event) {
           $("#movie-area").html(row);
     }
     else if (data.length !== undefined) {
+          guideID = data[0].guideBoxId;
           $(".moviePoster").show().attr("src", data[0].poster);
           $(".movieTitle").html(data[0].title);
           $(".movieYear").html(data[0].year);
@@ -48,48 +49,52 @@ $("#movie-submit").on("click", function(event) {
           console.log(rec1[2])
           $("#rec3").attr("src", rec3[2]);
           $("#movieTrailer").attr("src", data[0].trailer);
-
-          /*
-            FETCH GUIDEBOX DATA
-          */
-          console.log(data[0].guideBoxId);
-          console.log("DEFINED");
-
-
     }
     else if (data.length === undefined) {
-      $(".moviePoster").show().attr("src", data.poster);
-      $(".movieTitle").html(data.title);
-      $(".movieYear").html(data.year);
-      $(".movieGenre").html(data.genre);
-      $(".moviePlot").html(data.plot);
-      $(".movieDirector").html(data.director);
-      $(".movieCast").html(data.actors);
-      $(".view-trailer").show();
-      $(".view-sources").show();
-      // Recommendation Poster 1
-      rec1 = data.rec1.split(",");
-      console.log(rec1[2])
-      $("#rec1").attr("src", rec1[2]);
-      // Recommendation Poster 2
-      rec2 = data.rec2.split(",");
-      console.log(rec1[2])
-      $("#rec2").attr("src", rec2[2]);
-      // Recommendation Poster 3
-      rec3 = data.rec3.split(",");
-      console.log(rec1[2])
-      $("#rec3").attr("src", rec3[2]);
-      $("#movieTrailer").attr("src", data.trailer);
+          guideID = data.guideBoxId;
+          $(".moviePoster").show().attr("src", data.poster);
+          $(".movieTitle").html(data.title);
+          $(".movieYear").html(data.year);
+          $(".movieGenre").html(data.genre);
+          $(".moviePlot").html(data.plot);
+          $(".movieDirector").html(data.director);
+          $(".movieCast").html(data.actors);
+          $(".view-trailer").show();
+          $(".view-sources").show();
+          // Recommendation Poster 1
+          rec1 = data.rec1.split(",");
+          console.log(rec1[2])
+          $("#rec1").attr("src", rec1[2]);
+          // Recommendation Poster 2
+          rec2 = data.rec2.split(",");
+          console.log(rec1[2])
+          $("#rec2").attr("src", rec2[2]);
+          // Recommendation Poster 3
+          rec3 = data.rec3.split(",");
+          console.log(rec1[2])
+          $("#rec3").attr("src", rec3[2]);
+          $("#movieTrailer").attr("src", data.trailer);
+        }
+      });
+          $("#movieSearchField").val("");
+    });
 
-      /*
-        FETCH GUIDEBOX DATA
-      */
-      console.log(data[0].guideBoxId);
-      console.log("UNDEFINED");
-    }
-console.log("ok")
-  });
 
-  $("#movieSearchField").val("");
 
+$(".view-sources").on("click", function(event) {
+  event.preventDefault();
+  var guideBID = {guideboxID: guideID}
+    $.post("/api/findmovie", guideBID, function(data) {
+      console.log(data);
+    });
 });
+
+
+
+// $("#guide-submit").on("click", function(event) {
+//   event.preventDefault();
+//   var guideID = {guideboxID: guideboxID}
+//   $.post("/api/findmovie", guideID, function(data) {
+//     console.log(data);
+//   });
+// });

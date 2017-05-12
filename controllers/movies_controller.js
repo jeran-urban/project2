@@ -362,24 +362,6 @@ router.post("/api/find", function(req, res) {
 
 });
 
-// search guidebox
-
-router.post("/api/guidebox", function(req, res) {
-  var people = [
-      { name: 'Dave', location: 'Atlanta' },
-      { name: 'Santa Claus', location: 'North Pole' },
-      { name: 'Man in the Moon', location: 'The Moon' }
-    ];
-
-    // Since the request is for a JSON representation of the people, we
-    //  should JSON serialize them. The built-in JSON.stringify() function
-    //  does that.
-    var peopleJSON = JSON.stringify(people);
-
-    // Now, we can use the response object's send method to push that string
-    //  of people JSON back to the browser in response to this request:
-    res.send(peopleJSON);
-});
 
 // Search for a movie
 router.post("/api/new", function(req, res) {
@@ -695,5 +677,52 @@ function getGuideboxID (imdbID) {
   }
 
 }); // end of route for post
+
+
+router.post("/api/findmovie", function(req, res) {
+var guideboxID = req.body.guideboxID;
+var purchase = [];
+var subscribe = [];
+var queryUrl = 'http://api-public.guidebox.com/v2/movies/' + guideboxID + '?api_key=a4966dc9db26e3695465a5340bb66b205267cdc2';
+  request(queryUrl, function(error, response, body) {
+    var info = JSON.parse(body); // store parse string to variable
+  // Retreiving 'Purchase Web Sources' as strings, e.g. iTunes, Google Play, Amazon, YouTube.
+  // If the price does not exist or is not returned, we ignore that vendor.
+    for (var i = 0; i < info.purchase_web_sources.length; i++) {
+      var purchaseWebSources = info.purchase_web_sources[i].display_name;
+      var purchaseWebLink = info.purchase_web_sources[i].link;
+      console.log("puchasewebsource: ", purchaseWebSources);
+      console.log("purchaseweblink: ", purchaseWebLink);
+        if (info.purchase_web_sources[i].formats.length !== 0) {
+          var purchaseWebPrice = info.purchase_web_sources[i].formats[0].price;
+          var purchaseWebType = info.purchase_web_sources[i].formats[0].type;
+          purchase.push(purchaseWebSources + ", " + purchaseWebLink + ", " + purchaseWebPrice + ", " + purchaseWebType);
+          }
+        else {
+          purchase.push(purchaseWebSources + ", " + purchaseWebLink);
+        }
+          console.log("purchasewebprice: ", purchaseWebPrice);
+          console.log("purchasewebtype: ", purchaseWebType);
+        }
+
+  // Retreiving 'Subscription Web Sources' - e.g Netflix, HBO Go, Hulu etc.
+    for (var i = 0; i < info.subscription_web_sources.length; i++) {
+      if (info.subscription_web_sources[i].length !== 0) {
+      var subWebSource = info.subscription_web_sources[i].display_name;
+      var subWebLink = info.subscription_web_sources[i].link;
+      subscribe.push(subWebSource + ", " + subWebLink);
+        }
+      console.log("web source: ", subWebSource);
+      console.log("web link: ", subWebLink);
+      }
+      var whereToBuy = {
+    purchase: purchase,
+    subscribe: subscribe
+  }
+  res.json(whereToBuy);
+    }); // End of request
+  // } // End of function
+
+});
 
 module.exports = router;
