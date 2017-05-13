@@ -23,12 +23,8 @@ router.get('/', function(req,res){
   db.movie.findAll({limit: 5, order: [["created_at", "DESC"]]}).then(function(result) {
     sendBack = []
     for (i=0; i < result.length; i++) {
-
-      // console.log("please ", result[i].dataValues.poster);
       sendBack.push(result[i].dataValues);
     }
-    // console.log("please ", result[0].dataValues.poster);
-    // console.log("trying ", result);
     var photos = {photo: sendBack}
     console.log("photos ", photos)
     res.render('index', photos);
@@ -43,7 +39,7 @@ router.get("/index", function(req, res) {
 });
 
 router.get('/search', isAuthenticated, function(req,res){
-  console.log("user ", req.user);
+  // console.log("user ", req.user);
   res.render('search');
 });
 
@@ -68,8 +64,6 @@ router.get("/api/user_data", function(req, res) {
     res.json({});
   }
   else {
-    // Otherwise send back the user's email and id
-    // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       userName: req.user.userName,
       id: req.user.id
@@ -135,11 +129,11 @@ router.get("/members", isAuthenticated, function(req, res) {
         animation.push(result[i].dataValues);
       }
     }
-    console.log("action: ", action.length);
-    console.log("comedy: ", comedy.length);
-    console.log("drama: ", drama.length);
-    console.log("horror: ", horror.length);
-    console.log("animation: ", animation.length);
+    // console.log("action: ", action.length);
+    // console.log("comedy: ", comedy.length);
+    // console.log("drama: ", drama.length);
+    // console.log("horror: ", horror.length);
+    // console.log("animation: ", animation.length);
 
     var genreToHtml = {
       action: action,
@@ -166,45 +160,36 @@ router.get("/profile", isAuthenticated, function(req, res) {
    var sendBackLike= [];
    var sendBackDislike= [];
   db.user.findOne({where: {userName: user.userName}}).then(function(result) {
-    console.log("1");
+
     if(result.dataValues.likes !== null && result.dataValues.dislikes !== null){
-    likes = result.dataValues.likes.split(", ");
-    dislikes = result.dataValues.dislikes.split(", ");
-    console.log(typeof likes);
-    console.log(result.dataValues);
-    console.log(likes);
-    
-    db.movie.findAll({where: {tmdbId: likes }}).then(function(result){
-      console.log("2");
-    for (i=0; i < result.length; i++) {
-        console.log("5");
-      console.log("please", result[i].dataValues);
-      sendBackLike.push(result[i].dataValues)};;
-      console.log(sendBackLike);
-    
-      db.movie.findAll({where: {tmdbId: dislikes }}).then(function(result){
-      console.log("3");
-    for (x=0; x < result.length; x++) {
-      // console.log("please", result[x].dataValues.poster);
-      sendBackDislike.push(result[x].dataValues)};
-    
-    // console.log("please ", result[0].dataValues.poster);
-    console.log("trying ", sendBackLike);
-    console.log("hard ", sendBackDislike);
-    var photos = {photoLike: sendBackLike, photoDislike: sendBackDislike};
-    console.log("photos ", photos);
-    res.render('profile', photos);
-  });
-    });
-    // res.json(result);
-  }
-  else {
-    res.render('profile');
-  }
+      likes = result.dataValues.likes.split(", ");
+      dislikes = result.dataValues.dislikes.split(", ");
+      
+      db.movie.findAll({where: {tmdbId: likes }}).then(function(result){
+
+        for (i=0; i < result.length; i++) {
+          sendBackLike.push(result[i].dataValues)
+        };
+        console.log(sendBackLike);
+      
+        db.movie.findAll({where: {tmdbId: dislikes }}).then(function(result){
+          for (x=0; x < result.length; x++) {
+            sendBackDislike.push(result[x].dataValues)
+          };
+
+          var photos = {photoLike: sendBackLike, photoDislike: sendBackDislike};
+          console.log("photos ", photos);
+          res.render('profile', photos);
+        });
+      });
+      // res.json(result);
+    }
+    else {
+      res.render('profile');
+    }
   }).catch(function(err) {
     console.log(err);
   });
-
 });
 
 router.get("/all", isAuthenticated, function(req, res) {
@@ -218,7 +203,6 @@ router.get("/all", isAuthenticated, function(req, res) {
   var sendBack=[];
   var opinions = "";
   db.user.findOne({where: {userName: user.userName}}).then(function(result) {
-    console.log("1");
     if (result.dataValues.likes !== null){
       opinions = result.dataValues.likes;
     } 
@@ -243,7 +227,6 @@ router.get("/all", isAuthenticated, function(req, res) {
           }
         }
       ).then(function(result){
-        console.log("2");
         for (i=0; i < result.length; i++) {
           sendBack.push(result[i].dataValues);
           // console.log("sendBack", sendBack);
@@ -286,11 +269,6 @@ router.post("/profile", function(req, res) {
   db.user.findOne({
     where: {id: userId}
   }).then(function(result1) {
-    console.log("opinion: " + opinion);
-    console.log("likes: ", result1.dataValues.likes);
-    console.log(typeof result1.dataValues.likes);
-    console.log("dislikes: ", result1.dataValues.dislikes);
-    console.log(typeof result1.dataValues.likes);
     if (result1.dataValues.likes !== null){
       likes = result1.dataValues.likes.split(", ");
     }
@@ -303,10 +281,6 @@ router.post("/profile", function(req, res) {
     else if (dislikes.indexOf(movieId) !== -1) {
       dislikeExist = true;
     }
-    console.log("arrayLikes ", likes);
-    console.log("arrayDislikes ", dislikes);
-    console.log("exists in likes: ", likeExist);
-    console.log("exists in dislikes: ", dislikeExist);
 
     if (opinion === "like" && likeExist === true) {
       //do nothing
@@ -439,11 +413,8 @@ router.post("/api/signup", function(req, res) {
 });
 
 router.post("/api/find", function(req, res) {
-  console.log("got to server");
-  console.log("id to check ", req.body.id);
   db.movie.findAll({where: {tmdbId: req.body.id}}).then(function(result) {
 
-    console.log("clicked result ", result);
     console.log("sent result to html");
     res.json(result);
     // res.json(result);
@@ -769,11 +740,9 @@ function getGuideboxID (imdbID) {
 }); // end of route for post
 
 router.post("/api/findmovie", function(req, res) {
-  console.log("got to guidebox post path");
   var guideboxID = req.body.guideboxID;
-  // function getAvailableSources() {
-    var purchase = [];
-    var subscribe = [];
+  var purchase = [];
+  var subscribe = [];
   var queryUrl = 'http://api-public.guidebox.com/v2/movies/' + guideboxID + '?api_key=a4966dc9db26e3695465a5340bb66b205267cdc2';
 
   request(queryUrl, function(error, response, body) {
@@ -788,37 +757,34 @@ router.post("/api/findmovie", function(req, res) {
       purchasewebsource:
       console.log("purchaseweblink: ", purchaseWebLink);
         if (info.purchase_web_sources[i].formats.length !== 0 && purchaseWebSources === "iTunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)" || purchaseWebSources === "Cinemax (Via Amazon Prime)") {
-          var purchaseWebPrice = info.purchase_web_sources[i].formats[0].price;
-          var purchaseWebType = info.purchase_web_sources[i].formats[0].type;
-          purchase.push(purchaseWebSources + ", " + purchaseWebLink + ", " + purchaseWebPrice + ", " + purchaseWebType);
-          }
+            var purchaseWebPrice = info.purchase_web_sources[i].formats[0].price;
+            var purchaseWebType = info.purchase_web_sources[i].formats[0].type;
+            purchase.push(purchaseWebSources + ", " + purchaseWebLink + ", " + purchaseWebPrice + ", " + purchaseWebType);
+        }
         else if (purchaseWebSources === "itunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)" || purchaseWebSources === "Cinemax (Via Amazon Prime)"){
           purchase.push(purchaseWebSources + ", " + purchaseWebLink);
         }
-        
-          console.log("purchasewebprice: ", purchaseWebPrice);
-          console.log("purchasewebtype: ", purchaseWebType);
-        }
+        console.log("purchasewebprice: ", purchaseWebPrice);
+        console.log("purchasewebtype: ", purchaseWebType);
+    }
 
 
   // Retreiving 'Subscription Web Sources' - e.g Netflix, HBO Go, Hulu etc.
     for (var i = 0; i < info.subscription_web_sources.length; i++) {
       if (info.subscription_web_sources[i].length !== 0) {
-      var subWebSource = info.subscription_web_sources[i].display_name;
-      var subWebLink = info.subscription_web_sources[i].link;
-      subscribe.push(subWebSource + ", " + subWebLink);
-        }
+        var subWebSource = info.subscription_web_sources[i].display_name;
+        var subWebLink = info.subscription_web_sources[i].link;
+        subscribe.push(subWebSource + ", " + subWebLink);
+      }
       console.log("web source: ", subWebSource);
       console.log("web link: ", subWebLink);
-      }
-      var whereToBuy = {
-    purchase: purchase,
-    subscribe: subscribe
-  }
-  res.json(whereToBuy);
-    }); // End of request
-  // } // End of function
-
+    }
+    var whereToBuy = {
+      purchase: purchase,
+      subscribe: subscribe
+    }
+    res.json(whereToBuy);
+  }); // End of request
 });
 
 module.exports = router;
