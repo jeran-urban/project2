@@ -1,0 +1,46 @@
+{{> headerUser}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <h2 class= "text"> All Movies</h2>
+      {{#each photo}}
+        <div class= "display">
+          <img src= "{{poster}}" class="sizing">
+          <div class= "options">
+            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+<script>
+//need to edit jquery for new intention of display//
+$(".btn").on("click", function(event) {
+  var movieInfo = {id: this.id, opinion: $(this).val()};
+  var opinion = {opinion: $(this).val()};
+  // console.log(movieId);
+  // console.log(opinion);
+  var holder= $(this).parents()[1];
+  console.log(holder);
+  $(holder).hide();
+  $.post("/profile", movieInfo, function(data) {
+  });
+});
+
+$("body").on("click", function(){
+if($('.float').children(':visible').length == 0) {
+   console.log("It works");
+   //insert new call for next 10 movies//
+}});
+$(".options").on("mouseenter", function(){
+  $(this).children().css("opacity", 0.9);
+});
+$(".options").on("mouseleave", function(){
+  $(this).children().css("opacity", 0.2)
+});
+</script>

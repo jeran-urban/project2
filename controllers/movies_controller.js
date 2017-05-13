@@ -20,24 +20,6 @@ var fs = require("fs");
 //display index page
 
 router.get('/', function(req,res){
-    db.movie.findAll({}).then(function(result) {
-      fs.writeFile("./movie.json", JSON.stringify(result), function(err) {
-
-        // If an error was experienced we say it.
-        if (err) {
-          console.log(err);
-        }
-      });
-    });
-    db.user.findAll({}).then(function(result) {
-      fs.writeFile("./user.json", JSON.stringify(result), function(err) {
-
-        // If an error was experienced we say it.
-        if (err) {
-          console.log(err);
-        }
-      });
-    });
   db.movie.findAll({limit: 5, order: [["created_at", "DESC"]]}).then(function(result) {
     sendBack = []
     for (i=0; i < result.length; i++) {
@@ -56,6 +38,10 @@ router.get('/', function(req,res){
   });
 });
 
+router.get("/index", function(req, res) {
+  res.redirect("/");
+});
+
 router.get('/search', isAuthenticated, function(req,res){
   console.log("user ", req.user);
   res.render('search');
@@ -69,17 +55,104 @@ router.get("/signup", function(req, res) {
   res.render('signup');
 });
 
+// Route for logging user out
+router.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/login");
+});
+
+// Route for getting some data about our user to be used client side
+router.get("/api/user_data", function(req, res) {
+  if (!req.user) {
+    // The user is not logged in, send back an empty object
+    res.json({});
+  }
+  else {
+    // Otherwise send back the user's email and id
+    // Sending back a password, even a hashed password, isn't a good idea
+    res.json({
+      userName: req.user.userName,
+      id: req.user.id
+    });
+  }
+});
+
 router.get("/login", function(req, res) {
+  
   console.log("++++++++++++++++++++++++++++");
   console.log("status 1: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
+  // db.movie.findAll({}).then(function(result) {
+  //   fs.writeFile("./movie.json", JSON.stringify(result), function(err) {
+  //     // If an error was experienced we say it.
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //   });
+  //   db.user.findAll({}).then(function(result) {
+  //   fs.writeFile("./user.json", JSON.stringify(result), function(err) {
 
-  // lkj
-  // If the user already has an account send them to the members page
-  if (req.user) {
-    // res.redirect("/members");
-  }
+  //     // If an error was experienced we say it.
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //   });
+    
+  // });
+  // });
   res.render('login');
+});
+
+router.get("/members", isAuthenticated, function(req, res) {
+  console.log("++++++++++++++++++++++++++++");
+  console.log("status 4: " + res.statusCode);
+  console.log("++++++++++++++++++++++++++++");
+  console.log("user ", req.user);
+  var user = {name: req.user.name}
+  db.movie.findAll({}).then(function(result) {
+    var action = [];
+    var comedy = [];
+    var drama = [];
+    var horror = [];
+    var animation = [];
+
+    for (var i = 0; i < result.length; i++) {
+      var genres = result[i].dataValues.genre.split(", ");
+
+      if (genres.indexOf("Action") !== -1){
+        action.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Comedy") !== -1){
+        comedy.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Drama") !== -1){
+        drama.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Horror") !== -1){
+        horror.push(result[i].dataValues);
+      }
+      else if (genres.indexOf("Animation") !== -1){
+        animation.push(result[i].dataValues);
+      }
+    }
+    console.log("action: ", action.length);
+    console.log("comedy: ", comedy.length);
+    console.log("drama: ", drama.length);
+    console.log("horror: ", horror.length);
+    console.log("animation: ", animation.length);
+
+    var genreToHtml = {
+      action: action,
+      comedy: comedy,
+      drama: drama,
+      horror: horror,
+      animation: animation,
+      user: user
+    }
+    res.render('members', genreToHtml);
+  }).catch(function(err) {
+    console.log(err);
+  });
 });
 
 router.get("/profile", isAuthenticated, function(req, res) {
@@ -87,20 +160,110 @@ router.get("/profile", isAuthenticated, function(req, res) {
   console.log("++++++++++++++++++++++++++++");
   console.log("status 2: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
-  var user = {name: req.user.name}
-  db.movie.findAll({}).then(function(result) {
-    sendBack = []
-    for (i=0; i < 5; i++) {
-
-      // console.log("please ", result[i].dataValues.poster);
-      sendBack.push(result[i].dataValues);
-    }
+  var user = {userName: req.user.userName};
+  var likes = [];
+  var dislikes = [];
+   var sendBackLike= [];
+   var sendBackDislike= [];
+  db.user.findOne({where: {userName: user.userName}}).then(function(result) {
+    console.log("1");
+    if(result.dataValues.likes !== null && result.dataValues.dislikes !== null){
+    likes = result.dataValues.likes.split(", ");
+    dislikes = result.dataValues.dislikes.split(", ");
+    console.log(typeof likes);
+    console.log(result.dataValues);
+    console.log(likes);
+    
+    db.movie.findAll({where: {tmdbId: likes }}).then(function(result){
+      console.log("2");
+    for (i=0; i < result.length; i++) {
+        console.log("5");
+      console.log("please", result[i].dataValues);
+      sendBackLike.push(result[i].dataValues)};;
+      console.log(sendBackLike);
+    
+      db.movie.findAll({where: {tmdbId: dislikes }}).then(function(result){
+      console.log("3");
+    for (x=0; x < result.length; x++) {
+      // console.log("please", result[x].dataValues.poster);
+      sendBackDislike.push(result[x].dataValues)};
+    
     // console.log("please ", result[0].dataValues.poster);
-    // console.log("trying ", result);
-    var photos = {photo: sendBack, user: user}
-    // console.log("photos ", photos)
+    console.log("trying ", sendBackLike);
+    console.log("hard ", sendBackDislike);
+    var photos = {photoLike: sendBackLike, photoDislike: sendBackDislike};
+    console.log("photos ", photos);
     res.render('profile', photos);
+  });
+    });
     // res.json(result);
+  }
+  else {
+    res.render('profile');
+  }
+  }).catch(function(err) {
+    console.log(err);
+  });
+
+});
+
+router.get("/all", isAuthenticated, function(req, res) {
+  console.log("user ", req.user);
+  console.log("++++++++++++++++++++++++++++");
+  console.log("status 2: " + res.statusCode);
+  console.log("++++++++++++++++++++++++++++");
+  var user = {userName: req.user.userName};
+  var likeOpinions = [];
+  var dislikeOpinions=[];
+  var sendBack=[];
+  var opinions = "";
+  db.user.findOne({where: {userName: user.userName}}).then(function(result) {
+    console.log("1");
+    if (result.dataValues.likes !== null){
+      opinions = result.dataValues.likes;
+    } 
+    if (result.dataValues.dislikes !== null) {
+      opinions += ", " + result.dataValues.dislikes;
+    }
+    if (opinions !== "") {
+      likeOpinions = opinions.split(", ");
+      for (x=0; x<likeOpinions.length; x++){
+        likeOpinions[x] = parseInt(likeOpinions[x]);
+      };
+      console.log("likes", likeOpinions);
+    
+      db.movie.findAll(
+        {where : 
+          {tmdbId: 
+            { $and: 
+              { 
+                $notIn: [likeOpinions]
+              }
+            }
+          }
+        }
+      ).then(function(result){
+        console.log("2");
+        for (i=0; i < result.length; i++) {
+          sendBack.push(result[i].dataValues);
+          // console.log("sendBack", sendBack);
+        }
+      });
+    }
+
+    else {
+      db.movie.findAll({}).then(function(result) {
+        for (i=0; i < result.length; i++) {
+          sendBack.push(result[i].dataValues);
+          // console.log("sendBack", sendBack);
+        }
+      });
+    }
+
+    var photos = {photo: sendBack};
+    console.log("photos ", photos);
+    res.render('allopinions', photos);
+
   }).catch(function(err) {
     console.log(err);
   });
@@ -114,7 +277,6 @@ router.post("/profile", function(req, res) {
   console.log("user ", req.user);
   var opinion = req.body.opinion
   var movieId = req.body.id;
-  // var userId = 4;
   var likes = [];
   var dislikes = [];
   var likesToPush = "";
@@ -255,81 +417,13 @@ router.post("/profile", function(req, res) {
   });
 });
 
-router.get("/index", function(req, res) {
-  res.redirect("/");
-});
-
-// Here we've add our isAuthenticated middleware to this route.
-// If a user who is not logged in tries to access this route they will be redirected to the signup page
-
-router.get("/members", isAuthenticated, function(req, res) {
-  console.log("++++++++++++++++++++++++++++");
-  console.log("status 4: " + res.statusCode);
-  console.log("++++++++++++++++++++++++++++");
-  console.log("user ", req.user);
-  var user = {name: req.user.name}
-  db.movie.findAll({}).then(function(result) {
-    var action = [];
-    var comedy = [];
-    var drama = [];
-    var horror = [];
-    var animation = [];
-
-    for (var i = 0; i < result.length; i++) {
-      var genres = result[i].dataValues.genre.split(", ");
-
-      if (genres.indexOf("Action") !== -1){
-        action.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Comedy") !== -1){
-        comedy.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Drama") !== -1){
-        drama.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Horror") !== -1){
-        horror.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Animation") !== -1){
-        animation.push(result[i].dataValues);
-      }
-    }
-    console.log("action: ", action.length);
-    console.log("comedy: ", comedy.length);
-    console.log("drama: ", drama.length);
-    console.log("horror: ", horror.length);
-    console.log("animation: ", animation.length);
-
-    var genreToHtml = {
-      action: action,
-      comedy: comedy,
-      drama: drama,
-      horror: horror,
-      animation: animation,
-      user: user
-    }
-    res.render('members', genreToHtml);
-  }).catch(function(err) {
-    console.log(err);
-  });
-});
-
 router.post("/api/login", passport.authenticate("local"), function(req, res) {
   console.log("++++++++++++++++++++++++++++");
   console.log("status 5: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
-  // Since we're doing a POST with javascript, we can't actually redirect that post into a GET request
-  // So we're sending the user back the route to the members page because the redirect will happen on the front end
-  // They won't get this or even be able to access this page if they aren't authed
-  console.log("====================================");
-  console.log("login ", req.user.name);
-  console.log("====================================");
   res.json('/members');
 });
 
-// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-// otherwise send back an error
 router.post("/api/signup", function(req, res) {
   // console.log(req.body);
   db.user.findOrCreate({
@@ -342,28 +436,6 @@ router.post("/api/signup", function(req, res) {
     console.log(err);
     res.json(err);
   });
-});
-
-// Route for logging user out
-router.get("/logout", function(req, res) {
-  req.logout();
-  res.redirect("/login");
-});
-
-// Route for getting some data about our user to be used client side
-router.get("/api/user_data", function(req, res) {
-  if (!req.user) {
-    // The user is not logged in, send back an empty object
-    res.json({});
-  }
-  else {
-    // Otherwise send back the user's email and id
-    // Sending back a password, even a hashed password, isn't a good idea
-    res.json({
-      userName: req.user.userName,
-      id: req.user.id
-    });
-  }
 });
 
 router.post("/api/find", function(req, res) {
@@ -380,7 +452,6 @@ router.post("/api/find", function(req, res) {
   });
 
 });
-
 
 // Search for a movie
 router.post("/api/new", function(req, res) {
@@ -645,7 +716,7 @@ function getGuideboxID (imdbID) {
               trailer = "Sorry, No trailer is currently available";
             }
             if(JSON.parse(bod).recommendations.results.length !== 0) {
-              poster = "http://image.tmdb.org/t/p/w185" + JSON.parse(bod).poster_path
+              poster = "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).poster_path
               for(i = 0; i <3; i++) {
                 recommendations.push(
                   JSON.parse(bod).recommendations.results[i].title + ", " +
@@ -713,16 +784,18 @@ router.post("/api/findmovie", function(req, res) {
     for (var i = 0; i < info.purchase_web_sources.length; i++) {
       var purchaseWebSources = info.purchase_web_sources[i].display_name;
       var purchaseWebLink = info.purchase_web_sources[i].link;
-      console.log("puchasewebsource: ", purchaseWebSources);
+      console.log("purchasewebsource: ", purchaseWebSources);
+      purchasewebsource:
       console.log("purchaseweblink: ", purchaseWebLink);
-        if (info.purchase_web_sources[i].formats.length !== 0) {
+        if (info.purchase_web_sources[i].formats.length !== 0 && purchaseWebSources === "iTunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)") {
           var purchaseWebPrice = info.purchase_web_sources[i].formats[0].price;
           var purchaseWebType = info.purchase_web_sources[i].formats[0].type;
           purchase.push(purchaseWebSources + ", " + purchaseWebLink + ", " + purchaseWebPrice + ", " + purchaseWebType);
           }
-        else {
+        else if (purchaseWebSources === "itunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)"){
           purchase.push(purchaseWebSources + ", " + purchaseWebLink);
         }
+        
           console.log("purchasewebprice: ", purchaseWebPrice);
           console.log("purchasewebtype: ", purchaseWebType);
         }

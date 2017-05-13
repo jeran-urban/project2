@@ -20,6 +20,13 @@ $("#movie-submit").on("click", function(event) {
   $.post("/api/new", newMovie, function(data) {
     console.log(data);
     if (typeof data === "string") {
+      $("#movie-area").show();
+      $(".details").hide();
+      $("#rec1").hide();
+      $("#rec2").hide();
+      $("#rec3").hide();
+      $(".view-trailer").hide();
+      $(".view-sources").hide();
       console.log(data);
       var row = $("<div>");
           row.addClass("movie");
@@ -28,7 +35,11 @@ $("#movie-submit").on("click", function(event) {
           $("#movie-area").html(row);
     }
     else if (data.length !== undefined) {
-
+          $("#movie-area").hide();
+          $(".details").show();
+          $("#rec1").show();
+          $("#rec2").show();
+          $("#rec3").show();
           guideID = data[0].guideBoxId;
           $(".moviePoster").show().attr("src", data[0].poster);
           $(".movieTitle").html(data[0].title);
@@ -54,6 +65,7 @@ $("#movie-submit").on("click", function(event) {
           $("#movieTrailer").attr("src", data[0].trailer);
     }
     else if (data.length === undefined) {
+          $("#movie-area").hide();
           guideID = data.guideBoxId;
           $(".moviePoster").show().attr("src", data.poster);
           $(".movieTitle").html(data.title);
@@ -84,9 +96,24 @@ $("#movie-submit").on("click", function(event) {
 
 
 $(".view-sources").on("click", function(event) {
+  
   event.preventDefault();
   var guideBID = {guideboxID: guideID}
-    $.post("/api/findmovie", guideBID, function(data) {
-      console.log(data);
-    });
+  $.post("/api/findmovie", guideBID, function(data) {
+    $("#modalTable").empty();
+    for (var i = 0; i < data.purchase.length; i++) {
+      if (data.purchase.length !== 0) {
+        console.log(data.purchase[i]);
+        var newPurchaseArray = data.purchase[i].split(", ");
+      
+        if (data.subscribe.length !== 0 && data.subscribe[i] !== undefined) {
+          var newSubscribeArray = data.subscribe[i].split(", ");
+          $("#modalTable").append('<tr><td><a href="'+ newPurchaseArray[1] +'" target="_blank"><img class="ico" src="../images/' + newPurchaseArray[0] + '.ico"></a></td><td>' + newPurchaseArray[2] + '</td><td>' + newPurchaseArray[3] + '</td><td><a href="'+ newSubscribeArray[1] +'" target="_blank"><img class="ico" src="../images/' + newSubscribeArray[0] + '.ico"></a></td></tr>');
+        }
+        else {
+          $("#modalTable").append('<tr><td><a href="'+ newPurchaseArray[1] +'" target="_blank"><img class="ico" src="../images/' + newPurchaseArray[0] + '.ico"></td><td>' + newPurchaseArray[2] + '</td><td>' + newPurchaseArray[3] + '</td><tr>');
+        }
+      }
+    }
+  });
 });

@@ -31,9 +31,6 @@ $(document).ready(function() {
       console.log("data ", data);
       window.location.replace(data);
       // If there's an error, log the error
-    }).catch(function(err) {
-      console.log(err);
     });
   }
-
 });

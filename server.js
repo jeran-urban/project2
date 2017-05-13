@@ -7,6 +7,7 @@ var exphbs = require("express-handlebars");
 var methodOverride = require("method-override");
 var session = require("express-session");
 var passport = require("./config/passport");
+var fs = require("fs");
 
 var db = require("./models");
 // Sets up the Express App
