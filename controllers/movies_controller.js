@@ -787,12 +787,12 @@ router.post("/api/findmovie", function(req, res) {
       console.log("purchasewebsource: ", purchaseWebSources);
       purchasewebsource:
       console.log("purchaseweblink: ", purchaseWebLink);
-        if (info.purchase_web_sources[i].formats.length !== 0 && purchaseWebSources === "iTunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)") {
+        if (info.purchase_web_sources[i].formats.length !== 0 && purchaseWebSources === "iTunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)" || purchaseWebSources === "Cinemax (Via Amazon Prime)") {
           var purchaseWebPrice = info.purchase_web_sources[i].formats[0].price;
           var purchaseWebType = info.purchase_web_sources[i].formats[0].type;
           purchase.push(purchaseWebSources + ", " + purchaseWebLink + ", " + purchaseWebPrice + ", " + purchaseWebType);
           }
-        else if (purchaseWebSources === "itunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)"){
+        else if (purchaseWebSources === "itunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)" || purchaseWebSources === "Cinemax (Via Amazon Prime)"){
           purchase.push(purchaseWebSources + ", " + purchaseWebLink);
         }
         

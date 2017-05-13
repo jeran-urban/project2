@@ -7,27 +7,34 @@ var guideID = "";
 /* global moment */
 // When user clicks add-btn
 var guideboxID = "";
-$("#movie-submit").on("click", function(event) {
+$(".movie-submit").on("click", function(event) {
   event.preventDefault();
-
-  var newMovie = {
-    movie: $("#movie").val().trim(),
-    created_at: moment().format("YYYY-MM-DD HH:mm:ss")
-  };
+  if ($(".movie").val().trim() !== "") {
+    var newMovie = {
+      movie: $(".movie").val().trim(),
+      created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+    };
+  }
+  else {
+    var newMovie = {
+      movie: this.id,
+      created_at: moment().format("YYYY-MM-DD HH:mm:ss")
+    };
+  }
 
   console.log(newMovie);
 
   $.post("/api/new", newMovie, function(data) {
-    console.log(data);
+    // console.log(data);
     if (typeof data === "string") {
       $("#movie-area").show();
       $(".details").hide();
-      $("#rec1").hide();
-      $("#rec2").hide();
-      $("#rec3").hide();
+      $(".rec1").hide();
+      $(".rec2").hide();
+      $(".rec3").hide();
       $(".view-trailer").hide();
       $(".view-sources").hide();
-      console.log(data);
+      // console.log(data);
       var row = $("<div>");
           row.addClass("movie");
           row.append("<p>" + data + "</p>");
@@ -35,65 +42,68 @@ $("#movie-submit").on("click", function(event) {
           $("#movie-area").html(row);
     }
     else if (data.length !== undefined) {
-          $("#movie-area").hide();
-          $(".details").show();
-          $("#rec1").show();
-          $("#rec2").show();
-          $("#rec3").show();
-          guideID = data[0].guideBoxId;
-          $(".moviePoster").show().attr("src", data[0].poster);
-          $(".movieTitle").html(data[0].title);
-          $(".movieYear").html(data[0].year);
-          $(".movieGenre").html(data[0].genre);
-          $(".moviePlot").html(data[0].plot);
-          $(".movieDirector").html(data[0].director);
-          $(".movieCast").html(data[0].actors);
-          $(".view-trailer").show();
-          $(".view-sources").show();
-          // Recommendation Poster 1
-          rec1 = data[0].rec1.split(",");
-          console.log(rec1[2])
-          $("#rec1").attr("src", rec1[2]);
-          // Recommendation Poster 2
-          rec2 = data[0].rec2.split(",");
-          console.log(rec1[2])
-          $("#rec2").attr("src", rec2[2]);
-          // Recommendation Poster 3
-          rec3 = data[0].rec3.split(",");
-          console.log(rec1[2])
-          $("#rec3").attr("src", rec3[2]);
-          $("#movieTrailer").attr("src", data[0].trailer);
+      $("#movie-area").hide();
+      $(".details").show();
+      $(".rec1").show();
+      $(".rec2").show();
+      $(".rec3").show();
+      guideID = data[0].guideBoxId;
+      $(".moviePoster").show().attr("src", data[0].poster);
+      $(".movieTitle").html(data[0].title);
+      $(".movieYear").html(data[0].year);
+      $(".movieGenre").html(data[0].genre);
+      $(".moviePlot").html(data[0].plot);
+      $(".movieDirector").html(data[0].director);
+      $(".movieCast").html(data[0].actors);
+      $(".view-trailer").show();
+      $(".view-sources").show();
+      // Recommendation Poster 1
+      rec1 = data[0].rec1.split(",");
+      $(".rec1").attr("src", rec1[2]);
+      $(".rec1").attr("id", rec1[0]);
+      // Recommendation Poster 2
+      rec2 = data[0].rec2.split(",");
+      $(".rec2").attr("src", rec2[2]);
+      $(".rec2").attr("id", rec2[0]);
+      // Recommendation Poster 3
+      rec3 = data[0].rec3.split(",");
+      $(".rec3").attr("src", rec3[2]);
+      $(".rec3").attr("id", rec3[0]);
+      $("#movieTrailer").attr("src", data[0].trailer);
     }
     else if (data.length === undefined) {
-          $("#movie-area").hide();
-          guideID = data.guideBoxId;
-          $(".moviePoster").show().attr("src", data.poster);
-          $(".movieTitle").html(data.title);
-          $(".movieYear").html(data.year);
-          $(".movieGenre").html(data.genre);
-          $(".moviePlot").html(data.plot);
-          $(".movieDirector").html(data.director);
-          $(".movieCast").html(data.actors);
-          $(".view-trailer").show();
-          $(".view-sources").show();
-          // Recommendation Poster 1
-          rec1 = data.rec1.split(",");
-          console.log(rec1[2])
-          $("#rec1").attr("src", rec1[2]);
-          // Recommendation Poster 2
-          rec2 = data.rec2.split(",");
-          console.log(rec1[2])
-          $("#rec2").attr("src", rec2[2]);
-          // Recommendation Poster 3
-          rec3 = data.rec3.split(",");
-          console.log(rec1[2])
-          $("#rec3").attr("src", rec3[2]);
-          $("#movieTrailer").attr("src", data.trailer);
-        }
-      });
-          $("#movieSearchField").val("");
-    });
-
+      $("#movie-area").hide();
+      $(".details").show();
+      $("#rec1").show();
+      $("#rec2").show();
+      $("#rec3").show();
+      guideID = data.guideBoxId;
+      $(".moviePoster").show().attr("src", data.poster);
+      $(".movieTitle").html(data.title);
+      $(".movieYear").html(data.year);
+      $(".movieGenre").html(data.genre);
+      $(".moviePlot").html(data.plot);
+      $(".movieDirector").html(data.director);
+      $(".movieCast").html(data.actors);
+      $(".view-trailer").show();
+      $(".view-sources").show();
+      // Recommendation Poster 1
+      rec1 = data.rec1.split(",");
+      $(".rec1").attr("src", rec1[2]);
+      $(".rec1").attr("id", rec1[0]);
+      // Recommendation Poster 2
+      rec2 = data.rec2.split(",");
+      $(".rec2").attr("src", rec2[2]);
+      $(".rec2").attr("id", rec2[0]);
+      // Recommendation Poster 3
+      rec3 = data.rec3.split(",");
+      $(".rec3").attr("src", rec3[2]);
+      $(".rec3").attr("id", rec3[0]);
+      $("#movieTrailer").attr("src", data.trailer);
+    }
+  });
+  $(".movie").val("");
+});
 
 $(".view-sources").on("click", function(event) {
   
