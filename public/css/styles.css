@@ -93,6 +93,7 @@ footer {
   display: none;
   margin-left: 25%;
   border-style: none;
+  height: 400px;
 
 }
 .view-trailer, .view-sources {
