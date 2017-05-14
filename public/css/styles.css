@@ -98,6 +98,11 @@ footer {
 .view-trailer, .view-sources {
   display: none;
 }
+
+.margin-bottom{
+  margin-bottom: 15px;
+}
+
 /* ============================ */
 /* SEARCH PAGE MODAL            */
 /* ============================ */
@@ -121,7 +126,12 @@ table, th, td {
   border: solid 2px black;
 }
 .recs img {
-  width: 100px;
+  width: 200px;
+  margin-left: 12px;
+  margin-bottom: 12px;
+}
+.also-liked {
+  margin-left: 25px;
 }
 tr {
   color: black;

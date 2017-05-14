@@ -12,19 +12,11 @@
   margin-left: 20px;
   margin-right: 20px;
 }
-.btn-lg{
-  width: 45px;
-  height: 45px;
-  margin-right: 0px;
-  margin-left: 0px;
-  opacity: 0.2;
-}
 .options{
   position: relative;
   display: inherit;
   top:-49px;
   left: 24px;
-
 }
  .display{
   display: inline-block;
