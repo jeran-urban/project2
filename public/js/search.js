@@ -23,6 +23,7 @@ $(".movie-submit").on("click", function(event) {
     };
   }
 
+  if (newMovie.movie !== "") {
   $.post("/api/new", newMovie, function(data) {
     // console.log(data);
     if (typeof data === "string") {
@@ -34,6 +35,7 @@ $(".movie-submit").on("click", function(event) {
       $(".view-trailer").hide();
       $(".view-sources").hide();
       $(".also-liked").hide();
+      $(".movie-title-hr").hide();
       // console.log(data);
       var row = $("<div>");
           row.addClass("movie");
@@ -48,10 +50,12 @@ $(".movie-submit").on("click", function(event) {
       $(".rec2").show();
       $(".rec3").show();
       $(".also-liked").show();
+      $(".movie-title-hr").show();
       guideID = data[0].guideBoxId;
+      $('.backdrop').css('background-image', 'url(' + data[0].backdrop + ')');
       $(".moviePoster").show().attr("src", data[0].poster);
       $(".movieTitle").html(data[0].title);
-      $(".movieYear").html(data[0].year);
+      $(".movieYear").html(data[0].year + " / " + data[0].rating);
       $(".movieGenre").html(data[0].genre);
       $(".moviePlot").html(data[0].plot);
       $(".movieDirector").html("Director(s): " +data[0].director);
@@ -80,10 +84,12 @@ $(".movie-submit").on("click", function(event) {
       $("#rec2").show();
       $("#rec3").show();
       $(".also-liked").show();
+      $(".movie-title-hr").show();
       guideID = data.guideBoxId;
+      $('.backdrop').css('background-image', 'url(' + data.backdrop + ')');
       $(".moviePoster").show().attr("src", data.poster);
       $(".movieTitle").html(data.title);
-      $(".movieYear").html(data.year);
+      $(".movieYear").html(data.year + " / " + data.rating);
       $(".movieGenre").html(data.genre);
       $(".moviePlot").html(data.plot);
       $(".movieDirector").html(data.director);
@@ -106,6 +112,7 @@ $(".movie-submit").on("click", function(event) {
       $("#movieTrailer").attr("src", data.trailer);
     }
   });
+}
   $(".movie").val("");
 });
 
