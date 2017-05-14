@@ -106,24 +106,43 @@ $(".movie-submit").on("click", function(event) {
 });
 
 $(".view-sources").on("click", function(event) {
-  
+
   event.preventDefault();
   var guideBID = {guideboxID: guideID}
   $.post("/api/findmovie", guideBID, function(data) {
-    $("#modalTable").empty();
+    $("#purchaseTableBody").empty();
+    $("#streamingTableBody").empty();
+
+    if (data.purchase.length === 0) {
+      console.log("purchase missed");
+      $("#purchaseTable").hide();
+      $("#noPurchaseTable").show();
+    }
+    else {
+      $("#purchaseTable").show();
+      $("#noPurchaseTable").hide();
+    }
+
     for (var i = 0; i < data.purchase.length; i++) {
-      if (data.purchase.length !== 0) {
-        console.log(data.purchase[i]);
-        var newPurchaseArray = data.purchase[i].split(", ");
-      
-        if (data.subscribe.length !== 0 && data.subscribe[i] !== undefined) {
-          var newSubscribeArray = data.subscribe[i].split(", ");
-          $("#modalTable").append('<tr><td><a href="'+ newPurchaseArray[1] +'" target="_blank"><img class="ico" src="../images/' + newPurchaseArray[0] + '.ico"></a></td><td>' + newPurchaseArray[2] + '</td><td>' + newPurchaseArray[3] + '</td><td><a href="'+ newSubscribeArray[1] +'" target="_blank"><img class="ico" src="../images/' + newSubscribeArray[0] + '.ico"></a></td></tr>');
-        }
-        else {
-          $("#modalTable").append('<tr><td><a href="'+ newPurchaseArray[1] +'" target="_blank"><img class="ico" src="../images/' + newPurchaseArray[0] + '.ico"></td><td>' + newPurchaseArray[2] + '</td><td>' + newPurchaseArray[3] + '</td><tr>');
+      var newPurchaseArray = data.purchase[i].split(", ");
+            $("#purchaseTableBody").append('<tr><td><a href="'+ newPurchaseArray[1] +'" target="_blank"><img class="ico" src="../images/' + newPurchaseArray[0] + '.ico"></a></td><td>' + newPurchaseArray[2] + '</td><td>' + newPurchaseArray[3] + '</td></tr>');
+          }
+
+      if (data.subscribe.length === 0) {
+        $("#streamingTable").hide();
+        $("#noStreamingTable").show();
+      }
+      else {
+        $("#streamingTable").show();
+        $("#noStreamingTable").hide();
+      }
+
+        for (var i = 0; i < data.subscribe.length; i++) {
+          if (data.subscribe[i] !== undefined) {
+            var newSubscribeArray = data.subscribe[i].split(", ");
+            $("#streamingTableBody").append('<tr><td><a href="'+ newSubscribeArray[1] +'" target="_blank"><img class="ico" src="../images/' + newSubscribeArray[0] + '.ico"></a></td></tr>');
+            console.log("hit");
         }
       }
-    }
+    });
   });
-});
