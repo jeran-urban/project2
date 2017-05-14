@@ -107,7 +107,6 @@ th, td {
   width:150px;
 }
 th {
-  
   background:#00B0F0;
   text-align:center;
 }
@@ -119,18 +118,22 @@ tr + tr, tbody {
   text-align:center;
 }
 table, th, td {
-  border-bottom:solid 1px;
+  border: solid 2px black;
 }
-
-.title th {
-  border-right:solid 1px;
-}
-
 .recs img {
   width: 100px;
 }
-
+tr {
+  color: black;
+}
 #sources {
   padding-top: 10px;
   padding-bottom: 50px;
+}
+
+#purchaseTable, #noPurchaseTable, #streamingTable, #noStreamingTable {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 90%;
+  color: white;
 }
