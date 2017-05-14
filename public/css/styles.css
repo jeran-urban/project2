@@ -102,6 +102,10 @@ footer {
 .margin-bottom{
   margin-bottom: 15px;
 }
+.col-xs-6, .col-xs-4 {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
 
 /* ============================ */
 /* SEARCH PAGE MODAL            */
