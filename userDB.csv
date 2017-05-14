@@ -1,371 +1,388 @@
 id,userName,password,name,likes,dislikes
-1,jeran,$2a$10$AyK8nq1guBztq6qpesxoSulZXkTJtlI3jIyNpjCtwdasKkXI4Pg0m,"Jeran Urban",NULL,NULL
-2,CR_Frank_Lovece,$2a$10$p3WgdHrYiZOroJxv/sPcU.57UiEE11X65yhTFkbW2MkzPISAHH4YS,"Frank Lovece",1726,13995
-3,CR_Michael_Sragow,$2a$10$8aIUxQKqH3d4r9yDnUIkdeRFc.WcLaqfJgzI0zCmOrcGG2/dj1awe,"Michael Sragow","10020, 109445",NULL
-4,CR_John_Hartl,$2a$10$nDQMcGTZdF6KKK1Qaj4iye.sSpWTUeKJnKJuFqBBQUvxonrBJIUwm,"John Hartl","10020, 8587",NULL
-5,CR_Lawrence_Cohn,$2a$10$.YmngkQ1eqSgaifgM9ZIa.Fb2wLjidjG2V5oU0H5FcQVhs3C/iPaO,"Lawrence Cohn",NULL,13995
-6,CR_Dave_Kehr,$2a$10$v5YrfIkaa7la/bsrxgbzeeagYRp67nZNJNkL.31wgVetCJlda3SZy,"Dave Kehr","10020, 28297, 433",621
-7,CR_Cath_Clarke,$2a$10$P9h6nLY1fEsP56mCdvKI6u7TUrCR96bXirfKixXj8H2LhFwcWo7oK,"Cath Clarke","10020, 224141",NULL
-8,CR_Variety_Staff,$2a$10$FDHl3NF.l00qDX5SE24cvOXNiY2Da7PtB9nfeHEPPlaV7tTRMo3vS,"Variety Staff","10020, 28297, 621, 433",NULL
-9,CR_Stephen_Whitty,$2a$10$j0hkba.WOlnQVCDG8AHWM.c2MY1GtjDqDfOW.XTe4vhKgZKb3Yur.,"Stephen Whitty","10020, 109445, 224141, 1726, 313297, 277834, 281957, 269149","49013, 297761, 41513, 12429, 11638"
-10,CR_Lisa_Schwarzbaum,$2a$10$S1xnDScnw7EQnH77Mmd9geOevI5CJCau87e/I05l2OrmGYIl8izDG,"Lisa Schwarzbaum","10020, 920, 49013, 12429, 1597, 4233, 98",NULL
-11,CR_Jennie_Punter,$2a$10$S5/18R6lVkSRsGM9UvgqcOIkK8jVkeNqPvZtfWUKvQIK1exG1yo8G,"Jennie Punter",10020,41513
-12,CR_Richard_Ouzounian,$2a$10$jceNrbOqOMEQVuS84zgcx.xhpXTltEjaXvRJr.g0rQzBRIPH8FHKK,"Richard Ouzounian",10020,NULL
-13,CR_Gene_Siskel,$2a$10$LFWhL0uFrHyl.uipav20EeByvGDTHoObWUz3c/CcNddfy7JT6FaUG,"Gene Siskel","10020, 8587",NULL
-14,CR_Janet_Maslin,$2a$10$yhaEPwVwLvCSEpvMx2gSueADqeen8pMIyrM52J/5uU/ttKBagEtF2,"Janet Maslin","10020, 4233",10674
-15,CR_Jonathan_Rosenbaum,$2a$10$4yz0mv1y04/WJzJDHeYoOuK8aW0aSE5dpax/PV1Q5vBQ3/MRif8MC,"Jonathan Rosenbaum","10020, 10674, 8587, 1092, 98",11969
-16,CR_Richard_Corliss,$2a$10$PmUqwft.cc.tnrfmIxPIHuFxKQWptF8/.5oe8lIhS4yfldYmfpzkG,"Richard Corliss","10020, 920, 109445, 1726, 10674, 8587, 12429, 98",NULL
-17,CR_Joe_Leydon,$2a$10$qvVRxGn2Zl1wL/YeixBDreusAhg9.DrkojYk8hpgybOn4Ldm0/MJi,"Joe Leydon",10020,NULL
-18,CR_Richard_Roeper,$2a$10$eIc6NiSAjXaa7qDd3YjIA.AUfFi2fAA5qD8qcKno9RYvFArYrGx7i,"Richard Roeper","10020, 334521, 1726, 263115, 277834, 281957, 269149, 11397","49013, 297761, 337339, 11638"
-19,CR_Bruce_Westbrook,$2a$10$SOAmVMI11zr9iq2oD7STsurq9XD1fFEQMayKiwA1AfK96NyXfjofq,"Bruce Westbrook","10020, 4233, 11397",NULL
-20,CR_Jay_Boyar,$2a$10$3XNux5PST3aWEIMgw38cauelWAF7n5RUUo8ThGNr/LKejCCrN1QeK,"Jay Boyar","10020, 8587, 1597, 11397, 98",NULL
-21,CR_Chris_Vognar,$2a$10$d0JhPBISvMCToar2Xbe6q.Y48U0FB4sljy9wp8C3ZlyadNt4Ygps6,"Chris Vognar","10020, 49013, 1726, 281957",NULL
-22,CR_Glenn_Lovell,$2a$10$Xv8m6fkuJVuA.sGAmBCdgu/5k5h9vhkDxLwSpFN/d1lUVpy2E0i1G,"Glenn Lovell",10020,1597
-23,CR_Eleanor_Ringel_Gillespie,$2a$10$7ovPvDI3nF/EG7p7uzoPzOAyov4ZJyJZmes8IdeYvyXKq7KrLN7Da,"Eleanor Ringel Gillespie","10020, 98",11638
-24,CR_Charles_Solomon,$2a$10$.WKKKNXrTCqa7NycBSP/f.bV660r6GUOTRpxQEtA1rTUNwVEdn/Ry,"Charles Solomon",10020,NULL
-25,CR_Lou_Lumenick,$2a$10$dFsJ4RWELzq8vN7FVP.RXuKQDEet9YOjt0ytQx7FE6OJ9KrTp1Kfm,"Lou Lumenick","10020, 224141, 1726, 333484, 269149, 12429","273248, 41513, 11638"
-26,CR_Roger_Ebert,$2a$10$ApAuMWtPmRgdhGrcb1Deh.PaJP7pdabDFJFw.70QWBxbdRYvBK2vi,"Roger Ebert","10020, 49013, 1726, 10674, 599, 8587, 3034, 12429, 1597, 11638, 4233","3597, 11397, 48129, 98"
-27,CR_James_Berardinelli,$2a$10$fiEHqufVxykMngB0hqy/Iun1b0hsLAH.mOPp6RajTiJL0FwCCaYEC,"James Berardinelli","10020, 334521, 1726, 313297, 277834, 10674, 599, 281957, 269149, 12429, 4233, 98","49013, 224141, 297761, 333484, 11969, 1597, 11638, 3597, 11397"
-28,CR_Desson_Thomson,$2a$10$AwRxcagv1IMDWHLkSWmsUOPrEe.mCCEAYIJPBTj/E9oMeZg799swW,"Desson Thomson","8587, 1597, 98","10020, 11397"
-29,CR_Hal_Hinson,$2a$10$gmoO/yiBvBS5OHjmW/CgdeVp6eBeLd8hAl9gkAwOra5vVEEagjj5q,"Hal Hinson","10020, 8587",NULL
-30,CR_Owen_Gleiberman,$2a$10$jVd325GF0fMqR1D1RgfygO/37UGeSEVHgGffam1p.56DQbzfBWgtO,"Owen Gleiberman","10020, 109445, 1726, 263115, 10674, 337339, 3597, 11397","295693, 11969, 11638"
-31,CR_Peter_Howell,$2a$10$FP1uz15JlRW8QI7O9OrOZuhjS.GTdHDge/90D5/GuJybvF1n8vm.K,"Peter Howell","1726, 263115, 277834, 297761, 273248, 281957, 269149","4133, 49013, , 337339"
-32,CR_John_Zebrowski,$2a$10$tI/1Fu/kHycyFC6P.ZJIuOIu02yiIqN89poy7chOr/I/jDBbr1pJa,"John Zebrowski",4133,NULL
-33,CR_David_Edelstein,$2a$10$oB1rETwzSKPNhNID24i58eUPULzD/Efx/Oxa6dMovpNI4xJmus88G,"David Edelstein","1726, 263115, 269149, 12429","4133, 297761, 273248, 281957, 98"
-34,CR_Edward_Guthmann,$2a$10$XtC5mfg8Ms1eTNjaNv0rY.bNx7TALRHbqAX4/n4JIrKcXlRdHPaeq,"Edward Guthmann",621,4133
-35,CR_Jay_Boyar,$2a$10$n8jEwdRaShccV0tf/ca3SeddVH2NfJs7g5PxJGCG53gIBZ/1ZuR8y,"Jay Boyar","10020, 8587, 1597, 11397, 98",NULL
-36,CR_John_Anderson,$2a$10$K72D1Va95/NkVeNrdQS0oOAqU5BLd7A0yoZAN3fmDf2lCkEIHoMm2,"John Anderson",NULL,"4133, 1597"
-37,CR_A.O._Scott,$2a$10$Ikiq0Zf29RaksYChgOyBa.3qR2CO44zhV3nuvothylQJjRoXvcPNe,"A.O. Scott","1726, 277834, 11397","4133, 49013, 297761, 273248, 11638"
-38,CR_Mike_Clark,$2a$10$dQYolAPFoZWZ5iyauEqC6eM0zhYCCb0DSnuFMFP7ns3oxEzZx2Ioe,"Mike Clark",4133,3597
-39,CR_Stephanie_Zacharek,$2a$10$b3RnmjHQjgckXDPV4ZcoYe4r7CY6DySfsUSoFo7c6X5CwPIQ.iyqq,"Stephanie Zacharek","4133, 1726, 281957, 269149, 12429, 1597","263115, 335797, 297761, 333484, 11638"
-40,CR_Lou_Lumenick,$2a$10$/MXYQ5mptiA2ZZHmA11X.ubejIcy09lKYWpoFXVnJvmJ87pdATSha,"Lou Lumenick","10020, 224141, 1726, 333484, 269149, 12429","273248, 41513, 11638"
-41,CR_Eric_Harrison,$2a$10$isIqm61EWQRjNVWAICNLye73nEFS9Mh.348J.OTkfVYX91xNAJOwe,"Eric Harrison",1597,"4133, 11638"
-42,CR_Susan_Stark,$2a$10$AvziphfGVKpvp9199kkpLu0d/s51ZYRADhsIRoNTmKbM6JAOmYsdO,"Susan Stark","9323, 10674, 1092, 4233, 98","4133, 1597, 3597"
-43,CR_Terry_Lawson,$2a$10$bmGxlSNYaYH/TluFAD8lheoX4MlHfJpzcBq.pVd/7FW2q8ixcpJq6,"Terry Lawson","1597, 11397, 98",4133
-44,CR_Steven_Rosen,$2a$10$k5gzJhTW8agvka/8kCNV7eJtY53TpshTaPN8aq/POhW/4NeibpihS,"Steven Rosen","4133, 98",NULL
-45,CR_Roger_Ebert,$2a$10$H2XIU5sfhp3rSZah1FzAJeDYBMY5mbRO46uQXjbZaw1iDM0cQX5M2,"Roger Ebert","10020, 49013, 1726, 10674, 599, 8587, 3034, 12429, 1597, 11638, 4233","3597, 11397, 48129, 98"
-46,CR_Jay_Carr,$2a$10$IZoJnQNfCjRymFFogsLnDe08GQGCCcHG/DcDnXC6R4FF.LFTOQFdq,"Jay Carr","621, 1597, 4233","4133, 98"
-47,CR_Desson_Thomson,$2a$10$iNhSbua4GYrqPg9d7oXn6OCzGTpxISmJqhofp1on4deoeMLeoqSFi,"Desson Thomson","8587, 1597, 98","10020, 11397"
-48,CR_Steven_Rea,$2a$10$jOpBDs/txzxwSv1ySHMX0u1k6PvtT8tx1omtcqj5xImylbMW1IaLy,"Steven Rea","224141, 281957, 269149","4133, 273248"
-49,CR_Rene_Rodriguez,$2a$10$gUuTtX2JlZWWlUFkmpZbrOa062BuGGz471otd1iZSk3Tr28mFnN26,"Rene Rodriguez","109445, 1726, 263115, 281957, 12429, 1597, 98","4133, 297761, 11638"
-50,CR_Kenneth_Turan,$2a$10$.N9tYQgPbG7srQZofiS/ney0BTGOT9fkO..0tJ4r9KXyBkv5eQTPO,"Kenneth Turan","49013, 263115, 281957, 12429, 1597","4133, 1726, 10674, 297761, 333484, 98"
-51,CR_Ernest_Hardy,$2a$10$3EPrsingOQiPOanJBq3CY.fnyqI3nDhJ6tgXB12wyAHXntXMjf4Ge,"Ernest Hardy",4133,NULL
-52,CR_Chris_Vognar,$2a$10$KHdCyu4Nk5RBD8YV3oQGTOfVbd7OYSNUs6uCnw6.uMcr4J2CeHTRm,"Chris Vognar","10020, 49013, 1726, 281957",NULL
-53,CR_Paul_Tatara,$2a$10$9wKx.VqQd7nJIr9tBa5QzulY1WfzGpy7Y2zm5esBvOstGkDetMzEG,"Paul Tatara",4133,NULL
-54,CR_Christy_Lemire,$2a$10$7IWHk78ygSlKiTBJXDlN2OuFYPzkKq.xP1Zs7Yg7C24CKPbal6phK,"Christy Lemire","4133, 109445, 1726, 313297, 277834","49013, 297761, 12429, 11397"
-55,CR_Michael_Atkinson,$2a$10$dEJxNCG19p7Fw76/zbgc4u6BSgzUc8ygMuglUshQe7yeRo8PDcMDm,"Michael Atkinson",599,4133
-56,CR_James_Berardinelli,$2a$10$kN9ZkpUVrMF43DvMmo95Ee7BAZresOBjT9AIR.A5SvSDz53SgqVHu,"James Berardinelli","10020, 334521, 1726, 313297, 277834, 10674, 599, 281957, 269149, 12429, 4233, 98","49013, 224141, 297761, 333484, 11969, 1597, 11638, 3597, 11397"
-57,CR_Owen_Gleiberman,$2a$10$p7uC02DHnNLRhqxTkyyqjuHUTDR4La6KhQYXSWFYZrEu/SX9/UOie,"Owen Gleiberman","10020, 109445, 1726, 263115, 10674, 337339, 3597, 11397","295693, 11969, 11638"
-58,CR_Michael_Wilmington,$2a$10$0MBaOMaDGjI1ZoeMEw8P2.haRktnFRF3nVNeBD.g5qIloyWhRIGp2,"Michael Wilmington","1597, 4233, 98",4133
-59,CR_Steve_Murray,$2a$10$2c3.1sC.6GuQmd01HNRmT.UD8z2frgvCQ5Ju8QhgvuZ7TuAkqX1rK,"Steve Murray",4133,NULL
-60,CR_J._Hoberman,$2a$10$zTPCmf0npBdBZLiiFRq2quUNxpirEPZN4KDNjEozbG4Tt37L.uJmy,"J. Hoberman",1092,"4133, 98"
-61,CR_Peter_Travers,$2a$10$CQAqxbEDxyPFSLogPbyt4e01o9QyQzkuH81QAdEGST1iYJNfK5b0e,"Peter Travers","4133, 49013, 1726, 263115, 277834, 10674, 281957, 269149, 12429, 1597","297761, 11638"
-62,CR_Dennis_Harvey,$2a$10$eT8cSeVNIrLdMREVc3VWX.aJC0yF1J4AnrIPeJ5nRw1eMG89kBHLC,"Dennis Harvey",NULL,4133
-63,CR_Tom_Milne,$2a$10$iijcP8gaqfF9mLBJdlRpjO4bz47xSU7.wQ8CDC3a6mznzxK2vPtHe,"Tom Milne",28297,NULL
-64,CR_Bosley_Crowther,$2a$10$FxUBZLOu8UKngggGgQeXke3LaOrWRFZEEOnLZM/AgS9VcEGCkmzbS,"Bosley Crowther","28297, 433, 1092",NULL
-65,CR_Christy_Lemire,$2a$10$auGWkKT/6HrafaWBBO1aY.VLSgfbAauPn7ZbhKZ1Y/dtemO/Ipfs6,"Christy Lemire","4133, 109445, 1726, 313297, 277834","49013, 297761, 12429, 11397"
-66,CR_Anthony_Lane,$2a$10$QMBrOSr39osP.wQKRg2A/eqr3BspRLVnum4AgaCgy4UzNNaX8DLQi,"Anthony Lane","109445, 269149","920, 263115, 297761, 273248, 281957"
-67,CR_Mick_LaSalle,$2a$10$vZ.5iEy7Y1CM5aJRMrBvvO2Zfv2tdbUJA4FgPqk1iEtfa3cuqSkLG,"Mick LaSalle","49013, 224141, 1726, 273248, 281957, 269149, 11638, 4233, 98","920, 297761, 3597, 11397"
-68,CR_Moira_MacDonald,$2a$10$4ie7Yvlzwraq5APTs9hQbOra6tYgAfbDpc5uw33p7EjzVGj3kFNiu,"Moira MacDonald","920, 49013, 224141, 313297, 10674, 337339, 1092, 12429",41513
-69,CR_Peter_Howell,$2a$10$gtY5ROrZ886iD5dtMFHgkONTxqBUGIe3bkOPMvk/IUP4We2w8uk2S,"Peter Howell","1726, 263115, 277834, 297761, 273248, 281957, 269149","4133, 49013, , 337339"
-70,CR_Roger_Moore,$2a$10$hDSYUkPyTEHcUMGrH2FW4.xmgkJF9YR0Ma/bIMM.VumjSVKHmHgbS,"Roger Moore","920, 49013, 1726, 12429","41513, 11638"
-71,CR_Michael_Agger,$2a$10$lCFUZ4KGc7LFDmsRNMHZ/.hrmNYaNCbNX0JisFCCwI33iuBREf4Ge,"Michael Agger",920,NULL
-72,CR_Lisa_Rose,$2a$10$zS6OGIGmNgQ4hA4KMzHSuuDkq4e2K.5SXJwPtjSYQC1waV34oxCSu,"Lisa Rose",920,NULL
-73,CR_Lou_Lumenick,$2a$10$yFCOEtVBBZUJL6WWdTHK5.6Vt5bHm.eamCfdsCXDsm1nXY.H1Opnu,"Lou Lumenick","10020, 224141, 1726, 333484, 269149, 12429","273248, 41513, 11638"
-74,CR_David_Edelstein,$2a$10$vbQ8zCZRzgr86y9P4cAWMOhhDdUP7lwkAJ09ZzmorRylopVJjGtoa,"David Edelstein","1726, 263115, 269149, 12429","4133, 297761, 273248, 281957, 98"
-75,CR_Elizabeth_Weitzman,$2a$10$hwuFQnWJkkamtmhbadXFmOcADiXnnYZ5ErfL0yoM0/u7n1UxNQiMK,"Elizabeth Weitzman","920, 109445, 224141, 8587",11638
-76,CR_Amy_Biancolli,$2a$10$WZzNJLQxvJRA2n5NDtYBCOj6mlJs1atsTBcykJjAxEZXMMWAQ.U.O,"Amy Biancolli","920, 1726",NULL
-77,CR_Rick_Groen,$2a$10$AcXIx0pOWVx69qRuwlHV0eFay/X8xoBC3QFYkb2D/8NQjYI/UiWl6,"Rick Groen","920, 98","1597, 11638, 11397"
-78,CR_Tom_Long,$2a$10$TmbfDvEHl21WcF90nx9CkOSksA2dwi3g/8MgKRopwnPcZTYJfiyRS,"Tom Long","920, 109445, 1726, 281957, 11638","49013, 273248"
-79,CR_Terry_Lawson,$2a$10$W9RWj4U3InUMYfMm3c/1OOXtPcwjW/f8jXPwpL.nD5.Jzn0aJGYO6,"Terry Lawson","1597, 11397, 98",NULL
-80,CR_Lisa_Kennedy,$2a$10$XP9VglV5BpDmn7RZpN2RdOC22MpknTYmw730ISc4c.a.4zk4HvhPO,"Lisa Kennedy","920, 1726, 12429, 11638",49013
-81,CR_Chris_Vognar,$2a$10$X4dG8/IDWji6DlQA9m7Uc.lIw1djiyWVW8hAPqmJlNjw0e9I3Ld6e,"Chris Vognar","10020, 49013, 1726, 281957",NULL
-82,CR_Ty_Burr,$2a$10$0fhGYwWzmJP5MJNZhZkDx.80WCJRILlH5/0QOIgVR/5bKl2NjvSZa,"Ty Burr","920, 334521, 224141, 313297, 273248, 281957","297761, 8587, 41513"
-83,CR_J._R._Jones,$2a$10$NYhbSGrgWRy7RLsXGOB9JufwL1a95VzYT595wUZpUsOPjR37MiIvm,"J. R. Jones","1726, 281957","920, 334521, 297761"
-84,CR_Roger_Ebert,$2a$10$ETuPRPZue5Ty1lpQUV.57..7efvXK6kfvld1ePTYE/KlkA7IUjGVS,"Roger Ebert","10020, 49013, 1726, 10674, 599, 8587, 3034, 12429, 1597, 11638, 4233","3597, 11397, 48129, 98"
-85,CR_Joe_Williams,$2a$10$fmmLY6kjTHaUFbRQtRKnQeKEfjw71xVbGKZinJa1y6J1ygdTXAazK,"Joe Williams","920, 224141",49013
-86,CR_Stephanie_Zacharek,$2a$10$5MRn0Q9kfMyTOYXHyhk7fuidBLOrSW0MkXLL7TPSg3FJnHTqcW.Fi,"Stephanie Zacharek","4133, 1726, 281957, 269149, 12429, 1597","263115, 335797, 297761, 333484, 11638"
-87,CR_Christy_Lemire,$2a$10$wnqKix9oT0Hl.EVso5XkDO7TeOfSN0lD3KKanoAlbbCsDS3B/HbhS,"Christy Lemire","4133, 109445, 1726, 313297, 277834","49013, 297761, 12429, 11397"
-88,CR_Steven_Rea,$2a$10$ZsIHfx1WgylDo9yI.Zi3R..e1R3gXKpUNbbs0nZBJ6a/R/vWAAgt.,"Steven Rea","224141, 281957, 269149","4133, 273248"
-89,CR_Claudia_Puig,$2a$10$fJCr82Xdwb68roJIL6XEu.PJWDr3Fo0UUZUlV9ZAILSHGtb3caAvW,"Claudia Puig","920, 109445, 1726, 12429","49013, 11638"
-90,CR_James_Berardinelli,$2a$10$lygXf4W08T35mdrD85NqZeNArxRuFQ/0oPm3nk/VBXaosmCbZhSSe,"James Berardinelli","10020, 334521, 1726, 313297, 277834, 10674, 599, 281957, 269149, 12429, 4233, 98","49013, 224141, 297761, 333484, 11969, 1597, 11638, 3597, 11397"
-91,CR_Jessica_Reaves,$2a$10$Ia72L7dzq.Y9BSIOXdcltu2zZwp17pgu2/CLS53JhBMNC5TL0EPaK,"Jessica Reaves",920,NULL
-92,CR_Stephen_Hunter,$2a$10$I6/8BRGv9JpRFYpk4GCtSe7LFCxNArxZqF7dZMBl7P4QNx.JGMj3.,"Stephen Hunter",920,NULL
-93,CR_Manohla_Dargis,$2a$10$y4Y6hj5GNVVUn15y/JzpWOQddv96ksGtgzwfqQzGqvo0uX9pIzfBS,"Manohla Dargis","263115, 281957, 12429","920, 337339, 98"
-94,CR_Kenneth_Turan,$2a$10$K7DsxNFQLQZ0W/.V6G4y0.PnNLaOxqcxaMStzH.lx5v1LkmbEFAwu,"Kenneth Turan","49013, 263115, 281957, 12429, 1597","4133, 1726, 10674, 297761, 333484, 98"
-95,CR_Bill_Muller,$2a$10$CCzlABdC4MqTstcHZNuZy.tbju.eDMkaZb01ovPkOlrn8EsGNGK26,"Bill Muller",920,11638
-96,CR_Colin_Covert,$2a$10$R3/LiaKXCQfKPDMle1PRX..inkBNqIsBySFMrAwOaeY0JlXyRn.sW,"Colin Covert","920, 334521, 224141, 1726, 313297, 277834, 273248, 337339, 41513, 269149, 11638, 98","49013, 335797, 297761, 333484"
-97,CR_Peter_Rainer,$2a$10$XLvTCP.3c1lyag3BSfBe6elAf6ARQa5gKeQQOfyGGlHxI5W3P3EiG,"Peter Rainer","920, 49013, 224141, 263115, 277834, 12429, 1597, 98","1726, 297761, 273248"
-98,CR_Bruce_Newman,$2a$10$kYf.Siu.PkX7HciYOlkzhuPrKMMxmUlP9j7MgEGzAkdJXfMoHKkxW,"Bruce Newman","11638, 98",920
-99,CR_Gene_Seymour,$2a$10$Gujf8wTxlJ8DlQvrJqUitO0CYyzVqfiDvo7nRoYFOOVVnouGy1pBK,"Gene Seymour","920, 98",NULL
-100,CR_Eleanor_Ringel_Gillespie,$2a$10$/OmjDZ049kZWp8hFI3guROd9K4kLncPz/muFlshRO3OYYQFjLLGRu,"Eleanor Ringel Gillespie","10020, 98",11638
-101,CR_Ella_Taylor,$2a$10$c4tn00rpFnsWVpV3mp9JEewVZ1lQinw5t5yuh1Xr1GJIBBUV6bNC.,"Ella Taylor",920,NULL
-102,CR_Tasha_Robinson,$2a$10$PpKcDJ41grFcljsBoKZyGeustu9aOVLLlhPy/y/mZAiyb33c1UYsi,"Tasha Robinson","920, 12429",41513
-103,CR_Robert_Wilonsky,$2a$10$L6LSxyCwKqTB.ViP69Laiu00DQ.baL3H5vBugEdtF9L6BV4dBoB9K,"Robert Wilonsky",920,NULL
-104,CR_David_Ansen,$2a$10$3nZYBTVL4VFBdTjUlaQ3l..7FFZWZXr3PEyxpw8G95WEl2rfDGLfW,"David Ansen","920, 1726, 1092",NULL
-105,CR_Michael_Rechtshaffen,$2a$10$HyWAGNDgXIsGnGsMPMI58ORzP.nsyRkoTWhZnpF1UwD.mtp77ecSW,"Michael Rechtshaffen","920, 313297, 277834, 295693, 269149, 1597, 11638",41513
-106,CR_Brian_Lowry,$2a$10$8epJMD4qwES7flSwyTLClOBHcoRY5G3sJoaE6Rz.Ds80mbOZ5RF/G,"Brian Lowry","263115, 277834","920, 297761, 295693, 333484, 11638"
-107,CR_Richard_Roeper,$2a$10$oZPyC4GlWHMRX7gU6a9zQuMJwn/9/JTMDWOgOfKF2KrvM5JJA2aqO,"Richard Roeper","10020, 334521, 1726, 263115, 277834, 281957, 269149, 11397","49013, 297761, 337339, 11638"
-108,CR_Peter_Travers,$2a$10$Lo2ZbIfpcGIoYmvL0uBEIu8gXNAxGbKNCwpKvmZrEnQrYSVF/UIb.,"Peter Travers","4133, 49013, 1726, 263115, 277834, 10674, 281957, 269149, 12429, 1597","297761, 11638"
-109,CR_Joe_Morgenstern,$2a$10$1gRkhdmcdvaRIZ0/Y0sfqeD4Ko.1f9ds9Kxv0eGo5n.V8wUF1gbM.,"Joe Morgenstern","109445, 1726, 313297, 277834, 269149, 98","49013, 297761, 281957"
-110,CR_Scott_Marks,$2a$10$JrlheropARyoTWiDcUG94ekkhbmImjZn7h/ry40w24fWuRB6q0sZG,"Scott Marks",NULL,"109445, 273248"
-111,CR_Wesley_Morris,$2a$10$yeT76NLUuRmLSqKB29DEnOowaUqgsBZVvAiyebxf2GbTR3rP2m5pa,"Wesley Morris","109445, 49013, 224141, 1726, 12429",11638
-112,CR_Catherine_Bray,$2a$10$q0WGYLH7fhQRGjbMnG7.K.d18/v3ec4ckxOxCnRPfrkZ/nAbEK0qu,"Catherine Bray",109445,NULL
-113,CR_Adam_Nayman,$2a$10$J1IVGpcctgy2Pq88iWBJKepMafOyj2Lrc9QxDzplzwqY5EFCHmPiK,"Adam Nayman",NULL,109445
-114,CR_Bilge_Ebiri,$2a$10$NMI2q4V7moyCU7naCW4rWuvrbKPDrvV0EkYRZ6vEnNAPtvwvdpHIq,"Bilge Ebiri","109445, 313297, 277834, 297761",NULL
-115,CR_Maricar_Estrella,$2a$10$Yt.1XAZBRWBS/x1MEkVBGeDgJo4AFWyFIH7BOMlhJR2T1s5ndCmHG,"Maricar Estrella","109445, 313297, 277834, 269149","335797, 295693"
-116,CR_Linda_Barnard,$2a$10$zFsHhXAAqbCIb4JRcUoche/fi.HGAbzJvmqXtyfEjVF0zqMr.FToC,"Linda Barnard","109445, 224141, 313297",NULL
-117,CR_David_Hiltbrand,$2a$10$Kj.u9RFWZAXlT8ZOAVo30.FEp8.9THSPARH6BNVm/hxR3k3IrUbWS,"David Hiltbrand",109445,NULL
-118,CR_Ben_Sachs,$2a$10$aysXNeloVBuxdjsFZ65ZxeHWroe/2MroylfKta7ewtGW70lg1fM7.,"Ben Sachs",337339,"109445, 224141"
-119,CR_Kevin_McFarland,$2a$10$CEa86bM15OpYuQQRPEGTm.naYYRF14dD7HdhtLmhN5u/M.dbk5FZ2,"Kevin McFarland",109445,NULL
-120,CR_Keith_Uhlich,$2a$10$J2uGMQURdV0fBTbAEMqLrOKRiBdiDijhhWFAXxtcjR/To8ezBr7LO,"Keith Uhlich",NULL,109445
-121,CR_Bob_Mondello,$2a$10$Vn1aXgfVY5DzVlEeFjumn.V/tJN5WxNC5qkfZN4C1rBgZVWXEN5U2,"Bob Mondello","109445, 1726, 281957, 269149",NULL
-122,CR_Rafer_Guzman,$2a$10$y/G6gpbXCvDQ.kZt.l1M8.ZDg1tBASyVZ/AmqFUWCQ0CISo1kOYFK,"Rafer Guzman","109445, 224141, 263115, 335797, 333484, 269149, 12429","313297, 297761, 295693"
-123,CR_Sherilyn_Connelly,$2a$10$.1P0Qe3GWq.X2XSkPCVW0O440emH3pfEbSmhjsJpfyPQPRdcAW8m2,"Sherilyn Connelly",109445,NULL
-124,CR_Tom_Russo,$2a$10$hwtLSLJRMsfVLhzr7Lc.KuZC6Gc/lHr1Hg4jefYwRHPSSUPg1t5vu,"Tom Russo","109445, 263115, 335797, 337339, 269149",295693
-125,CR_Stephen_Holden,$2a$10$p2DYVLuegn7Vz/W56lcRwOEHTEZ56g9HKmS8RtqMtLoznUqF24t0u,"Stephen Holden","109445, 224141, 8587",11969
-126,CR_Stephanie_Merry,$2a$10$af40a.ftZ1259lSgqtHzmOU6npFx/ge6BcVeGHPzqULVCpDPbSS8S,"Stephanie Merry","109445, 224141, 337339",NULL
-127,CR_Peter_Hartlaub,$2a$10$yNHyrDHMkS9bolsN5biw3e0Qv/cnpMjoBtgIp9mmbPyjPQ5xm1RRq,"Peter Hartlaub","109445, 263115, 277834, 41513, 12429","335797, 295693, 333484"
-128,CR_Tony_Hicks,$2a$10$fCBIYSEFd69eMDIaWQbxgeydYjxvamijYXtaQHoLjRhHiW4Z/vApi,"Tony Hicks","109445, 297761, 273248, 269149",NULL
-129,CR_Tom_Keogh,$2a$10$mRCiRWj2S5Tt2QAx7OY8S.pkrKeTOMTkmqIUGPGLNCfe/OLJPlIUy,"Tom Keogh",1092,109445
-130,CR_Dan_Kois,$2a$10$XSMUm7ohaB926hDOpiMxme9/5KZLSoq58y7Uv4BgO4gnKsXM8VpL2,"Dan Kois","277834, 12429",109445
-131,CR_Michael_Phillips,$2a$10$hQrQnR4iHABdJzes7.KiZOZQCOgwquAIxgti95g8yPZ33cT4hNodm,"Michael Phillips","109445, 1726, 277834, 1092","263115, 297761, 273248, 281957"
-132,CR_Bill_Goodykoontz,$2a$10$./IOYjNsqihz7MdNnNGPW.w7PpKkSnLvOYNqQr.6D1WV0nUa5ly1G,"Bill Goodykoontz","109445, 224141, 1726, 263115, 335797, 297761, 273248, 281957",337339
-133,CR_Laremy_Legel,$2a$10$U2Umv8xpSnQHRdmfc5Oel.H.TAhqCgLXzR4a48i69f376jFhv3p3.,"Laremy Legel","109445, 1726",41513
-134,CR_Jessica_Herndon,$2a$10$0OwCQtEyjcjaeszTJdb3K.8TE1DA8dRHgPioGbVjqdNEOIz8hpk5a,"Jessica Herndon",109445,NULL
-135,CR_Betsy_Sharkey,$2a$10$3f/2HWDVPELnLhhJfppPhusCwFui42lSx7J9hNEeKoZ98EJR.S40q,"Betsy Sharkey","109445, 224141",41513
-136,CR_Kyle_Smith,$2a$10$pcBEYLJoMP1xZ59uppHZaeqoB1zqeCvJQ/YMMdz8Hgzt2/w.O5seK,"Kyle Smith","109445, 263115, 335797, 281957","297761, 295693"
-137,CR_Todd_McCarthy,$2a$10$98lB2YQ.YP5zbqpzdx1KUeRaJK2i62EaxDd9YIW9e.RYtLrAiyRSa,"Todd McCarthy","109445, 1726, 281957, 1597, 98","10674, 297761, 333484"
-138,CR_Scott_Foundas,$2a$10$9xuMP9twExO3Q0kVR.c3o.tHc0elfK1g/Lmk2KcWAsIJVXRa6hGuK,"Scott Foundas","109445, 1726, 12429",NULL
-139,CR_Alonso_Duralde,$2a$10$aFVGyqLM6Gx2bzGbOyMm8uBPzfYUUm28598NH9WMKh0SQAtSqkQye,"Alonso Duralde","109445, 224141, 263115, 277834, 273248","297761, 295693, 41513"
-140,CR_Katie_Walsh,$2a$10$x8hoY0SnjX4I5L4QA5mAlO6Nrk6a0rli9nacNAMemTwNAws73tQVK,"Katie Walsh","263115, 335797, 297761, 337339, 269149","334521, 333484"
-141,CR_Scott_Marks,$2a$10$/8rMmG5JgzN1v4/vlBQHJ.HlOBXVAXzft3hd/14B4B.6yTTfRTdJe,"Scott Marks",NULL,"109445, 273248"
-142,CR_Joshua_Rothkopf,$2a$10$z6YqExo3Vw6iYusogiVZNeNSkO.sj1ufxNaLcr6NItO4b4zWWpVaW,"Joshua Rothkopf","333484, 1092",334521
-143,CR_David_Fear,$2a$10$Q5OYV0Tm3vJol1PBj.F6l.POCDzSvQ/YOR4pzpAbQifTBdlktF1pG,"David Fear","334521, 313297",295693
-144,CR_Barry_Hertz,$2a$10$Xz35eTd7kqgHAZBcKMwWmuycRxf1jbXKqdHo/cgXDeXjiklYN657q,"Barry Hertz","334521, 263115, 337339",NULL
-145,CR_Adam_Graham,$2a$10$L2aFcCJipYmdXqvT13y/reIQg8pRWDZ07bmDb/Loc.oJKV93meLoW,"Adam Graham","313297, 277834, 333484, 269149","334521, 335797, 297761, 295693"
-146,CR_Chris_Klimek,$2a$10$D.ziXY21NC4hkOT0xus5y.YNMhytVC.YSVXbDh42I.W4kRjg1cqiG,"Chris Klimek","334521, 263115, 297761",337339
-147,CR_Mark_Olsen,$2a$10$9O0F58cmGYXe/z/pecI18.FJLuW5G5Iht/gQaJmzZLZeCMrgKsUt2,"Mark Olsen",334521,NULL
-148,CR_Liz_Braun,$2a$10$CTGtOM4cyvVabWCN7Ze55eufEW1K/U6qSvJf4erDMCc78r2ESxnXe,"Liz Braun","334521, 333484",NULL
-149,CR_Linda_Barnard,$2a$10$eIPLa.vETX7K2o1QY7BTbOrFjtUJKWIBbkQLnOB.ciJiQAFKHfqpK,"Linda Barnard","109445, 224141, 313297",NULL
-150,CR_David_Sims,$2a$10$8ae6zEusejVgflelEbx06.yZKPek22m6jGar9u87XDD9ge0Ua9zya,"David Sims","263115, 337339","334521, 273248"
-151,CR_Ann_Hornaday,$2a$10$HczUpOW/GvPqp1kByQ2siuwYakbD9x4SgUwji246FqmrVs85M9fsy,"Ann Hornaday",NULL,"334521, 1726, 273248, 281957, 11638"
-152,CR_Glenn_Kenny,$2a$10$H2etIQFJ8tjKwO3b.0jq3.czRvFjhF9z2nj6LKlS.PQwJD/X9e/Qy,"Glenn Kenny","334521, 313297","335797, 41513"
-153,CR_Tim_Grierson,$2a$10$Tm2l7aat0BscAqRvyk8yBe1Y/zWBtWd6gBTf56OwrlULC8Grjvwo.,"Tim Grierson",334521,NULL
-154,CR_Calvin_Wilson,$2a$10$CxTYCGMd11kpHn1yWTw9.O0D4TSzJpGfgeN4oPjai/aD3A0fDqROC,"Calvin Wilson","1726, 263115, 273248, 281957, 12429","334521, 297761, 333484"
-155,CR_Rafer_Guzman,$2a$10$//PjNqrDURd.kVEutkNRcuamWVUL79cdaE0et8wAR2GNSbWVkChtO,"Rafer Guzman","109445, 224141, 263115, 335797, 333484, 269149, 12429","313297, 297761, 295693"
-156,CR_Chris_Nashawaty,$2a$10$.PEw8.ESGsgnUbFIgT6KkuuwHTvgjFt.6t2WcmktnA8yHSqDukhtK,"Chris Nashawaty","334521, 224141, 263115, 297761, 281957, 269149, 4233",273248
-157,CR_Barbara_VanDenburgh,$2a$10$o6DlwSPYEyaq3PGuOThkP.iVNdBXddUZXL6PxLunzQJmeOwYjrFUC,"Barbara VanDenburgh","334521, 269149",NULL
-158,CR_Jake_Coyle,$2a$10$JD3MrDNehIMY6xmCaQrIjenbhBRNM3OwOKhRVv.YXZpBHYAGTLxUq,"Jake Coyle","313297, 281957","334521, 297761"
-159,CR_Matt_Zoller_Seitz,$2a$10$7xcNrV0dHcQjA95at93DA.abcwspNybatfOR.XyfXpswX1cPLJbke,"Matt Zoller Seitz",269149,"334521, 273248"
-160,CR_Amy_Nicholson,$2a$10$.ObsJoxFVmnGtpGTS/o26emgj.xoK2QbCm3As0BQYPhD1iNfNNYPi,"Amy Nicholson",263115,"334521, 297761, 333484"
-161,CR_A.A._Dowd,$2a$10$wT/0e7F7pyJc/QhSZ4fSRepPEA70tkgHmEzpaWAegtMsB2zEZAKli,"A.A. Dowd","334521, 263115, 281957",NULL
-162,CR_Soren_Anderson,$2a$10$GzeGg2J781rZ84HBIsmmgew6NY4BIfFCTNgB.u/C3OXihWpjNzQX6,"Soren Anderson","263115, 277834, 281957, 269149","334521, 297761, 295693, 273248"
-163,CR_Melissa_Anderson,$2a$10$f.lkqM0u6EbdJju/9l/17eVRpuc1qojzsfpoMmfm4sVRmHbi8Nr82,"Melissa Anderson",NULL,334521
-164,CR_Brian_Truitt,$2a$10$.YRczQg.WKYMr39OcOfiLu5A.yJLgQH8hvaCeHv.6lnOndyMR1PTq,"Brian Truitt","334521, 313297, 335797, 297761, 281957, 269149",333484
-165,CR_Walter_V._Addiego,$2a$10$FMVppRvtLQjLJZ67A3MBAupycymxovmRa8PHN3IosvvyMvUSltDnu,"Walter V. Addiego",334521,313297
-166,CR_Richard_Brody,$2a$10$BjuAnuiTEJdD4WVIs9DU0eUnfQJO.Vgc5fY.6GsY1WdZY41GKiOgK,"Richard Brody",NULL,334521
-167,CR_Eric_Kohn,$2a$10$YxwSir6ucHDjDQFGmb.6CuLHjYIwi.MMgdjgoHrimTOkxhlxM1nOK,"Eric Kohn","334521, 281957",NULL
-168,CR_Stephen_Dalton,$2a$10$9YbK2AxwKQ/cnpRLp1fdWeB.O51frZ8T8p4uXgmW3ivEjEN6qu98q,"Stephen Dalton",NULL,334521
-169,CR_Peter_Debruge,$2a$10$50mIAWulZ17V7KjRgcoi9e0.QcxtOrIzUndXxmbM/N2wgNsn0FJcC,"Peter Debruge","334521, 313297, 335797, 273248, 269149",297761
-170,CR_Leah_Rozen,$2a$10$.AVVuW35H2Hb5QCH9zoT2eXvGAh.6CiNL6xki1kY.Wj7YQhADBNfW,"Leah Rozen",NULL,49013
-171,CR_Derek_Adams,$2a$10$kwe892DcHRheyY5VygFgGeo6xB060pfVesc9DrGEtwshTAs1jrb1O,"Derek Adams","10674, 1597","49013, 621, 4233"
-172,CR_Rafer_Guzman,$2a$10$tVJrviDr4jzJWqxh8NbHquYKU9gYUHwFD94q3G0yng5siHvn4wp4u,"Rafer Guzman","109445, 224141, 263115, 335797, 333484, 269149, 12429","313297, 297761, 295693"
-173,CR_Logan_Hill,$2a$10$VTx6Bh4mlnMV0c34yR9e9O8rrl9sLr7Bib.P5GVYJGRKWKTwSDpni,"Logan Hill",NULL,49013
-174,CR_Liam_Lacey,$2a$10$huH52ogDVeLBZ5Z5Ru/nnewTq2K2FgjpvG6/1XRGTWydG1jkkCOiC,"Liam Lacey",1726,"49013, 10674"
-175,CR_Michael_O'Sullivan,$2a$10$nPQMopW9K0kWDusPUWGYdulbqdVmpSZUz6mdLAP2S.dWelkX77nwu,"Michael O'Sullivan","313297, 335797","49013, 297761, 11638"
-176,CR_Kyle_Smith,$2a$10$ll9RAIMto4KOFedpjrDEp./GGDGIC2wLfpqYNroHZu9noaFllkkHm,"Kyle Smith","109445, 263115, 335797, 281957","297761, 295693"
-177,CR_Joe_Neumaier,$2a$10$X5Hlo6jCnNYRJS8BPVa1AOlDBC/fDWi8IgngRa3Hw9uMKdGEfuPIC,"Joe Neumaier","49013, 1726, 12429",41513
-178,CR_William_Goss,$2a$10$3lFjeHSAxB3TZlScQA3qyuvpO7nPnvJxYJAAL7YbGhAfGMxseNgSW,"William Goss",49013,NULL
-179,CR_Andrew_O'Hehir,$2a$10$JFU7aj19SxyHoEAftxpzMOwnfuGcsX/azlkjX8cHAw1OEQV.2Xy.m,"Andrew O'Hehir","49013, 1092, 4233","297761, 281957, 98"
-180,CR_Dana_Stevens,$2a$10$ZMHZgB5HViUO3s/1BqP1nuJeA9d7iukudkSbRVjKyYXeceHt17sGe,"Dana Stevens","1726, 12429","49013, 224141"
-181,CR_Carrie_Rickey,$2a$10$FM0lP5s8NY25FSP4ThD3dOo0xmIpJPfZBMU0pc2jAXTRApYxB9UxG,"Carrie Rickey","1726, 12429, 11638","49013, 11397"
-182,CR_Charlie_McCollum,$2a$10$3SY4ubwLb7d0N9FKhqwwm.RMEpvkdrvSc2/B.nfj0oH9uOLnTP/mS,"Charlie McCollum",NULL,49013
-183,CR_Nathan_Rabin,$2a$10$VWSfpIYb5hHZt/GIdMEIW.EDVdP6yeWYY6hqcM1vzWMq7UMCNU29e,"Nathan Rabin",1726,49013
-184,CR_Michael_Phillips,$2a$10$DzGlyGcgU2wlc5/lH5WpFuPmNTsEEDHxpEZABiSJ9S3p5IijHxlJe,"Michael Phillips","109445, 1726, 277834, 1092","263115, 297761, 273248, 281957"
-185,CR_Mary_F._Pols,$2a$10$SUqd/ynbtv.G7ZzDNr2T/OUXKG05WO8vwNxSYKn6M.QY1FHY3obua,"Mary F. Pols",NULL,49013
-186,CR_Bill_Goodykoontz,$2a$10$3xPae1mwd2tzshhdvDjI9uvUtJebxIj243u3kyiIZqKDHkUxhFoZS,"Bill Goodykoontz","109445, 224141, 1726, 263115, 335797, 297761, 273248, 281957",337339
-187,CR_Keith_Uhlich,$2a$10$OcwoQn3BkFiJsMX9iPenJ.YnZzOI4GVGQQ2/uRTVthZw5AtyEYwnS,"Keith Uhlich",NULL,49013
-188,CR_Nick_Schager,$2a$10$FAD2CI5uEo6zeJjXTDr8AOEpbunoF38ZnTSmLM2zXNU8XKXHiwVf6,"Nick Schager",NULL,"49013, 41513"
-189,CR_Glenn_Kenny,$2a$10$0pe0OKFKj8WXVbQngkfIA.L.cZHC2fHHpY0lYGE1Sc1LkDIRJn/MW,"Glenn Kenny","334521, 313297","335797, 41513"
-190,CR_Justin_Chang,$2a$10$BuYtOp.UanwUMCNAKPSKdOLPyjgkfDYj6z4a526okrwf2UGJrxRD2,"Justin Chang","49013, 313297, 277834, 41513","295693, 281957"
-191,CR_Todd_McCarthy,$2a$10$8/FO5dIwgyIGXrc.3YbijOezRjzF2Y9AiZ4yY.sQaOyeoQ8xrhlNa,"Todd McCarthy","109445, 1726, 281957, 1597, 98","10674, 297761, 333484"
-192,CR_Mara_Reinstein,$2a$10$4wJ785DWpatVhLoDX8yMq.Vo8MLzV82iOoH1upBRjOU1833pyoK2i,"Mara Reinstein","224141, 277834","263115, 297761, 333484"
-193,CR_Sophie_Gilbert,$2a$10$HIjZBWVoj3evpoclIljy9ujaJ6H4C2T9iE2DNGmi3LKvcDtT/b8kC,"Sophie Gilbert",224141,335797
-194,CR_Preston_Jones,$2a$10$ZgyLRfTzl.1TSAv64hP0OeakN9/TygJVeQjR01919HiXwAK3Wcsr.,"Preston Jones",224141,NULL
-195,CR_Nancy_Churnin,$2a$10$Am0o1tpEAc7N5GP5wN89duRtyMN0Kj/WkDx9/O70r4.nobjGIaIpy,"Nancy Churnin",224141,41513
-196,CR_Susan_Wloszczyna,$2a$10$AQrEsucOcNyrjmPWWw9gpuzhfa/fV2M6mAlKRHyopewiP9qREsvQu,"Susan Wloszczyna","224141, 335797, 1597, 4233","295693, 98"
-197,CR_Rex_Reed,$2a$10$0OYcTHOONY5S7/7ch7OFw.t2ejgRFNRImIEYVJZRbKC9nmEvrBuxu,"Rex Reed",NULL,"224141, 263115"
-198,CR_Christine_Dolen,$2a$10$V4WxLg/o1ejzkyXD6g1uKeUXy2Qua.5OWwpJhGyCWqbnebSxAjVku,"Christine Dolen",224141,NULL
-199,CR_Brad_Wheeler,$2a$10$LLts5dgj58L1dxVMORHQl.7znnneY2zhI//VZtkGJo8FtGYcc1D6K,"Brad Wheeler",224141,NULL
-200,CR_Matthew_Lickona,$2a$10$m/R2nI7yEHBfCfWD4yoDbuhaFnWvs9DRoKh7N/3hYcKeNH75rECNi,"Matthew Lickona","224141, 263115, 295693, 281957, 269149","277834, 297761, 333484"
-201,CR_Jesse_Hassenger,$2a$10$YMSuyYyPWYwF23sQ/IgHm.7f2cbaEaganaXw2Bg2ehIMw5qeLZ392,"Jesse Hassenger","224141, 313297, 277834, 269149",335797
-202,CR_Lindsey_Bahr,$2a$10$h92CYVFaGyZq93OuOOb3t.j78i3ErYbVeILMj5OcJz4jgxHuLeyhO,"Lindsey Bahr","224141, 277834, 333484",NULL
-203,CR_Alan_Scherstuhl,$2a$10$AYyaSuCr7ciSYEeKRjcBtOrMY0wp0wsSg.ECfPZ3B1UjFxQ8beJuq,"Alan Scherstuhl","263115, 281957",224141
-204,CR_Karen_D'Souza,$2a$10$8drsfJXGcLVRsWfWC76yb.tb/gOb4U.Qz9y0qBXi3HQKZaSZARaOW,"Karen D'Souza",NULL,224141
-205,CR_David_Rooney,$2a$10$tcXK8MQ3bB2M87tLUbcT3eucEp2CdIsD0bkIJwsnHw9a7cdamj2sO,"David Rooney",224141,NULL
-206,CR_Tom_Huddleston,$2a$10$55pffN8pkFgwWRvg.2R43OpKH2annqJTqLkC3tCx/fFalYgxpJINO,"Tom Huddleston","9323, 263115, 337339",295693
-207,CR_Laura_Evenson,$2a$10$dBMiDGSudYf8YANuQcZwquPKi/ZGwYluFIyA73AzOwQyv4ICyk3pS,"Laura Evenson",9323,NULL
-208,CR_Judith_Martin,$2a$10$1Rm2QWPeZsiT9oCVkineLeNgxnvrtpv9B/B04lrVyerS7VxblRSye,"Judith Martin",NULL,621
-209,CR_Stanley_Kauffmann,$2a$10$.1HSCADxKgWn4aIUqu5mIei/WPf0FWM3Mt8SYafSMuFkamAFEcgkm,"Stanley Kauffmann",NULL,621
-210,CR_Arthur_Knight,$2a$10$yX00IcNlPsgTPqf9fETyrOU7iz9cjzi9ByvNL2h.BdIPqcHzLA.0O,"Arthur Knight",621,NULL
-211,CR_John_L._Wasserman,$2a$10$yM/ITeY7pRQy/FY30lN1UOpyQz.kun1ochinCH26z5UVgraC1KPsa,"John L. Wasserman",NULL,621
-212,CR_Michael_Booth,$2a$10$1pa13eY5qrcTlbKo35x0xefAXx5wGDKDFl3N9ZbCpB04fCIXQsDG.,"Michael Booth",621,NULL
-213,CR_Julie_Hinds,$2a$10$Rne8XNlXIrcEFyVVwLAdHOV9vBXDlZEf3igpzvCJ4blcTQyqLiLSa,"Julie Hinds",621,NULL
-214,CR_Vincent_Canby,$2a$10$EZ6biPaBaQ6VilNV2Xcmcep7/OKsqoO.j4HFsDQHv.rWSOqhwL1sW,"Vincent Canby","621, 3034",NULL
-215,CR_Craig_Outhier,$2a$10$sTCz3NW6S8AAZoxUVD4BXO/lgDH7FOBZYcohYeGqoHO7W7WF2Qcqi,"Craig Outhier",1726,NULL
-216,CR_Tom_Charity,$2a$10$35.5HPqAkSqkCSLw/ibgp.8zC46wqZ1KRa2mu3n128OMc7Ouu7y3S,"Tom Charity",1726,NULL
-217,CR_Jim_Emerson,$2a$10$ZLySLb5T4TtSQ1Bg45ZmH.bZcYuPPlwsP55jvUGypZqx1N.Er7D1m,"Jim Emerson",1726,NULL
-218,CR_Christopher_Orr,$2a$10$LgmiZpTGSxtx1yhyX0C1.ugxBntPLFAxxl2Bc3cVo5rT8p9F1vcsK,"Christopher Orr","1726, 277834, 281957, 269149","297761, 333484"
-219,CR_Mark_Rahner,$2a$10$/4iFrJVqQoIYVYX/FMMNoOamN8pGvAKW7O/b9DnVmRoObnpTQu08O,"Mark Rahner",1726,NULL
-220,CR_Bill_Zwecker,$2a$10$FhPFZNzNstIGv6wLHfyxkugjyedHbtTSWecBj/4IAXZecmLgQwvje,"Bill Zwecker","1726, 313297, 295693",NULL
-221,CR_David_Denby,$2a$10$fiO3BvSzAztwd7GcEAw4MejpFGyUTYLJBGc8Plsfn8YcTN15crYtm,"David Denby",NULL,"1726, 98"
-222,CR_Kirk_Honeycutt,$2a$10$JOQ3Eyoaq6BDfcATlmd3YedBf8M5LPymlLxqK90qgoqxIe8SszPyW,"Kirk Honeycutt",1726,NULL
-223,CR_David_Jenkins,$2a$10$WmDWdLNJBvSjRyWaVBpphej8RdgA6UhECawt92dG1FvPTn0FMwui2,"David Jenkins",12429,"1726, 41513"
-224,CR_Sandy_Cohen,$2a$10$iULmbM6u0h53OjpWfa364.s1ncavWd1tJX0qUI/bNUleANua.WhWW,"Sandy Cohen","263115, 337339",NULL
-225,CR_Leah_Pickett,$2a$10$DauDETNvEA4s191zVTDiLukeTZEe79iCLxfI1ZFSiBFlAAaSGQ9um,"Leah Pickett","263115, 277834",NULL
-226,CR_Britton_Peele,$2a$10$bnHTracCCR5meHSW5PS5POJD3dPHNvq10VN8XR2aEDvMF34B1y0Sy,"Britton Peele","263115, 277834, 269149",297761
-227,CR_Jonathan_L._Fischer,$2a$10$kVEMSl9wQ7uAY2xQd7XCH.1PpVN8ezO1Z0N8iSkE13QcRcfuILhtq,"Jonathan L. Fischer",263115,NULL
-228,CR_Will_Leitch,$2a$10$pT/DGTnfSMgWeQpsd3wHgeBlXQeolGlnQyq3GqPOcfEaGRcweNQV.,"Will Leitch",337339,"263115, 297761, 333484"
-229,CR_Cary_Darling,$2a$10$lBWFrhD9VJskCmm4rFk4UOZpqD6Q1LI65vH7kGbvbzUfX37yvdzku,"Cary Darling","263115, 281957","297761, 273248"
-230,CR_Brian_Tallerico,$2a$10$EKXdr.f0s71CyCbDZVh0wegFPoX81ajuCGnfcgBM2lWl7cvxnH6Y2,"Brian Tallerico","263115, 281957",333484
-231,CR_Alison_Willmore,$2a$10$OK4IwOPA8dzhtnn46/YorezjJlox7.5SH3vyc5VXB1QNOz9bcZiqy,"Alison Willmore","263115, 277834, 273248, 269149","297761, 281957"
-232,CR_Mark_Daniell,$2a$10$n/qfgL6M6VkY6cJ2So3DAuShBxU73q0rCmP07A8wZ0cTGHW6XtfJC,"Mark Daniell",263115,NULL
-233,CR_Sheri_Linden,$2a$10$3Og1npUpIyToiCYMeQGIe.Dj2o1nAXcSI36LKi49sxriCXyNHShgO,"Sheri Linden",263115,NULL
-234,CR_David_Ehrlich,$2a$10$YxIsSpRPTX2c/XX3Mnpen.u6zDOSssotUDCDOQ78Ny1TdULdPHVjC,"David Ehrlich","263115, 333484","335797, 297761, 295693, 337339"
-235,CR_Alison_Willmore,$2a$10$8SgzxTX3Kd3SJGBC90x0Q.Z5BxgjuX.spYKRdPWR.i68QRw.zThOi,"Alison Willmore","263115, 277834, 273248, 269149","297761, 281957"
-236,CR_Britton_Peele,$2a$10$K711DyzGAV0mnR.wQgyb7.qufgFj4jJsKi/XnD/itCvqB9YLUj4DW,"Britton Peele","263115, 277834, 269149",297761
-237,CR_Lenika_Cruz,$2a$10$3yZqcu.kf90T793XrXv/3OqAvTjXbgXRLYlDxFg0aO8EuUkZYV0Qa,"Lenika Cruz",313297,NULL
-238,CR_Ellen_Brait,$2a$10$cC00.ZW04nGQIkbErHCf6u.mrpMPnFYP/t5RDkuGiwMldFBm91Q8u,"Ellen Brait",313297,NULL
-239,CR_Tirdad_Derakhshani,$2a$10$xLLLrZtgnPBx0sIKx2mA/O1jToCM.MgWphpg7GELqs53CYhHLHMS2,"Tirdad Derakhshani","313297, 277834","297761, 333484"
-240,CR_Tomris_Laffly,$2a$10$1.9UnBnZ.9IvFEkiVdy.5e/HAQSI2kQbuV30pAw89T4iny27INP/O,"Tomris Laffly",313297,NULL
-241,CR_Scott_Tobias,$2a$10$8pJs6pauPS7.Cds4GnuWHuFDLVR4u10zO6CIG020bGIA5gQxWyVvK,"Scott Tobias","313297, 273248",NULL
-242,CR_Sara_Stewart,$2a$10$FCQ1a0i819fcUboVUUPKF.UIaTLumc7MnChiUu/NfE.7lqEQzVeCK,"Sara Stewart","313297, 277834",337339
-243,CR_Steve_Tilley,$2a$10$L45F3fIp56h8hvhLXFPF/ONXuZOSk/UXJgho0UDXKfDDowB7XsvL.,"Steve Tilley",313297,NULL
-244,CR_Oliver_Jones,$2a$10$zvZZ0QYTF2dFUwSUBT3F1OioGjidfDDATqTQYgE5R5gGPWAbcfajG,"Oliver Jones","313297, 337339",NULL
-245,CR_Kerry_Lengel,$2a$10$Boa5MiLv.R5tabFCuQqzK.9lopeHnxXuDC4FyC.bPyNmQaJaWE9Iu,"Kerry Lengel",313297,NULL
-246,CR_Leah_Greenblatt,$2a$10$JNkm5wWzgtXqw9N6EPkOweroYbbPovMjhUP5kxvPbiNBoUXfd1D/W,"Leah Greenblatt","313297, 333484",NULL
-247,CR_Raakhee_Mirchandani,$2a$10$I/pJ7aXM/SZAVtMtBDBfCemZaN3JpAwzF3wzmCV47y3ThbVMRgFhq,"Raakhee Mirchandani",313297,NULL
-248,CR_Sam_Adams,$2a$10$Kxgf4vWDW0AwcsxVfZoIFOQG92yQyBAihwRpCTpWthj4/5dQ74vke,"Sam Adams",313297,337339
-249,CR_David_Ehrlich,$2a$10$Rl7d.ESXAlWogcu.AQFBSuQCf4NaqSDNH9THEEL2iRwCQDsO8Fedy,"David Ehrlich","263115, 333484","335797, 297761, 295693, 337339"
-250,CR_Leah_Pickett,$2a$10$pfcPV/onjPrxpz30qGPuG.DF48k6SnwNYRL1VjBZCxYgYt0rAf7ae,"Leah Pickett","263115, 277834",NULL
-251,CR_Andrew_Lapin,$2a$10$rraEz1EnoVHoAnFfIE6bJuvev4Z4tJz1fwHeU5bC7DqhBYd8Yw3U.,"Andrew Lapin","277834, 269149",NULL
-252,CR_Dave_Calhoun,$2a$10$2Ya4/pmiD7HVvVL6VYtgGualGYfhwuNWcbh73e2pJQLhDepBUJ9.i,"Dave Calhoun","277834, 297761, 281957, 269149",NULL
-253,CR_Andrew_Parker,$2a$10$TcBcQi.RyIOyOCBZaj8oVuk6pmEQr5uo9SoYxCUbtCCyMUsztxmBy,"Andrew Parker",277834,NULL
-254,CR_Jody_Mitori,$2a$10$U0cigtlisj50Tw3rJ1HZMO5H8Npu/JRfTEhaqKC5Ujy4ySJXOec3W,"Jody Mitori","277834, 295693",41513
-255,CR_Bruce_Kirkland,$2a$10$1KhYuG6Zv4SC/fEHoPaGauWUF0EtoF9JkOJhDAgNEQMxk98NA7hZy,"Bruce Kirkland","277834, 297761, 281957, 269149",NULL
-256,CR_Caitlin_Moore,$2a$10$qCeiMUK..oHJIReCxrglgeunNv1R.QA9ogAk8tsTKj74QtYSz9uQm,"Caitlin Moore",277834,NULL
-257,CR_Devan_Coggan,$2a$10$dpX5q8IHU2b3OpYZ0mlYt.z0tEILRvUi3xhgk5Vca6DZsSYdERB5i,"Devan Coggan",277834,NULL
-258,CR_Devan_Coggan,$2a$10$ZiIHfFcqOgF1lgpCo5SqDu36FsWfsRnQZrYSJ3.WAn.ciDcwTnwuG,"Devan Coggan",335797,NULL
-259,CR_Kate_Taylor,$2a$10$J/e2WbeGrqZlYoNnjDaQ2efdvjxOqe0dUsm/sNaWpHsUSX2kAEKU.,"Kate Taylor","335797, 273248, 281957",269149
-260,CR_Andrea_Gronvall,$2a$10$X6yGmbMQT6NM9cvwKIWeZu.rtCz7XF.bbGmvfyn9vLyqrasX4G8ra,"Andrea Gronvall","335797, 333484",12429
-261,CR_Dave_Calhoun,$2a$10$U4c.eyYaOnNMKCHcRzta.eY69aejbn0VLU.A9gljg7FBcl/GCivcu,"Dave Calhoun","277834, 297761, 281957, 269149",NULL
-262,CR_Jocelyn_Noveck,$2a$10$uU1mdJnXZyDhnTiGbeGhk.9Cy1/yJl4xJJqpdMA68QnZyZX8DVx9m,"Jocelyn Noveck",335797,NULL
-263,CR_Jody_Mitori,$2a$10$sM75/1DL5u9ooQertkg97.tJTwdQZ.P7scN5XsXGz9j1fspUjKzi6,"Jody Mitori","277834, 295693",41513
-264,CR_Sarah_Miller,$2a$10$wTGpcix3Ykvs.ADO9dEwsODd16xvMKt9DQEwLPz0koeHWSAEMebpC,"Sarah Miller",335797,NULL
-265,CR_Edward_Douglas,$2a$10$0tdMFx6so6P3RkfDU1I7OuF1pMUgEYgSd6nufW0D/wTb2TM6xGbde,"Edward Douglas",335797,297761
-266,CR_Steve_Pond,$2a$10$a5Hf169wm715gATiWoZpjOivEzHLwmITn.A8n1ZtjuizQXrza3/3G,"Steve Pond",335797,NULL
-267,CR_Leslie_Felperin,$2a$10$S53G7ye8c2pikBURDIPxOeM/A.1U2dS0kg06/S6gvMfNYfdXLLrlO,"Leslie Felperin",335797,NULL
-268,CR_Frances_Dickinson,$2a$10$.5fsFbnNWrzUElgEBHJRdu/sdbFdIhOOzv2eJ/f9kOp8OqBOeydfa,"Frances Dickinson",433,NULL
-269,CR_Jenn_Shreve,$2a$10$YUqfbl/YeHImUbBp4mVsFOLV8pTJSO1VOC/.I4pL2fuEJ.kd8wpMS,"Jenn Shreve",10674,NULL
-270,CR_Peter_Stack,$2a$10$SUj9SWyk8YGkvSty7QVvSOIZrGBOmBY03ZtPaBxVvzkB1.QZPEegG,"Peter Stack","10674, 8587",NULL
-271,CR_John_Semley,$2a$10$hV/X/n9Wl3n6manwxn58ZeV14B/fmyMdpcdmC0ekYewpEeXorT3tG,"John Semley",295693,297761
-272,CR_Jacob_Brogan,$2a$10$1xd5ltdL1l0TTmGn4ofq7usGavJ/tbWSCf.VHFzXJ6RczsYCNDnwu,"Jacob Brogan",NULL,297761
-273,CR_Ignatiy_Vishnevetsky,$2a$10$MkatzNLe9hW73WGbpgczPeNnID3fbEIlYdFjxEMmqa/qaHUmeU0am,"Ignatiy Vishnevetsky",273248,"297761, 333484"
-274,CR_William_Brogdon,$2a$10$y5xTt3svJAKxLq9VSUJ1veYsrf07jO55BcXwo69vrOAa914IGh4ve,"William Brogdon",599,NULL
-275,CR_Don_Druker,$2a$10$gxx8Fx9yRDRYHt64xlXLJeRxKNc4xGVXPEF1B9OL1IswuhLK4djum,"Don Druker","599, 3034",NULL
-276,CR_Geoff_Andrew,$2a$10$zL7BpD2wXemgQXbSSb50UejnazszL.GhbQAfPUjuWsiWKEOt6bs1m,"Geoff Andrew","599, 3034, 98",NULL
-277,CR_Andrew_Sarris,$2a$10$/q916bT57V3P.9XVpyMjUuyNaBqhaKtOqwVEESaVtuJkYPvH1Vmle,"Andrew Sarris","599, 1092",98
-278,CR_Thomas_M._Pryor,$2a$10$0OXF6C2Ee5Ezk6x6gReopOCFP5a25exXgL9aG4jj3lc6uDsGNMd26,"Thomas M. Pryor",599,NULL
-279,CR_Jonathan_F._Richards,$2a$10$aNSrFmO3GpMs5onKxJ4HoesIK1Rmq08Q4jQLheBNEp.8/5SAnmIny,"Jonathan F. Richards",7445,NULL
-280,CR_Mark_Kennedy,$2a$10$fL8vehCCYoxoiacS3jx/VOKcCtk2.eUczvJUoEM6nJvJ9.JIEaueC,"Mark Kennedy",295693,NULL
-281,CR_Neil_Genzlinger,$2a$10$epvvGn4aJo23XYXnUErIi.fSy0L7DrEvCduHlkoSOf7y.K/Gpv43m,"Neil Genzlinger","295693, 41513, 269149",NULL
-282,CR_Kathryn_Laskaris,$2a$10$lkJUc4dusnouaM4iBlO3E.MibeAjjcBQhCJMos1lx6u46yGzi.ym6,"Kathryn Laskaris",295693,NULL
-283,CR_Darren_Franich,$2a$10$JR2qHoxPsRWT8y2YGLmeReq.NmTxdiyBAbHaitPo8deAqtU8w265y,"Darren Franich",NULL,295693
-284,CR_Pat_Padua,$2a$10$y86cbXE4Ysn/jBtNXezfT.Q2U/cWD2djmATFacaINBvta30kIB0v.,"Pat Padua",295693,NULL
-285,CR_Dawn_Burkes,$2a$10$JMvm2q5TQraIUmzq6kUWgOjI4By7zaB4tt0F7FtqhJRUddJD.XvaW,"Dawn Burkes",295693,NULL
-286,CR_Katie_Rife,$2a$10$q.RBvAOMVMLcZvATyJaUPOYbdBb605a/NOwavalfwhh2//8Kefn0S,"Katie Rife",NULL,295693
-287,CR_Allen_Salkin,$2a$10$YO6gQ0HZyB8Jkod9Lf2Klu8n/9kmiLiMXD.e9aiVGncHUn77PyIfy,"Allen Salkin",295693,NULL
-288,CR_Pete_Vonder_Haar,$2a$10$qUaNffnloTUbhjXwtoRoCuTe31ps/t2SjBSZOeoXX7YeCB.gaxA0q,"Pete Vonder Haar",NULL,295693
-289,CR_Tal_Rosenberg,$2a$10$Y2tuwyOR44Gzrjxqkys.ie9vZvnMeudMRn46lCZRfYvPxidHxgfvy,"Tal Rosenberg",NULL,273248
-290,CR_Joe_Dziemianowicz,$2a$10$r0mI9pNUA2OqqYShXA40aO8FZY7i8ESsEb7MVGgfSg92pczKX6pfq,"Joe Dziemianowicz",273248,NULL
-291,CR_John_Wenzel,$2a$10$L4oYIRfGL4Xbr1lzxhPRcevxBbe0vhsdUTiXeiMscOwkGR8LYDri.,"John Wenzel",273248,NULL
-292,CR_Desmond_Ryan,$2a$10$o4lR4dK2820hYURfQEYlOuznXN1Sx8sXjxWP2lA2SnhRXrnNVUQV6,"Desmond Ryan","8587, 1597, 98",NULL
-293,CR_Terrence_Rafferty,$2a$10$NcTIGRlVngRtZ1MSQxi9xO73faE1SIrId0oMONOqbnbQgdVKek5G6,"Terrence Rafferty",NULL,8587
-294,CR_Brian_Case,$2a$10$XkVAYvdsnGoVoQJqa5ON8uAatgABPSPIDM2wyb72BoUolhui.7CpW,"Brian Case",8587,NULL
-295,CR_Glenn_Abel,$2a$10$vplDI8hRlbNFvOT8xULYHurklbslyH5rK81CEI0jtFYoUhyVZ9TnS,"Glenn Abel",8587,NULL
-296,CR_Philip_Wuntch,$2a$10$FPSP2vM9Q6UqQ25QcCMLYeOvrnFI20sHb2P9de885pPQXs56ru4PC,"Philip Wuntch","8587, 1597, 98",11638
-297,CR_Jeremy_Gerard,$2a$10$YdBt7k.qmkHi8JQ7S.wuv.5fspqe0G8Ado9t4lqqd5w4P/Oxm8fCG,"Jeremy Gerard",8587,NULL
-298,CR_Jim_Slotek,$2a$10$I0cyG3yn.B6ZwqGCUz7tO.dq3UepZX8ltXhkUooOuTacQcpXMwu7.,"Jim Slotek",337339,NULL
-299,CR_Kristen_Yoonsoo_Kim,$2a$10$ZbeWVL7jAmJMakNTFRD5g.wp9ObM2FNrSDKt7E7SXBv8Fha.As86K,"Kristen Yoonsoo Kim",337339,NULL
-300,CR_Emily_Yoshida,$2a$10$xPGcFFCjSXQ2v.EpXqwSQu6kVfYtk5QAdj3sCzDqIkTGm1huZBv1q,"Emily Yoshida",NULL,337339
-301,CR_Amy_Rowe,$2a$10$.rQTWrVgoDvB5MVln2.Ln.XS4.SWRSmKq1OlcMjldAxL5vzbgp0Va,"Amy Rowe",NULL,337339
-302,CR_John_DeFore,$2a$10$HEVZW.H9nmI8ufi5Ag6klOi1wpdj2l2XqDoPoJavHfgAxEFCM4bcm,"John DeFore",337339,NULL
-303,CR_Dan_Callahan,$2a$10$beEawXgBg/H1j5MuD5CkV.8bKWnANtnfy7CTYXj9ua02STqEJICX2,"Dan Callahan",NULL,337339
-304,CR_John_Wenzel,$2a$10$zaqE2YYgzINpj4lNL5QafefS1.cyvfqKZieWn0b07nTPFlxA87qIe,"John Wenzel",NULL,333484
-305,CR_Aisha_Harris,$2a$10$7HMN3uyGJUEZedZnqAwYY.gjI6Jh5bA1sXqIUMSnoQFukTCPemw3W,"Aisha Harris",333484,NULL
-306,CR_Robert_Abele,$2a$10$FYW9X/G2L7cbA/vdgs4NneLpjza5MC0eBHXCanP.91AG4/4RFYrHu,"Robert Abele",269149,333484
-307,CR_Randy_Myers,$2a$10$YEkps2kNDMRnOE5reLp0JejX64HwE/lbWZjY0ZWdWayMb3lkFKGwC,"Randy Myers",281957,NULL
-308,CR_Robert_Abele,$2a$10$uFHbKoT25KeZ8oMJewGmUOzp8HBiD834uhlI5IaPhPDRZyUSpl.Zm,"Robert Abele",269149,NULL
-309,CR_Sean_O'Connell,$2a$10$WVb4SMWSh/ujEskYIxPX5u6AAszTB/eSZspI1i1GGwa12jHNwtBI2,"Sean O'Connell",NULL,41513
-310,CR_Nell_Minow,$2a$10$9tW9jFrWPYKoXJLM3eP1C.kA/3EL08INUQwFjt.YxashgaIhZa41m,"Nell Minow",NULL,41513
-311,CR_Bruce_Demara,$2a$10$0hEfmTeVCdd6g..DjFiXmOWT50IiAb7QUiEmDNiPAiWs8FCUb/.Pe,"Bruce Demara",41513,NULL
-312,CR_Scott_Bowles,$2a$10$eHjk8XaUNnJzRrHJEJw1ye2nu.9df/kXxzw0bCcbedWzFYxgucVyC,"Scott Bowles",NULL,41513
-313,CR_Keith_Staskiewicz,$2a$10$N68eAJkBHBYtxqJWjiazGeNrcr0IfGJvkRC4aeR.P8u.yZtoy7Hha,"Keith Staskiewicz",NULL,41513
-314,CR_Emanuel_Levy,$2a$10$EXeVR/9HOmnKfMMoJyMmHeGd4GfFMupnhwTCzrvdXyXZIR9HDDp2.,"Emanuel Levy",11969,NULL
-315,CR_Mark_Feeney,$2a$10$OjN1Uu9oAu8LvvZA7jSgmenhkmlUGPX7Ev5KFvFwyOebgIZ5uRBPi,"Mark Feeney",1092,NULL
-316,CR_Richard_Harrington,$2a$10$quYAXLqk7yoX8jZo/67m0urfc7vbAGXH1jgyQwcbNYcduZ7oGJjOS,"Richard Harrington",3597,11969
-317,CR_Jeff_Millar,$2a$10$yJ0XeNCFByZiTy0RnZcxUek6gkrVtZHe8XmMMMJIy5vX2mV8hP126,"Jeff Millar",1092,3597
-318,CR_Robert_Horton,$2a$10$HWdDoIc9X6xTyrgmy20EEuCrDLnP8lLKDExTGaRk8I.OUnVpfz7fu,"Robert Horton","1092, 1597",98
-319,CR_Laura_Miller,$2a$10$IMnQExjCZXorCaAkpsnia.i3zLIg8AJI2k0uJMo/2mKtbZKX37el6,"Laura Miller",1092,NULL
-320,CR_John_H._Dorr,$2a$10$hYk4UDofwk0ApgZLIzDgHOgV7fmzzf1XHQYsaZzGAC.pnpm547IAG,"John H. Dorr",NULL,3034
-321,CR_Pauline_Kael,$2a$10$PIB58HQLG3572rIdoqj5UuMXO2YA8ofRBVF2HWBBma4Fu4S9pAvFO,"Pauline Kael",3034,NULL
-322,CR_Gary_Goldstein,$2a$10$wTJk.IbyYziQ.vcMenabkOmtOFAaPRuOuXbTmkgYXGUHz/vbuJf8y,"Gary Goldstein",269149,NULL
-323,CR_Sarah_Bryan_Miller,$2a$10$y4./7Uwz9oI5Nnks6v7hMu1hBY9hM9NTUZGELv.YtJgAfQy6dcphy,"Sarah Bryan Miller",269149,NULL
-324,CR_Jen_Chaney,$2a$10$BuB3jOa07hbeypdZtPInuuMFi1iqTPU3f3plXGGbrt1ek5YuEOQU6,"Jen Chaney",269149,NULL
-325,CR_Katherine_Pushkar,$2a$10$861bZYG9Ga55q9WrKJPvPuswUeS81WiDJO3wraXDSYRyAZRZkZuze,"Katherine Pushkar",269149,NULL
-326,CR_Michelle_Orange,$2a$10$UZtteOFx83whoANtn2ZeR.1saeuEPZ3Qr7PO7ZpyR09uuefzPMi6m,"Michelle Orange",269149,NULL
-327,CR_Ruth_Hessey,$2a$10$lm0Ym/uDodj3Fk3jRXNAVuZFsUTHc2IwcrILHSz4bm5cUA9lJyPRq,"Ruth Hessey",12429,NULL
-328,CR_Ben_Lyons,$2a$10$2/ooOPS7NKwHfPgGxSzSTuVQTgVvta7ig92rXrhiiGaDA5WCrgHH2,"Ben Lyons",12429,NULL
-329,CR_Ben_Mankiewicz,$2a$10$wbVkRQSENrukFJHm0mgrF.NW.uuQ86qLjjQI4jVOioy7eQnUOLY4W,"Ben Mankiewicz",NULL,12429
-330,CR_Alan_Niester,$2a$10$k40dBJvBopIFRtyUpUvcC.vB3l0wtbv9Q.EGU/sEFvoqs79ftRsd6,"Alan Niester",12429,NULL
-331,CR_Greg_Quill,$2a$10$7PR3b./WEsGaxBnG70b0s.CtxrpHip4Q/aj/9iA6ZJQNcVwq0vZnu,"Greg Quill",12429,NULL
-332,CR_Joanne_Kaufman,$2a$10$5c2HP.KPVTKw6rXM9JVcbeWvyHs5c4p902njY4o7VL/lFZVOBaBLy,"Joanne Kaufman",12429,NULL
-333,CR_Ronnie_Scheib,$2a$10$8ov7Q8XPEC/8V4UbYDHON.y08r6z/o1MzYNsV3fkHsagh.GGtnfyC,"Ronnie Scheib",12429,NULL
-334,CR_Deborah_Young,$2a$10$zmneLNk0AzOuJ2HpLjMCR.My3m.WhV2kOcx1UJPYs4s5pS2CZVDR.,"Deborah Young",12429,NULL
-335,CR_Aaron_Hillis,$2a$10$p5474PeJ4cz6AhYF4hyedeN4ZU7Jwam/g085BuzVgxdRO0opIMO7e,"Aaron Hillis",12429,NULL
-336,CR_Lisa_Alspector,$2a$10$uBqYE8yaUbwWWXtGbdH4veE0KO/KZI.zQdbBradYxpW4o0D9yfWTW,"Lisa Alspector",4233,1597
-337,CR_Richard_Schickel,$2a$10$O9DndsV.bBzdFqnqw0QTaeR.AcM78DRgtZ31eItENjEMjElzpGQCG,"Richard Schickel",1597,NULL
-338,CR_Bob_Graham,$2a$10$l5sN7rZgaEinO11sI5W6Defn5fQV5NM8Qc/2XgOOimC2W.VIDdU92,"Bob Graham",1597,NULL
-339,CR_Jessica_Winter,$2a$10$68iyIP5vbF9ex5cwrW8fy.6oLYF9dBYgaBlKqbADcJUCAaW5VuWkW,"Jessica Winter",1597,NULL
-340,CR_Cody_Clark,$2a$10$wkL20tqRh5JOY663Vc7cEuJ0Af5WzA4qmmKCxjL97ZV0B7n3kbOTW,"Cody Clark","1597, 98",NULL
-341,CR_Robert_Denerstein,$2a$10$q8P3dZiHlLOadHKnxNgJW.FAouCq2OpxB7QbUzS84xvv58xnOYK5m,"Robert Denerstein","1597, 98",11638
-342,CR_Paul_Clinton_(CNN.com),$2a$10$Dt5QQm52yGusD4sx.70Xlel3MKc5myIBzRm9aYp.a092J3fjbxyFi,"Paul Clinton (CNN.com)","1597, 11638, 98",NULL
-343,CR_Bob_Longino,$2a$10$aOUNFjbyC.0ltxc8XuiL7ewQrFOWdT22QVIW4SDDZMj4fRSJGNdrS,"Bob Longino",1597,NULL
-344,CR_Erik_Lundegaard,$2a$10$CuvV6f9F4wlHLiycdP4zWuNMySWYGOHK78OKfjgSZT3eaYp8HCXle,"Erik Lundegaard",NULL,1597
-345,CR_Elvis_Mitchell,$2a$10$EZueCRpkc3PNZIECuRYWReWzmB02DGuSOtE4ny12BQMCa1V6n7ot.,"Elvis Mitchell",1597,98
-346,CR_Jonathan_Foreman,$2a$10$qxoJWbTrZVSFp3oWIYtsKeGP8TgZXOUAC1ls/cVATAAzcWMfO2hU6,"Jonathan Foreman","1597, 98",11397
-347,CR_Sean_P._Means,$2a$10$iiaUzBkpwcIbkCApUgF2/ORZkm9cdbAta.8XRTF6bAw3oAL/uc.TC,"Sean P. Means","1597, 4233",98
-348,CR_Peter_L'Official,$2a$10$RH1hqAYEgPEjR4q5Wi7qdeDV6c2aZeI1msIThwg2qPAVTf28szJ1q,"Peter L'Official",NULL,11638
-349,CR_Ted_Fry,$2a$10$W0z/C9JsXmft7E6Mlphsxu/wS9Kh2sIcb72wSym2Ji3ZqDjY6pOna,"Ted Fry","11638, 98",NULL
-350,CR_Malene_Arpe,$2a$10$GIF/RU.fjRfBIYyTXwUjUO0ACntyCEaxzjYaSJy30hxLR0C3PL9Bi,"Malene Arpe",NULL,11638
-351,CR_Chuck_Wilson,$2a$10$.sB1EPvScQ0mKvRGKHoG9eNn3AtoK38ej39tdYLeApEEeLaGgsHJC,"Chuck Wilson",11638,NULL
-352,CR_John_Monaghan,$2a$10$CK1Wvd7k9xz8hP9asTkU7u3ZGdFyjU3BwCAS3fBciMmeyrVXGLL/q,"John Monaghan",NULL,11638
-353,CR_Kevin_Crust,$2a$10$bdcdxTrGSENUyuna8xQLt.zZVmmlMltRgcIuyDHCYxiCzbVP9z.eO,"Kevin Crust",NULL,11638
-354,CR_Jan_Stuart,$2a$10$YMjxQ/.dwpwQ0HHTKcnLdOKw/bbWYD6FCBqgDxzGubOutGEW/F6De,"Jan Stuart",NULL,"11638, 11397"
-355,CR_Allison_Benedikt,$2a$10$J9d/7SrNqDUtiWbKYzN/0.rKzQIOFftsJ7slHqpk8JkSasQU6JSp.,"Allison Benedikt",NULL,11638
-356,CR_Kevin_Thomas,$2a$10$jH9wgKxvAO8frrszWnuP6OPYp4hzpIaxJngGZ9zZbH6v3xAV1odZu,"Kevin Thomas","3597, 4233",NULL
-357,CR_Lawrence_Van_Gelder,$2a$10$Fg0ByVYW5wip/YDaEJYZqOzehskrZjkrov8gatSHAdmePg1fhu0SO,"Lawrence Van Gelder",3597,NULL
-358,CR_Leonard_Klady,$2a$10$R4P4x/v.lpVQdzo5t4znX.HjV/CP4S1JiMKTn2ndBp5qJUs0xh2Y2,"Leonard Klady",4233,NULL
-359,CR_Rita_Kempley,$2a$10$p.dQdLrcR6YV7xW7RTLcfuZh1hLN2GNMcZICaMCyrY2URZ0/OuTay,"Rita Kempley",NULL,11397
-360,CR_Jonathan_Perry,$2a$10$JJx.QbNQOVho2VTaOZMjJuMUXSaXphy0jNteYnq9pOSDBn1JxY0Pm,"Jonathan Perry",11397,NULL
-361,CR_Robin_Rauzi,$2a$10$ad8.3OMkH9vACwnN9mexG.iQ4VFYN0d/itYf8Ab3uJXjyHa7fafQq,"Robin Rauzi",NULL,11397
-362,CR_David_Hunter,$2a$10$SwkypULZx4i96au6R..BK.SofBVXx8cMtUwWdWA/tKFC06OoRs.Eq,"David Hunter",NULL,11397
-363,CR_Charles_Savage,$2a$10$QmEu.bWsO.u8rLJuuti3A.Uo9tJzWkygEK3hAkad53tBZY/oMOXzu,"Charles Savage",NULL,11397
-364,CR_Tom_Maurstad,$2a$10$naaWx3.aOX9DQCqZIBp4..HJRYHBUmZBHCp4mVIBOb1Y1.uOCIlqW,"Tom Maurstad",NULL,11397
-365,CR_Robert_K._Elder,$2a$10$jJMdt7RRjqdkBhcJ/kpz9.VC5XbL0vENx67IFPJ2Z.JOefL5Pqyta,"Robert K. Elder",NULL,11397
-366,CR_Jami_Bernard,$2a$10$K9oi.6XnzFRuShOW.ZlMOOc27u0xk2pn8IN0QZq5ZkRB6fwOGF.3S,"Jami Bernard",98,NULL
-367,CR_David_Germain,$2a$10$B5uPCChrigBfQ9UF241n6e59fePxbhJT8hOd4Oxmkf7FFmyVc6TjW,"David Germain",NULL,98
-368,CR_Keith_Phipps,$2a$10$i7Ui/Ra/ZHbSxeHLEAa9Y.CHbJxhFCs6SrHyAQFksDTgON6e2mCy6,"Keith Phipps",98,NULL
-369,CR_Louis_B._Parks,$2a$10$Zy7KefyS1BQGnw5hxG5t8uHhgROfC.GoydEYm2U.q5JNZ.ROL2o1.,"Louis B. Parks",98,NULL
-370,CR_Geoff_Pevere,$2a$10$G08M9uPg82VJxhK/m1l1ROr1U95g796AWxgrvwOhHuBvmAU7mx5/2,"Geoff Pevere",98,NULL
+1,jeran,$2a$10$/TR04CjwqMBRbee56MBa9.ACe2x0NIjfuN6eF4L4Pg8j8nDSI60Ge,"Jeran Urban","11, 129, 238, 274, 429, 433, 521, 599, 621, 824, 920, 963, 1092, 1726, 2670, 3034, 3309, 4133","6522, 7445, 8587, 9323, 10020, 10674, 10910, 11072, 11969, 13995, 28297, 41513, 49013, 109445, 136799, 150689, 224141"
+2,CR_Michael_Sragow,$2a$10$OmcxmdqZAgC8ORHKPDmFr.RHtX2wjRLK9FaZ8.nBKrJL1zOeBxRMS,"Michael Sragow","10020, 109445",NULL
+3,CR_John_Hartl,$2a$10$kKMcn.Xr2w.WpxJky2TPDeimcjW/rroZGwBwMoT52cyGiwsLu/tO.,"John Hartl","10020, 8587, 863",NULL
+4,CR_Dave_Kehr,$2a$10$REX.Md3Zt.IGRNpSPyZ5b.juL3IXbLFiKUWlktJ4gin7Hl7Wct9cK,"Dave Kehr","10020, 28297, 433",621
+5,CR_Cath_Clarke,$2a$10$S3gVCMV/PQmyu924vjbd3uI2HpK/4UXA/KOvXNV5XBQB.eathymb6,"Cath Clarke","10020, 224141",NULL
+6,CR_Variety_Staff,$2a$10$WGFrHNCzYdCQDh5SDPRNj.yp.f1IyT2yz39CpMvt.HYNPOSmOTI8m,"Variety Staff","10020, 28297, 621, 433",NULL
+7,CR_Stephen_Whitty,$2a$10$2Hz2jaaRo5EQm4S2ZD6I6Ooo7QtNHWbGApuLHIteh6nJdRo/7Bz8i,"Stephen Whitty","10020, 1726, 313297, 277834, 273248, 281957, 269149, 38757, 2062, 10193","49013, 297761, 337339, 333484, 41513, 1487, 12429"
+8,CR_Lisa_Schwarzbaum,$2a$10$WLBvSQnWOGVxMXIzMO.XxOkA6e/fMGwuVcJ.o..pM2sZ3WdZdOVGi,"Lisa Schwarzbaum","10020, 920, 49013, 12429, 38757, 863, 808",NULL
+9,CR_Jennie_Punter,$2a$10$gvuW5Y7h/HUr7IKoh4np1u8xZuGXNX0toTAMPZjwLUN3MfCtwl.aK,"Jennie Punter","10020, 38757",41513
+10,CR_Richard_Ouzounian,$2a$10$DeFL4iS1h63ufKX7nzj3y.hk0csTa/zfJFyVzTgva8vqx1iPzfUSS,"Richard Ouzounian",10020,NULL
+11,CR_Gene_Siskel,$2a$10$nFbFbTZ8FROESUpPYZ.oEeYbiZZrhZ9SUHog8lXfopz/uAP70QoXW,"Gene Siskel","10020, 8587",NULL
+12,CR_Janet_Maslin,$2a$10$bR.QGcdUUWoxuYZqKS49M.25G2FhVbELN9g8cYBsD8g0rzGCpAhtu,"Janet Maslin","10020, 863",10674
+13,CR_Jonathan_Rosenbaum,$2a$10$LfMEXNBHO9KJqzL05Uvni.fOUs1URZTiR2ju7LzXBaOQt8EG1.1zy,"Jonathan Rosenbaum","10020, 10674, 8587, 1092","11969, 9482"
+14,CR_Richard_Corliss,$2a$10$FxPTARDcoXJCPPufopRtQe9pG74Oq.mRyJwDbqWFSKz8o03jdqtcS,"Richard Corliss","10020, 920, 1726, 10674, 8587, 12429, 38757, 2062, 10193",NULL
+15,CR_Joe_Leydon,$2a$10$bSfRBQ8SfKRgpTUFmbQCke62dVoT/dTe/Mg14RV/12aGoSx/b.j4q,"Joe Leydon","10020, 36586, 1487, 425",NULL
+16,CR_Richard_Roeper,$2a$10$Yfw3AsI4iVEbV2WweKqCF.TahGQmDbHPRfEzIfsNZk5D9HenTPYZS,"Richard Roeper","10020, 920, 1726, 277834, 273248, 281957, 269149, 2062, 10193, 425","49013, 297761, 337339, 36586, 1487"
+17,CR_Bruce_Westbrook,$2a$10$CjACAKxylF/1D18zJ7MoO.mNwpIr6ZcVXM/bp1QiICvNAupSr0GxS,"Bruce Westbrook","10020, 1487, 808",NULL
+18,CR_Chris_Vognar,$2a$10$yxOHaUUaEHxz/RL9wsoa7OAL7cf1pYc6KN0kAHAi7qw0YHdKPT/Rq,"Chris Vognar","10020, 920, 49013, 1726, 273248, 281957, 863, 10193",NULL
+19,CR_Jay_Boyar,$2a$10$DPAURxqf13bw4d6MmSKHD.NMF7fKr4kghYeeWolpUUylJ5Qr8HsTu,"Jay Boyar","10020, 8587, 36586, 1487, 863, 808, 425",NULL
+20,CR_Glenn_Lovell,$2a$10$VBrkqcBC6knzSuKTAqUiYe2g8ab5CgAlgyDl9M68AE/ojdTeBrmAu,"Glenn Lovell","10020, 425",NULL
+21,CR_Eleanor_Ringel_Gillespie,$2a$10$JkZ2HSj.AM13YlFI8bT86u7qdkiurJzXHV1r5KJJuMiBjlmTNc/gC,"Eleanor Ringel Gillespie",10020,"920, 808"
+22,CR_Charles_Solomon,$2a$10$HKBlq5YvdKmQaSne25iR3.nWPtId9WO3xSSNO97sbtNZZdn25qre.,"Charles Solomon",10020,NULL
+23,CR_Lou_Lumenick,$2a$10$gWmakbI/3aGownTpVo0GOOza5BuBhEfi/K0tjLMAkPH0CvdlXArBe,"Lou Lumenick","10020, 920, 1726, 333484, 269149, 12429, 38757, 2062, 10193, 808","273248, 41513, 36586"
+24,CR_Roger_Ebert,$2a$10$afqmSmHouNTwRleyt0Y1muAdvLN8hCT/YEgYj7UXiDS9NdD70uvt.,"Roger Ebert","10020, 920, 49013, 1726, 10674, 599, 8587, 1092, 3034, 36586, 1487, 12429, 2062, 863, 10193, 808, 425",9482
+25,CR_James_Berardinelli,$2a$10$ApQcIRYPF2rbmpvqE4Cd6.D6UH8MWHib43JvIYjcf4w5QCmSfAP7C,"James Berardinelli","10020, 920, 1726, 313297, 263115, 10674, 335797, 599, 337339, 273248, 281957, 1092, 269149, 1487, 12429, 38757, 2062, 863, 10193, 808, 425","224141, 297761, 333484, 11969, 36586, 9482"
+26,CR_Desson_Thomson,$2a$10$XjtHsdcl59h7JQ.eRya1e.1ewMCGK/qXx6VqGfWxIt332x3eg1ckC,"Desson Thomson","8587, 36586, 2062, 863, 808, 425",10020
+27,CR_Hal_Hinson,$2a$10$RVdhyLrgiaw2buJL3Yu5fe/cemOLcYw4A4LKGGolOpVOFQ01d07GW,"Hal Hinson","10020, 8587",NULL
+28,CR_Owen_Gleiberman,$2a$10$V8Rgg.571pcxmwK.J44v/eHCuP0ug2WfH/xrXn9gsy7n4PECsg0Tq,"Owen Gleiberman","10020, 1726, 10674, 337339, 8587, 36586, 1487, 2062, 10193, 425","295693, 11969, 9482"
+29,CR_Frank_Lovece,$2a$10$Q7Y5FzH5uT4BLc.ZvvN8quaWL7N.Wf.a5MY3SFZSBR9S2SZ/XFCny,"Frank Lovece",1726,13995
+30,CR_Lawrence_Cohn,$2a$10$9hl5Oe39xlo8k5q6nIM7WuR7C9SA4U6BWLL4/Xorrn9f9i8hf.Qni,"Lawrence Cohn",NULL,13995
+31,CR_Peter_Howell,$2a$10$LzeABCjTiK8.YkygQRZww.R0qRWzTHanRdAHIRX0C./weZaK.Al/i,"Peter Howell","920, 1726, 277834, 297761, 273248, 281957, 269149, 38757, 2062, 10193, 808","4133, 49013, , 337339"
+32,CR_David_Edelstein,$2a$10$dCl6aWnjMbg6MQ4TPuLw9.VpMCebrTgE9w4O4GYis5HCMmopa8lpe,"David Edelstein","920, 1726, 263115, 269149, 36586, 1487, 12429, 38757, 2062, 10193","4133, 297761, 273248, 281957"
+33,CR_John_Zebrowski,$2a$10$yf5hM9CCoZXauq3tj3Smwu2XjrVFxPqE/B1d8fufbUmURZQTs7wO6,"John Zebrowski","4133, 808",NULL
+34,CR_Edward_Guthmann,$2a$10$2rtDmkH2yEdit5uTMV7q0OIB7CuKceK5dHilvRxjOKYA8sEuov0UO,"Edward Guthmann",621,4133
+35,CR_Jay_Boyar,$2a$10$R.uqe/l7XWbIy5HHI0NaQuP2onH323viJOs/L58zDrus1UW47u4em,"Jay Boyar","10020, 8587, 36586, 1487, 863, 808, 425",NULL
+36,CR_John_Anderson,$2a$10$UXkzo1rUBhzsEss1RWCFDe45YG2IB9ymQTDmgpVTU9mW73MXxg7TK,"John Anderson","1487, 808",4133
+37,CR_A.O._Scott,$2a$10$HT/060Yvj7xObDRoVCf9veTFgFC68tn4frXkap4NGPxrtfr3RdzfK,"A.O. Scott","1726, 277834, 38757, 2062, 10193","4133, 49013, 297761, 273248"
+38,CR_Mike_Clark,$2a$10$3XrEQA/myS770J/fJxfDQOilNBohpQby1b50ejMdASwgBVCIzd1GC,"Mike Clark","4133, 425",36586
+39,CR_Stephanie_Zacharek,$2a$10$zYoJQ71Jz9.4nShXgTzhEu1S3F36w8eGtg6SNj6yVWWaH/ACFhD2e,"Stephanie Zacharek","4133, 1726, 281957, 1092, 269149, 1487, 12429, 2062","263115, 297761, 333484, 808"
+40,CR_Lou_Lumenick,$2a$10$jpaH8bipioBwOi/IV3cwvORfE9PB4WVWoTgJvTEo172pZdjxM1a9O,"Lou Lumenick","10020, 920, 1726, 333484, 269149, 12429, 38757, 2062, 10193, 808","273248, 41513, 36586"
+41,CR_Eric_Harrison,$2a$10$euOVnPccZBupN2JjNb2Jtumh3RnRiBixU7clW7IQ150hFvAR9NZOS,"Eric Harrison",NULL,"4133, 36586, 425"
+42,CR_Susan_Stark,$2a$10$zcazlwzuVRa.ckFwCLGYuOqHHynfv/VceCufYTW.fetONTFjTF4qu,"Susan Stark","9323, 10674, 1092, 863, 808, 425",4133
+43,CR_Terry_Lawson,$2a$10$6RlQ73DoWNiLX1QHWKVL1e1z69ySMKrNvZ8M7wliCtOt4Vb9lHxsa,"Terry Lawson","1487, 2062, 808, 425","4133, 36586"
+44,CR_Steven_Rosen,$2a$10$HvDF5Lw0jH0B/oOZaJTRY./ZwyKgdyyiq6pSWwQ8QJ1a9sp86Ll4e,"Steven Rosen","4133, 36586, 863, 808, 425",NULL
+45,CR_Roger_Ebert,$2a$10$JkObWYnZqBSKfv7GJO.XF.tBS/JFEv1wrAl3QNm30uVZCkqo1oLRG,"Roger Ebert","10020, 920, 49013, 1726, 10674, 599, 8587, 1092, 3034, 36586, 1487, 12429, 2062, 863, 10193, 808, 425",9482
+46,CR_Jay_Carr,$2a$10$MaMSjQZhx60SwQaFCGyNiuEVewXi9DpGB0wI5zkNIEZDO5UtwaaC2,"Jay Carr","621, 863, 808, 425",4133
+47,CR_Desson_Thomson,$2a$10$yDO2IEjNUeRu/bsRTi1Dz.ZSwl9Ca2Q2x5CvRbC5tEn0wBdiak/IK,"Desson Thomson","8587, 36586, 2062, 863, 808, 425",4133
+48,CR_Steven_Rea,$2a$10$30VyrRDDNmT.Kw7zvFI5JuKuAvxqLPZD2IpW8FBhVrDvXVs9HrinW,"Steven Rea","224141, 281957, 269149, 1487, 2062, 10193","4133, 273248"
+49,CR_Rene_Rodriguez,$2a$10$UdGRiWRHxpzaOYa5jHTH4e66hQ7psQPliUK2uyKWpDVJ4h6YZJRSy,"Rene Rodriguez","1726, 263115, 273248, 281957, 36586, 1487, 12429, 38757, 2062, 863, 10193, 808","4133, 297761, 425"
+50,CR_Kenneth_Turan,$2a$10$LW1Yz850Ec7yqPhY.JK5TOF4KPXoYInL8BnvKfA9Oo7vPHJdIvdPS,"Kenneth Turan","49013, 263115, 281957, 12429, 38757, 2062, 863, 10193, 808","4133, 1726, 10674, 297761, 333484, 425"
+51,CR_Ernest_Hardy,$2a$10$fyT3ZDAtMNz2hViXHojaZOPe4SKTCKvp3z95CCmkTS4gKTuRZ55PK,"Ernest Hardy",4133,NULL
+52,CR_Chris_Vognar,$2a$10$OzjNEFZaAvAHiJrWb7xiZum./QUe0uHw02Nmu90tMhW7z44sPoxyW,"Chris Vognar","10020, 920, 49013, 1726, 273248, 281957, 863, 10193",NULL
+53,CR_Paul_Tatara,$2a$10$2yphLmZFkeidgZU32Q67NeMvftEwfExyW6iNvI8G4Dvwr7z59vYFW,"Paul Tatara","4133, 808",NULL
+54,CR_Christy_Lemire,$2a$10$oGvdAjS3OtO7uPZ.xaMG2OqzMt7UiSYaA.6hvY4iy/eX.r93Kn6rG,"Christy Lemire","4133, 1726, 313297, 277834, 2062, 10193","49013, 297761, 12429, 808"
+55,CR_Michael_Atkinson,$2a$10$dRoi66pWa6azZoHyPFUl7eFKhUWu0N0S05u1GfGT/zOV/KPJg3Uiy,"Michael Atkinson","599, 863","4133, 808"
+56,CR_James_Berardinelli,$2a$10$rmDH5xKZlrkw3CX6xXEVMueo1gW2kqhlhPEexGoaii0Efri15SMVu,"James Berardinelli","10020, 920, 1726, 313297, 263115, 10674, 335797, 599, 337339, 273248, 281957, 1092, 269149, 1487, 12429, 38757, 2062, 863, 10193, 808, 425","224141, 297761, 333484, 11969, 36586, 9482"
+57,CR_Owen_Gleiberman,$2a$10$NJLLdI2G2EEGKmJC6nEeRecWCWN7gVIvtKWR/iwCntVu9n8fAC86u,"Owen Gleiberman","10020, 1726, 10674, 337339, 8587, 36586, 1487, 2062, 10193, 425","295693, 11969, 9482"
+58,CR_Michael_Wilmington,$2a$10$UpcGHC0cAc62oMeqV0XwWuk7THG.fTRCMuzo.W0aDbcxemWhqEHE.,"Michael Wilmington",425,4133
+59,CR_Steve_Murray,$2a$10$HVJjNeWYNErtFwOsR2K.COPGwB0rG4zhzk7aB3TE9FaxO7Sm03a2m,"Steve Murray",4133,NULL
+60,CR_J._Hoberman,$2a$10$XWZGaXviw51cK2QiHKoAEeZc.sn.N/a8GdcldP/E9bVFEdpAinK7G,"J. Hoberman","1092, 1487",4133
+61,CR_Peter_Travers,$2a$10$BoCgTb0cmWaBr1YfCxsF7OMh6mmmmTwHDWO5e1MkqqxnYAWlK7pui,"Peter Travers","4133, 49013, 1726, 263115, 10674, 335797, 337339, 273248, 281957, 269149, 1487, 12429, 38757, 2062, 10193, 808",297761
+62,CR_Dennis_Harvey,$2a$10$goYkfzkMPwgZDKvvJPE98OvUcEnJqxvuMty.beJ9FGYwb9Jq0ODBO,"Dennis Harvey",NULL,4133
+63,CR_Tom_Milne,$2a$10$0XyI/LAYNXHdf7W2Z9rKcuWWK3LMkEQTT5JheRTjPrBZ435FeRsHq,"Tom Milne",28297,NULL
+64,CR_Bosley_Crowther,$2a$10$PEb3BgzB1.mXRU5pOhFgFOP7BpMYjNlRErQTLqnob8z4vaSq.ucpa,"Bosley Crowther","28297, 433, 1092",NULL
+65,CR_Christy_Lemire,$2a$10$l0DSxA2KH2Sv1m0QqzVErudcRII9AKaJQ48sQoU0VSYFfs3S0Noky,"Christy Lemire","4133, 1726, 313297, 277834, 2062, 10193","49013, 297761, 12429, 808"
+66,CR_Roger_Moore,$2a$10$rZkSn4w8SX5yi734lcVXXOihunJL3fg4h5PE4eF0jjQDLjQIvZRNW,"Roger Moore","920, 49013, 1726, 12429, 10193",41513
+67,CR_Anthony_Lane,$2a$10$q9JgkE5mlnRPgf7/958TTO/kNSGVPXnlD3rwK.hlwmb9THixMhERy,"Anthony Lane","109445, 269149","920, 263115, 297761, 273248, 281957, 808"
+68,CR_Mick_LaSalle,$2a$10$hBO.mFyCqTF.HZm61CACL.OVAOCUCTWpZUSt7wzubdeSZIVMwcXhK,"Mick LaSalle","49013, 1726, 337339, 273248, 281957, 269149, 10193, 808, 425","920, 297761, 36586, 9482"
+69,CR_Moira_MacDonald,$2a$10$IDWhd6sG70DTJz/Aqqu8G.DJpqFJRBcoVGPw27a2AExyzHvw1f3SG,"Moira MacDonald","920, 224141, 313297, 10674, 337339, 1092, 12429, 2062, 10193, 425",41513
+70,CR_Michael_Agger,$2a$10$B4nL8rw1FTiUGxphwSpi/.QjtCGH2W5d9rKcSQMKxLI5q6Z05XU1K,"Michael Agger",920,NULL
+71,CR_Lisa_Rose,$2a$10$8sdSmOWzLYdjoh.YFanZT.9G89FTWD1etouQaoaEspnJ4GVGQFMwe,"Lisa Rose",920,NULL
+72,CR_Elizabeth_Weitzman,$2a$10$Cz82eupR0bkmxvTSMl1bXulaQ/mtQNCRPH2cujVk0ob/s52CgXPXa,"Elizabeth Weitzman","920, 224141, 8587",NULL
+73,CR_Amy_Biancolli,$2a$10$4/L.4I6DV6EDe/aWfzr7ROl9VOMa.oYY4CqBmVkjCRAR8mBxF7H0q,"Amy Biancolli","920, 1726",38757
+74,CR_Rick_Groen,$2a$10$NDwEP2v45ThPcqqwo1btt.TKVo4Be8uX0rwXWrRCT8hZMuggeCxZG,"Rick Groen","920, 1487",808
+75,CR_Tom_Long,$2a$10$aCzS8.a2bFVkEkj3wF7C6OI7cQ9FE96YP0XO.hFP.iqdms4aDoGGq,"Tom Long","920, 1726, 281957, 1487, 38757, 2062, 10193","49013, 273248"
+76,CR_Terry_Lawson,$2a$10$eCVFNZB3OofzdHASiREeXewO0kg4m/VQ3GWslBDeMO4Nc/W1QGys6,"Terry Lawson","1487, 2062, 808, 425","4133, 36586"
+77,CR_Lisa_Kennedy,$2a$10$lrM.U/6LrOnO0RdAiSBrLeJ8EAWbK2zE/8Flqb31FEnz8smHZxbB2,"Lisa Kennedy","920, 1726, 12429, 10193",49013
+78,CR_Ty_Burr,$2a$10$7q1nLI80XE.El5N/DBIpB.PhTx.rE5dk/Q2FxXCzZ2n5apncfrmYm,"Ty Burr","920, 224141, 313297, 273248, 281957, 1487, 10193","297761, 8587, 41513"
+79,CR_J._R._Jones,$2a$10$CZtriFnvAr/PyMV2szFneO7W43gyUYJDUemeGyK.MTk3iIKyEfSXq,"J. R. Jones","1726, 281957, 1487","920, 334521, 297761"
+80,CR_Joe_Williams,$2a$10$mFaihOadx/TmhGEJoQg23eyUCCAFOZHR8V1c1WKG8PX3aTvsSOk9y,"Joe Williams","920, 224141, 2062, 10193","109445, 38757"
+81,CR_Stephanie_Zacharek,$2a$10$oe.kTDqUL95RYV.XZ5oXfOOUVeB61CkLunh5fNzBZzJMlSOqAdylS,"Stephanie Zacharek","4133, 1726, 281957, 1092, 269149, 1487, 12429, 2062","263115, 297761, 333484, 808"
+82,CR_Christy_Lemire,$2a$10$Yvv/m8T8xJ0pUEzYhtIvXO3yPa4Usl5DMQtBqWeKACIbnWUPBx3im,"Christy Lemire","4133, 1726, 313297, 277834, 2062, 10193","49013, 297761, 12429, 808"
+83,CR_Steven_Rea,$2a$10$D84OXyMV7i7qCOqYf3Q4gOxprydm7obA9E6NgOs8qid/O0pz.gABG,"Steven Rea","224141, 281957, 269149, 1487, 2062, 10193","4133, 273248"
+84,CR_Claudia_Puig,$2a$10$UzShTuOxykq/vvo.tvclo.BxJcmLOrbzkTM/GzYq6oL6O5rEPRM1K,"Claudia Puig","920, 1726, 12429, 38757, 2062, 10193","334521, 1487"
+85,CR_Jessica_Reaves,$2a$10$MYCUmH7/Jr4YMCxf/03iaOpeg0UBN6LoAmzBm3g4Pg8JvPbV7pRYi,"Jessica Reaves",920,NULL
+86,CR_Stephen_Hunter,$2a$10$IenDjPqyx8EexGwUqhLKlOSzWB7pJb2JxxWy.KNTQL.Os8JVXtFHu,"Stephen Hunter","920, 36586, 808",NULL
+87,CR_Manohla_Dargis,$2a$10$MAFgmOmU4PIN5Z5jysUcLOkkGCmayARHc6csq8zK20pwFs2FZSUr.,"Manohla Dargis","263115, 281957, 1487, 12429, 425","920, 337339"
+88,CR_Kenneth_Turan,$2a$10$rS7scp/t14vh9O4sXSfYSenFGJcr/4K7s1ONZ.GIeoRd7L6B5ZJrq,"Kenneth Turan","49013, 263115, 281957, 12429, 38757, 2062, 863, 10193, 808","4133, 1726, 10674, 297761, 333484, 425"
+89,CR_Bill_Muller,$2a$10$On3kcUx.6jO0dMoL0bnbCOhO8v04ytOo08RBibBIXcG7gxTKB72Km,"Bill Muller","920, 1487, 2062, 425",NULL
+90,CR_Colin_Covert,$2a$10$Fg6YGxPyHkp1IpqnK9jS2uLoFkgPp7.6P5A3amoRAKJgBEr8.YYfG,"Colin Covert","920, 1726, 313297, 277834, 337339, 273248, 281957, 41513, 269149, 1487, 38757, 2062, 10193","49013, 297761, 333484"
+91,CR_Peter_Rainer,$2a$10$6EvLR1153FMx7vEc7zP9p.4A.5jOkiwN.D2/o1ppyG8tFEWPeHmuG,"Peter Rainer","920, 49013, 224141, 277834, 12429, 2062, 863, 10193, 808, 425","1726, 297761, 273248, 9482, 38757"
+92,CR_Bruce_Newman,$2a$10$wOKw2EugSYtNKmD.IGlCVuBEFO4quZXW7KFDghe194ve7KleIXjWG,"Bruce Newman","1487, 2062, 808",920
+93,CR_Gene_Seymour,$2a$10$GLYQjZFlvguEt6vi1HGqtOFnNil8w6hQUptBseLCcBKWX83Rh41IC,"Gene Seymour","920, 425",NULL
+94,CR_Ella_Taylor,$2a$10$vjSI1gIlNKiZhPsehGtFueN8fHhV061Nc7BbqgsfPouMw2ufitdGy,"Ella Taylor",920,NULL
+95,CR_Tasha_Robinson,$2a$10$HxNVUD2vwXqhtkMe5usmWeSWqpP1pKcljqcgrdRaocHZ3WwkDHO.C,"Tasha Robinson","920, 12429, 38757, 2062, 10193",41513
+96,CR_Robert_Wilonsky,$2a$10$Q4c4CKrWRrM6V.yw4MPedecZURaDVS7Pw5y2vd9b0jdPO.Nh.uEyS,"Robert Wilonsky",920,NULL
+97,CR_David_Ansen,$2a$10$qz.B4MOuhbYr3rS/9.r8w.XLam4Oj9RmdXA8hjgrLOe5EONUz8SzK,"David Ansen","920, 1726, 1092, 2062, 863, 808",NULL
+98,CR_Michael_Rechtshaffen,$2a$10$UJgF0LrPuKS3Bi/Kgkog8egB3uHBl91VArYRrtfs1L/qx6.AVZQ76,"Michael Rechtshaffen","920, 313297, 277834, 295693, 269149, 10193",41513
+99,CR_Brian_Lowry,$2a$10$wqueGJU7WRie5ZEKPni0xOEupoyNfaNR2LYVQbYu.fMKQ3JA4EOQO,"Brian Lowry",277834,"920, 297761, 295693, 337339, 333484"
+100,CR_Peter_Travers,$2a$10$SqO7Xyz5lCyioDEiTxVrfu4Yh.wdVezBWI1I6YsLO0Hf1wF7ETF.G,"Peter Travers","4133, 49013, 1726, 263115, 10674, 335797, 337339, 273248, 281957, 269149, 1487, 12429, 38757, 2062, 10193, 808",297761
+101,CR_Leah_Rozen,$2a$10$FfBgeiSoQ9JnggknM5RaFeGTQ3ALWSbLxIz8HJDLERQsmK1yMBOHW,"Leah Rozen",10193,49013
+102,CR_Derek_Adams,$2a$10$LEMuVU73ua5X/EMWWA7o2eYUSL5.5tMdQUeKqvjfcnz4aKtjlw5re,"Derek Adams",10674,"49013, 621"
+103,CR_Rafer_Guzman,$2a$10$ySSSDL7gqUtt8oMSz2/Fw.Mse519LRSBD7gzj4Qt/Ws21g6VKVoAS,"Rafer Guzman","49013, 224141, 277834, 335797, 337339, 333484, 269149, 12429, 38757, 2062, 10193","313297, 297761, 295693"
+104,CR_Liam_Lacey,$2a$10$5cTXHhrAXsIvpTypG2n89O2SG0krctmutDEc4XcKe8.FqcfRgRUKe,"Liam Lacey","1726, 36586, 2062, 10193","49013, 10674, 425"
+105,CR_Logan_Hill,$2a$10$y6V2yhF3JZQyR/1q4HyiPOsowWgOo.ph6N4GMAXJYnhlDb.VjXr9y,"Logan Hill",NULL,49013
+106,CR_Michael_O'Sullivan,$2a$10$8x0Kp69YVhn3zGpWok/4QOjXzCCEVnT8HAdOcQrWd7DSW2MBxEVJy,"Michael O'Sullivan","313297, 263115, 335797","49013, 297761"
+107,CR_Kyle_Smith,$2a$10$3uvN.t8jT0UzSRMNRBXiJe.VVNNaCvkeuWgVNJLtXcD3AZlccPeii,"Kyle Smith","263115, 335797, 281957","49013, 297761, 295693"
+108,CR_Joe_Neumaier,$2a$10$74xYZK.fT7U0Qjf0gHmCduBDjF8NpNUg/3N9ZVxWqV4IS8V.C.n9i,"Joe Neumaier","49013, 1726, 12429, 38757, 10193",41513
+109,CR_William_Goss,$2a$10$ZgMd0fUtjo66B6kQiOUbPO5AhytXaZK/zSkTGFMINK.hjBJqXbUI.,"William Goss",49013,NULL
+110,CR_Joe_Morgenstern,$2a$10$g0ICcokJEWmfsXhKqRusNevNmodE84ccukZmjozpHedockw1A8bam,"Joe Morgenstern","1726, 313297, 277834, 269149, 38757, 2062, 863, 10193, 808","49013, 297761, 337339, 273248, 281957, 36586"
+111,CR_Andrew_O'Hehir,$2a$10$xToHTPra0gqto60tUT1Ra.ABP9TzvDQkqcfBu8XHf/RUeTnnfB48u,"Andrew O'Hehir","49013, 1092, 10193","297761, 281957"
+112,CR_Dana_Stevens,$2a$10$lqaSQWz7i1ytj8lRIJRTf.4i06Hh9dczAHim2hvRAv0r9ve.FPBou,"Dana Stevens","1726, 12429, 2062, 10193",49013
+113,CR_Wesley_Morris,$2a$10$H2DyM.IpXx0/44BefCAr9egZOfFxMSOuZ9q4V/tpEhuMrW6wIMWke,"Wesley Morris","49013, 1726, 12429, 2062",38757
+114,CR_Carrie_Rickey,$2a$10$Z2wYgDDsvYqXIarFvypb4.uX2rEUjY5a4zBg.ZvOsyUIbSDmAnSe2,"Carrie Rickey","1726, 12429, 38757","49013, 425"
+115,CR_Charlie_McCollum,$2a$10$bKe4qI5vYcM9HP25DfDCouW11yq5ATTsaIeeMCgpqbNGkS412xSwS,"Charlie McCollum","863, 10193",49013
+116,CR_Nathan_Rabin,$2a$10$FfzsSVb39//tQY4vuAyZK.k73WzfWyg5X6bhmtmIdeh09Y8TNgn2K,"Nathan Rabin","1726, 36586","49013, 808"
+117,CR_Michael_Phillips,$2a$10$Vz71crUOY5WnUI.tryYAP.klc888aeIzHDRrU5KhpxQI3WcIAM/PO,"Michael Phillips","1726, 277834, 1092, 38757, 2062, 10193","49013, 263115, 297761, 337339, 273248, 281957"
+118,CR_Mary_F._Pols,$2a$10$bLpEzdrh2iKIYeBbRLUSmu7QemBzxYyaSPuyaYIpRwIZZxdqfhGte,"Mary F. Pols",NULL,49013
+119,CR_Bill_Goodykoontz,$2a$10$YgnSuwsBBwv3GknCAY7eQO8QXRxvQNuyVI/rDGUjOJhMvBHfrJg9e,"Bill Goodykoontz","49013, 1726, 277834, 297761, 273248, 281957, 10193",337339
+120,CR_Keith_Uhlich,$2a$10$H0RY8wigvrTkLAEbDfuzB.rZXCehyFDoPIasejq4BUlXFQM7yHf4.,"Keith Uhlich",38757,49013
+121,CR_Nick_Schager,$2a$10$tsldqfCIcI9epIolnYj05.ewyMx2pOigHTd3ChqFBSDJlPP6y/URq,"Nick Schager",863,"49013, 41513"
+122,CR_Glenn_Kenny,$2a$10$wTMitX.Ytc1mJ1rxJgd8/uAnU7FZYFWCvYWu3gCdGRYKNt6/0KI4S,"Glenn Kenny","49013, 313297, 38757","335797, 41513"
+123,CR_Justin_Chang,$2a$10$my2e6/Dd4XUZdD1qJNliqOHewqWqfVz1x8dMxQi8iDFn4mnspV8ye,"Justin Chang","49013, 313297, 277834, 41513, 38757, 2062","295693, 337339, 281957"
+124,CR_Todd_McCarthy,$2a$10$8I86YCvjRiLrYKKKQEoci.VzhDjD1jREqopPkNTm3QrPt/01zTCDG,"Todd McCarthy","49013, 281957, 38757, 863, 10193, 808","10674, 297761, 333484, 9482"
+125,CR_Katie_Walsh,$2a$10$Fl1eP3lsn5jQSSd7GvKoSe4YstQCnLl2jxxbkqqwWhE5ciJiuKu8a,"Katie Walsh","263115, 277834, 297761, 337339, 269149","334521, 333484"
+126,CR_Scott_Marks,$2a$10$kYK2q4NxXA1giM9ffMstA.ikGedNmeFfi4I/BuQTx45Hfmc9a/t/i,"Scott Marks",NULL,"334521, 273248"
+127,CR_Joshua_Rothkopf,$2a$10$6aL4xwVx6UvZy7RM.3ewdOBRHnNV5Teyw2Dc6ILGD.lcNc9MBkSO2,"Joshua Rothkopf","333484, 1092, 10193",334521
+128,CR_David_Fear,$2a$10$pBqK27wQPbpzNui6i8kzYeTzw7c6XSOpx3Plj4fIUeloa4pgTylKG,"David Fear","334521, 313297",295693
+129,CR_Barry_Hertz,$2a$10$4neyHdM4jf1uPQ8yIOhLz.3EjaoR0uBvwOIbjcDYADYVBVFBmnN/6,"Barry Hertz","334521, 263115, 337339",NULL
+130,CR_Adam_Graham,$2a$10$Ts27R5EhzR4gHAToxbVfTelEqw6sLhC6IBIPKY70b9CENVvulW2K.,"Adam Graham","313297, 277834, 337339, 333484, 269149","334521, 297761, 295693"
+131,CR_Chris_Klimek,$2a$10$d6y2OksCLO/WqZs9s0U8/.BHLpWZVejeqwSw3la3fXI19rXsjRfUO,"Chris Klimek","334521, 263115, 297761",337339
+132,CR_Mark_Olsen,$2a$10$QRIibrsCKoOYxNMk3L8xGu3jW2CpSvLsnv52TdH6lDhOoTzGH8SuW,"Mark Olsen",334521,NULL
+133,CR_Liz_Braun,$2a$10$1vYr9Rtk5sCKuWeMWiz44exjyA1I0pcUjSbpGve53R.PcG5QKF2NC,"Liz Braun","334521, 333484",NULL
+134,CR_Linda_Barnard,$2a$10$IkDlQDmn1/9anplZffF3y.xLc8cF26TV/TmBHSvD4b2qtAiJebArS,"Linda Barnard","334521, 313297",NULL
+135,CR_David_Sims,$2a$10$fn/Gl/MWW9eHIExKOBR/p.gFZJohnHV3PjS17oOc.d1r3pjnD0vga,"David Sims","263115, 337339","334521, 273248"
+136,CR_Ann_Hornaday,$2a$10$C5XK5N6AfSwt9pJiiv45/.RFGRJfSoDcXGPOiPzB9lsWKC4pBqoa6,"Ann Hornaday","1487, 38757, 10193, 425","334521, 273248, 281957"
+137,CR_Glenn_Kenny,$2a$10$5GVbBhtzo6rqIn5yh4oeguUCdbCzAvu9aHePjGIrmFKj5XWQL4QGO,"Glenn Kenny","49013, 313297, 38757","335797, 41513"
+138,CR_Tim_Grierson,$2a$10$KLsPINPROW3M8YGR43yiie48Nqu9spWoq7VxB7azBjGeRHPyU16fO,"Tim Grierson",334521,NULL
+139,CR_Calvin_Wilson,$2a$10$qqj0z0SvyRlKBVEwdTPoR.wG6rO0VrGmi0DkUf8oOD.mHrx6J4JHi,"Calvin Wilson","263115, 337339, 273248, 281957, 12429","334521, 297761, 333484"
+140,CR_Rafer_Guzman,$2a$10$yQ6rTD6.J7.MhAPNgfHJhOy/wXqG8FO5fpPD8u1BtrwadvAC8nxqm,"Rafer Guzman","49013, 224141, 277834, 335797, 337339, 333484, 269149, 12429, 38757, 2062, 10193","313297, 297761, 295693"
+141,CR_Chris_Nashawaty,$2a$10$fu1Jtegww9xGvuxFBNQCh.5.0bs93HXkr1mjZfF/hZjCw.V9NRrT6,"Chris Nashawaty","334521, 263115, 297761, 281957, 269149",273248
+142,CR_Barbara_VanDenburgh,$2a$10$f6PX6IK/485KJEB4CR2ae.IHdfOGLkx55uD5YzfmKxH60NRaia1m6,"Barbara VanDenburgh","334521, 269149",NULL
+143,CR_Jake_Coyle,$2a$10$1mJVrzVk0OQMMUukrugB3uww0k80A4.Mu3CSpafOE0cQIsFlrBaYi,"Jake Coyle","313297, 281957, 38757","334521, 297761"
+144,CR_Matt_Zoller_Seitz,$2a$10$JDuXr/G0hXFTcyEZKnx75eXegMjbqTvHU0VZpvwEfduSynOUqQTKK,"Matt Zoller Seitz",269149,"334521, 273248"
+145,CR_Amy_Nicholson,$2a$10$KjWTvxJw11imCmqTiQj05eyDt7dgW9Msy7kFs.r/o2lPII9jAucpi,"Amy Nicholson","263115, 38757, 10193","334521, 297761, 333484"
+146,CR_A.A._Dowd,$2a$10$LJ3tXMKaMpHDz0yAgl76pelyUT8zK7hHxwd9BvaKZ6zCkWmcPZ5I.,"A.A. Dowd","334521, 263115, 281957",NULL
+147,CR_Soren_Anderson,$2a$10$TiUeAS5h53IuydI7LL/sj.0Fj9HwQmsQ5AYmUmFa/vHyFkwxRj1aa,"Soren Anderson","277834, 281957, 269149","334521, 297761, 295693, 273248"
+148,CR_Melissa_Anderson,$2a$10$6882DEOSIqULnyotZe7RtuGOeM5IoNp3Mj.ca4Mc7VXA677KWRHb2,"Melissa Anderson",NULL,334521
+149,CR_Brian_Truitt,$2a$10$r1LHA49IMiOPKYzMxIghQeDSOcqkfjYmGw6cd.ZG1IR98NpkVNqY.,"Brian Truitt","334521, 313297, 277834, 297761, 337339, 273248, 281957, 269149",333484
+150,CR_Walter_V._Addiego,$2a$10$evlcD9smSdyuHiWDBh5/VuvMqG8Qbi9g4N1ssO07ufQjV5MUekc26,"Walter V. Addiego",334521,313297
+151,CR_Richard_Brody,$2a$10$YLp15SNEcPaHSANhbEBhROSt5/Q14fDnsiYmGJdNSPcmMnzEz.rv.,"Richard Brody",NULL,334521
+152,CR_Eric_Kohn,$2a$10$c7JAeqiw5F4q1hOmGISSi.pYzklnmvoYdAX4zUwjNsVxR75vwp/uu,"Eric Kohn","334521, 281957",NULL
+153,CR_Stephen_Dalton,$2a$10$aVF67BcxEnBegvk/jZ.bq.09aAv/Cf0sOHG99XAHYhFu7X.hhZ/Gi,"Stephen Dalton",NULL,334521
+154,CR_Peter_Debruge,$2a$10$8wJvn3EwK7X7pK8ptjovE.OJVmjGfQE.9W9NOQgJj8MOymPhrGtv6,"Peter Debruge","334521, 313297, 277834, 335797, 273248, 269149, 10193",297761
+155,CR_Maricar_Estrella,$2a$10$WR6/6WFIn5JJSP9riVMF3eDVVhqmn3P1FPT9Wp5XgMgDEJAG0vrHy,"Maricar Estrella","109445, 313297, 277834, 269149","335797, 295693"
+156,CR_Scott_Marks,$2a$10$2chBF2/BLloiDZQEGu37eesUA.9cikU7x4JiieNy4O6BF5aRBqjxC,"Scott Marks",NULL,"334521, 273248"
+157,CR_Wesley_Morris,$2a$10$WW9/9rGewrvoM9PL1TUPluMuWuGsVpUhVnH7XtKUaSS3ZCKcamA7e,"Wesley Morris","49013, 1726, 12429, 2062",38757
+158,CR_Joe_Morgenstern,$2a$10$y.eQ7n.6WV4G337wMvXgwesV1wUOuM8lzeAM8QLe5s9x4p6cMJmhy,"Joe Morgenstern","1726, 313297, 277834, 269149, 38757, 2062, 863, 10193, 808","49013, 297761, 337339, 273248, 281957, 36586"
+159,CR_Catherine_Bray,$2a$10$0aXFpNhRkVuEKVKgI/mnA.zfICGf2mwQ0WA0c666XyOe11WnWG3.O,"Catherine Bray",109445,NULL
+160,CR_Adam_Nayman,$2a$10$VFxJfETfZwICJ0TGLSMsb.WYOOAvJdaCyjRNFWokm1Kf.XBjQZx7m,"Adam Nayman",NULL,109445
+161,CR_Bilge_Ebiri,$2a$10$EqkUDpQWgqvGE2Me04MIzeQIY5HC6uGWnoA5lLzoinERPhm.gHaOi,"Bilge Ebiri","109445, 313297, 277834, 297761",NULL
+162,CR_Linda_Barnard,$2a$10$xdI3sQw2TLbcTXD4B1lXieBeCO2.YOWdkG4jawaE1qjfFdNA4i/pu,"Linda Barnard","334521, 313297",NULL
+163,CR_David_Hiltbrand,$2a$10$nbnEB7z7Wj9RjEagUOyMq.mNlVTtyEqSmnZRDyeRhDBm947z5w8HS,"David Hiltbrand",109445,NULL
+164,CR_Ben_Sachs,$2a$10$h9jul4OYR10ARdrbTUtbueNORJPHN9c/jXiVVeO5xbqMRWULya1X2,"Ben Sachs",337339,109445
+165,CR_Kevin_McFarland,$2a$10$uILCdSge2clp/FR0L/etReEFQa6ADZ8kfehnoSmuOQlLH9rI.n3jq,"Kevin McFarland",109445,NULL
+166,CR_Keith_Uhlich,$2a$10$0YkGjORTc8KgpcE3HC3wLuJJ7a6m..zq5NlWo943ymNgJ.HwYUS36,"Keith Uhlich",38757,109445
+167,CR_Bob_Mondello,$2a$10$IT.zx6SAkrip1bnMhvqWB.kQxibiJxhMN2JGiG0eN1TgN48aOD6R2,"Bob Mondello","109445, 281957, 269149, 2062",NULL
+168,CR_Sherilyn_Connelly,$2a$10$7AN4gJTA0VaiLPVbdD9TKuBpNEfRDIWl0OBnHQayDXf7TEcmRGz0q,"Sherilyn Connelly",109445,NULL
+169,CR_Tom_Russo,$2a$10$ExthFyCFrCjpeKs0vq5iZeu63SKlnVB.20vXkpYYBqceKyZxAuoE.,"Tom Russo","109445, 277834, 335797, 337339, 269149",295693
+170,CR_Stephen_Holden,$2a$10$4PGI78XHjGI0gjaHf/ZiBOiF9W3ntX9.8cMAmPt9/iBm2yecsV4Be,"Stephen Holden","109445, 8587",11969
+171,CR_Stephanie_Merry,$2a$10$CCahhe9MRydwFtaA2/KmleTmGHmy8IyJxxcJ/ArcQYQzRrxVW29.i,"Stephanie Merry","109445, 337339",NULL
+172,CR_Peter_Hartlaub,$2a$10$C4NOUuLz1CHvY5f4aivF6uGejbaFInhuFh19Crx1cuEfU3B8R4QSW,"Peter Hartlaub","109445, 277834, 41513, 1487, 12429, 2062","335797, 295693, 333484"
+173,CR_Tony_Hicks,$2a$10$yUkwkJph8ili3yX5HaG6o.fV4SZFs4VkRbglopGbON3j4KNLFHom.,"Tony Hicks","109445, 297761, 273248, 269149",NULL
+174,CR_Tom_Keogh,$2a$10$bd/W096YAZQ4d3L.ndmcx.gHXjQAjHZF3pbP3NtohJKf/WX2/RAoK,"Tom Keogh","1092, 863",109445
+175,CR_Dan_Kois,$2a$10$vqTLvEtcYVNND/yifmIj6eln5BaBt.uDWv7sC8sLM7e8mcccWtuxS,"Dan Kois","277834, 12429, 38757",109445
+176,CR_Michael_Phillips,$2a$10$ebqLZ2VftdNZMrJp7fXEj.okBxqgAk8ZlOHO8oEGCQWuPdptsyZkK,"Michael Phillips","1726, 277834, 1092, 38757, 2062, 10193","49013, 263115, 297761, 337339, 273248, 281957"
+177,CR_Bill_Goodykoontz,$2a$10$.B.q0l.kblEJeKf7LDar7.xFBWYEwXmMibdZR7TNAksG6H3mcOAXy,"Bill Goodykoontz","49013, 1726, 277834, 297761, 273248, 281957, 10193",337339
+178,CR_Laremy_Legel,$2a$10$bY6nc48oiuH2RBnb7APo2.WHPRahImCp..OEuvKU7PdZbPhNOBtSG,"Laremy Legel","109445, 38757, 10193",41513
+179,CR_Jessica_Herndon,$2a$10$wIFfWmZKXYGnCkgV/WCjyuKEM/e.1lLYilxG3.ZoSxA8I.5L.YsAG,"Jessica Herndon",109445,NULL
+180,CR_Betsy_Sharkey,$2a$10$qLrZpdMJ7MC82JM93ApWYed/E9YTXrdLUpWIOqYKxVcK4NbeQWFRG,"Betsy Sharkey",109445,41513
+181,CR_Kyle_Smith,$2a$10$nXv5WxW3Kn76YYlTngYtZ.ZTmeB6GtfRWIyvPdD76ZnLA//Vr7N2S,"Kyle Smith","263115, 335797, 281957","49013, 297761, 295693"
+182,CR_Todd_McCarthy,$2a$10$NaAoraweliDugn30QZ5elOumJsvHk.Zj1sgGcd49XHVHpOaBtkP4S,"Todd McCarthy","49013, 281957, 38757, 863, 10193, 808","10674, 297761, 333484, 9482"
+183,CR_Scott_Foundas,$2a$10$dk5BQyBuF995QK1W8tNg9uN.bA971iucifec4MdyTXsiDbN4lAmMy,"Scott Foundas","109445, 12429, 2062",NULL
+184,CR_Alonso_Duralde,$2a$10$xGz.m7PnIyi0/Z1XvEc.1.gdMFOVVM0nJrj2TBxm2ci854W8jGWci,"Alonso Duralde","109445, 277834, 273248","297761, 295693, 41513"
+185,CR_Sophie_Gilbert,$2a$10$12sRAnscljjszq2Gk6OUn.srnAOkSNaKnMSZIiLoVOh5ojyrtR.UK,"Sophie Gilbert",224141,335797
+186,CR_Mara_Reinstein,$2a$10$5deuVQcJwxCFJ0ZAu3NIVee.Bs6.tCx/f/.6a4/9rf0.EQv8w.dx2,"Mara Reinstein","224141, 277834","263115, 297761, 337339, 333484"
+187,CR_Ben_Sachs,$2a$10$WrJznefgi6IN6EDOpLLf4.VKz2YehLQKs9sy/LdL4Qur5/tmABmxe,"Ben Sachs",337339,224141
+188,CR_Wesley_Morris,$2a$10$P2rL0A2Ypu4mcC/tkRbwf.1GM5.N1k5wIt5rOMDK1VEe.ziUEzWQq,"Wesley Morris","49013, 1726, 12429, 2062",38757
+189,CR_Stephen_Holden,$2a$10$D4B/reBrB2TX4jB2bbkDm.BSTVhetvNm.fb.duysGagjxaaJfMINu,"Stephen Holden","109445, 8587",11969
+190,CR_Preston_Jones,$2a$10$YG4KcrkU3qn7ZmirO88P7uX7AUFO5YCY3Cyv5/Fuodk1W.6EzI3MC,"Preston Jones",224141,NULL
+191,CR_Nancy_Churnin,$2a$10$AtmCea3n8Zj.zsn1xDoMl.9NyYqY9.welH9AOe3RuEOCXK/9rPP6m,"Nancy Churnin",224141,41513
+192,CR_Betsy_Sharkey,$2a$10$ReoxFeP5jPrVOqBEJMhqxeGsvz245s3okHIq5I1pPspHwexd/J7hm,"Betsy Sharkey",224141,41513
+193,CR_Susan_Wloszczyna,$2a$10$5GMezzsD7A47/J7dQQxnT.h/zP0EMYVAlv6lG3SZuzRSjNDVVyhcG,"Susan Wloszczyna","224141, 335797, 863, 808","295693, 9482"
+194,CR_Dana_Stevens,$2a$10$tN5BtzUrodzU0mtZFFjZvO.1pdzQPnbioEKOnVPkJc3ykysepG/T2,"Dana Stevens","1726, 12429, 2062, 10193",224141
+195,CR_Linda_Barnard,$2a$10$etGQq5pYCtalaBKyCh2uouHYaj5pamHtP9EuyD8G/i3JuVm3siTz2,"Linda Barnard","334521, 313297",NULL
+196,CR_Rex_Reed,$2a$10$LkOZfKvqsxAFj4ZRLi6ave97nJ5aI0oHrD6vslEdFZ/ikzzU6Bd6O,"Rex Reed",NULL,"224141, 263115"
+197,CR_Christine_Dolen,$2a$10$QApzfZpXAf1TyhfnpmPnWeCD.hCgMJA4PRrnu2nX2dr2eBOXXrDD.,"Christine Dolen",224141,NULL
+198,CR_Brad_Wheeler,$2a$10$NQA9N5jRmyBZ0/zif75nC.chav6RwGcQZK0FzO9r5V5jdBusIMi.i,"Brad Wheeler",224141,NULL
+199,CR_Matthew_Lickona,$2a$10$V6AqpJK5/uLdC20jqR3Af.hLfoeRjEe3StDBUi6k3CZkCcl/gWPj.,"Matthew Lickona","224141, 263115, 295693, 337339, 281957, 269149","277834, 297761, 333484"
+200,CR_Stephanie_Merry,$2a$10$U63nr9yVGN2g4tqAJOxvDOW1vGohLaVtMo50v5r2KdiUYlIszfYKC,"Stephanie Merry","109445, 337339",NULL
+201,CR_Bill_Goodykoontz,$2a$10$V6nzN2BdGcBOMiU6CrZHPO7MeFL3RKE8aWZZuvfbAOwLbz7KqmuXS,"Bill Goodykoontz","49013, 1726, 277834, 297761, 273248, 281957, 10193",337339
+202,CR_Jesse_Hassenger,$2a$10$s6BSqhB7dQRzOzZs8z3rtOOkqgHV1lyrtnhbjb2wjCohcnWlDed16,"Jesse Hassenger","224141, 313297, 277834, 269149",335797
+203,CR_Lindsey_Bahr,$2a$10$sQ75.voltnlaUSSVcN4fn.kK42XSeKnSbQudHt7vUP7hP7dn0zyca,"Lindsey Bahr","224141, 277834, 333484",NULL
+204,CR_Alan_Scherstuhl,$2a$10$DGS0qfAW0UbIc7OzhCPz3O1e8WXkZHge1LSkKoCtnZjQe2n8wAb7O,"Alan Scherstuhl","263115, 281957",224141
+205,CR_Michael_Phillips,$2a$10$47E7Pc6YPSNZvgfAufaT/e2n6Qwz7Mf/27hUTdrIJmAtnADDoanXO,"Michael Phillips","1726, 277834, 1092, 38757, 2062, 10193","49013, 263115, 297761, 337339, 273248, 281957"
+206,CR_Karen_D'Souza,$2a$10$7F.iQUXPI3idv2ALQr1BfO7HMqyPoGoDWsU8EgVz.R7zEJ2qcX5Ou,"Karen D'Souza",NULL,224141
+207,CR_Chris_Nashawaty,$2a$10$4cypzJ7ZlP6/u21DgJjouOgGy7/cZ04xLwtZCzdKPY0A5skytGUGe,"Chris Nashawaty","334521, 263115, 297761, 281957, 269149",273248
+208,CR_Alonso_Duralde,$2a$10$7YehxQ4bL9Z1LBg50KNZkO1Rutx.RWj8bxMffk1SEovUnb9OvEy8C,"Alonso Duralde","109445, 277834, 273248","297761, 295693, 41513"
+209,CR_Scott_Foundas,$2a$10$/Zq4NC3ZBP.//h4TBNhUSOkfcMT2Op43AQbJFq4HqWDvtZGXcY352,"Scott Foundas","109445, 12429, 2062",NULL
+210,CR_David_Rooney,$2a$10$5QgXj8HLiq55ASlUIGVVXe8WUIebHTTjlIwdNOBJ3HggGRMnXH2n.,"David Rooney",224141,NULL
+211,CR_Tom_Huddleston,$2a$10$EYoJqYCvnsA3NB4mV6L/pOwKCwlI7/b98ZnKR1j4.Z5AT6wFtaYdG,"Tom Huddleston","9323, 263115, 337339, 38757",295693
+212,CR_Laura_Evenson,$2a$10$wXDIqq9K3ySmAKLFb1TaYON2VVovy/X7ZUJ3xQJ7DB2SdGPFN1m76,"Laura Evenson",9323,NULL
+213,CR_Judith_Martin,$2a$10$YEuh/CUJxAm.2kcpwTJOA.MkSL//E46TY82TllkkyXDcZH7/Kmgwm,"Judith Martin",NULL,621
+214,CR_Stanley_Kauffmann,$2a$10$qOyfHF5NSyW3e75Baj7MOOBNoKcVKAxK6ZQLOThIVNVp1bYz.bUCS,"Stanley Kauffmann",NULL,621
+215,CR_Arthur_Knight,$2a$10$aSlplWa042FoauVpInfz1um57xEFHesfX/F/3aq/D5F9WB17gLkKS,"Arthur Knight",621,NULL
+216,CR_John_L._Wasserman,$2a$10$jRqKmQgmN4vWZJI85J9WTehnFilBSkXDSx/ivwjxfs.6/8eHUjNiS,"John L. Wasserman",NULL,621
+217,CR_Michael_Booth,$2a$10$9BdUK5h/SdWki5ID5LGDOORz/BWoU1h5bQKhRSFbCd8Gh/MqODPrC,"Michael Booth","621, 1487, 2062",NULL
+218,CR_Julie_Hinds,$2a$10$v.yT/x8T6gVh8C76UQfYi.2O5n3sr.1aeECoPpeBdVs4Zc95h088O,"Julie Hinds",621,NULL
+219,CR_Vincent_Canby,$2a$10$P7lQN0lCt35Eu5ABpdTARuqeIvKCsWIuhViVFp/mBEWv2kc72Nwci,"Vincent Canby","621, 3034",NULL
+220,CR_Craig_Outhier,$2a$10$HDGbkjthYgzftit2sznkC.KIMdRFzK3szk1Vtfgqt7nKy64lIW9xC,"Craig Outhier",1726,NULL
+221,CR_Laremy_Legel,$2a$10$0U54JJb.aF4jSqLRuhuMGuUz3G.Q8zLRjAJrr/JtazRVvpVc32tjC,"Laremy Legel","109445, 38757, 10193",41513
+222,CR_Tom_Charity,$2a$10$XN5mlS7A2xhgo2TGk3IQPORwSE2j7OWsA3Kh25tFkTsYBCUScNlkS,"Tom Charity","1726, 38757, 10193",36586
+223,CR_Calvin_Wilson,$2a$10$3Cabj7xDe6rHO.itP38r8uODctAo3ExnuyumhK6mjTZsd0olPAw6O,"Calvin Wilson","263115, 337339, 273248, 281957, 12429","334521, 297761, 333484"
+224,CR_Bob_Mondello,$2a$10$8NyC0j8yDPTqoNtr7G1MYuTrjeCl/Cr7opEIdMEDkr3jc8XuUeP86,"Bob Mondello","109445, 281957, 269149, 2062",NULL
+225,CR_Jim_Emerson,$2a$10$UgBp8j/iCPnSsMDju5yOD.xc5O3HSsHZIDsMsBuOZmC02vIij6oJC,"Jim Emerson",1726,NULL
+226,CR_Ann_Hornaday,$2a$10$d46kyW02N3qWfC2YCckPlug/yU1z9upXqqd2zwaATuE4mAOlsK0Sm,"Ann Hornaday","1487, 38757, 10193, 425","334521, 273248, 281957"
+227,CR_Christopher_Orr,$2a$10$xHgohHjBI6kwFy7Cpy/QSei9iyxbmxUfgaQNz1hhLUa2Yo5H94IiC,"Christopher Orr","1726, 277834, 281957, 269149, 10193","297761, 333484"
+228,CR_Mark_Rahner,$2a$10$qFSHp71/zGSzJRX7Pz/4QeirxZUcIG13Inb/f4Y7K3Qt8f8EO3Wh.,"Mark Rahner","1726, 1487",NULL
+229,CR_Scott_Foundas,$2a$10$B1tvFYItNAgPAcwl8UoQquowRiSkXrm7Fj92leU8/YhW/8kP08vJO,"Scott Foundas","109445, 12429, 2062",NULL
+230,CR_Bill_Zwecker,$2a$10$VKqECdm0V87/dpBg7LWDRelGhvaPTN1RfHiEfoNIt0MxhBJj0tAI.,"Bill Zwecker","1726, 313297, 295693",NULL
+231,CR_David_Denby,$2a$10$JhcDOv5p9PgRcxoZbRMB.uIYvRF8P0KqxQU.FWuMYE3jFyTZ5YsUC,"David Denby","2062, 10193",1726
+232,CR_Kirk_Honeycutt,$2a$10$aJ1uEORxrBZ.viYtkaUZKOVt0IuVbhUi4WGt1AofXnRyiZFOAPFli,"Kirk Honeycutt","1726, 1487, 2062, 863, 808, 425",NULL
+233,CR_Todd_McCarthy,$2a$10$zUvzGvTJASF6gl.pBXX9oe2juAN5HfnFCxMA0hF4O9vQrs.5vbDuy,"Todd McCarthy","49013, 281957, 38757, 863, 10193, 808","10674, 297761, 333484, 9482"
+234,CR_David_Jenkins,$2a$10$MDS11QL8sfCOHTz2VB1bb.6d7UUtvmxFdq5JU1RhMxWee2uCVKptK,"David Jenkins","12429, 863","1726, 41513"
+235,CR_Alison_Willmore,$2a$10$WM7/BxI6P8IfnfF0T9LP7e3AV7iKiKSLvdTcW0/X715dV5g.sCXaS,"Alison Willmore","313297, 277834, 273248, 269149","297761, 281957"
+236,CR_Britton_Peele,$2a$10$HmlsKk9orahLSH/ng6UZ1OBAxtsb0xOCzhUV9a3hZIvIGe3dYi.WW,"Britton Peele","313297, 277834, 269149",297761
+237,CR_Lenika_Cruz,$2a$10$94IsWFl2tnSWR6sPdzXrgOLndkJ5g1v3K9FDlsQTbhGhgCEt6Rmia,"Lenika Cruz",313297,NULL
+238,CR_Tirdad_Derakhshani,$2a$10$tOSTClRhoULAe42imWtaxuZB3QIV.xsDsGEW5cfJYrzubMg6I5Eou,"Tirdad Derakhshani","313297, 277834","297761, 333484"
+239,CR_Tomris_Laffly,$2a$10$Kcvgp3ErBcXn/8m5/trrneSQjO/QpX2hlaz4xzVDJXcM7HcOqANhW,"Tomris Laffly",313297,NULL
+240,CR_Ellen_Brait,$2a$10$q1AT.FaSfY3Zh7Y2zjByTearcuEjFA/ec03/QLsesR2eUxjq.ACK6,"Ellen Brait",313297,NULL
+241,CR_Scott_Tobias,$2a$10$JZdV9rhEKBvZvHIUJujgnOHVOtJwiDPDMmIFzQx0e9uTqslNWHdkG,"Scott Tobias","313297, 273248",NULL
+242,CR_Sara_Stewart,$2a$10$hZumr63sGyIWN6UbteOztO0Rx9HSR5PGmZbD4eSyJKVh1o7Toawgm,"Sara Stewart","313297, 277834",337339
+243,CR_Steve_Tilley,$2a$10$cfvHChE/JZrmhlUhTmK5FOlWoQkmTJom93wK4AtSw8/0qwXeAY1gG,"Steve Tilley",313297,NULL
+244,CR_Oliver_Jones,$2a$10$8KOawfsFXvH6.pJkxPUsxebKqW92mLdRuvEVrgNF0IEuqaX232I/q,"Oliver Jones","313297, 337339",NULL
+245,CR_Kerry_Lengel,$2a$10$13QtKiy0kiay0XFAklHdXuhlRsKD2kQHq.lOVv5xX/sg1kSzBmVyq,"Kerry Lengel","313297, 38757",NULL
+246,CR_Leah_Greenblatt,$2a$10$OxLazEtj2o6ROzlDXCEXJ.4GyKRxuKhWkh2AVWbgbXBuuT/5qTn/y,"Leah Greenblatt","313297, 337339, 333484",NULL
+247,CR_Raakhee_Mirchandani,$2a$10$5l3CISp1xCsySsnW7HnGbOl.TdchgM1nIaX.PMBrQ9YcVF4k2NAL2,"Raakhee Mirchandani",313297,NULL
+248,CR_Sam_Adams,$2a$10$gn/YvYYrNFA/PBjXOzaB/uzDyVX67dtCFTlFPs6Pb1MpRkCGijpRK,"Sam Adams",313297,337339
+249,CR_David_Ehrlich,$2a$10$vMxTgaeMSBua7Gf7zG7pV.hYnkeFhsLJnPSZkoiUmWEj3X0sWoMn6,"David Ehrlich","313297, 263115, 333484","297761, 295693, 337339"
+250,CR_Leah_Pickett,$2a$10$VriKLvPlagtrVObXLBWMneoNoI4t0Eo9kCqnFflCCbqarAIJpGhj2,"Leah Pickett","313297, 277834",NULL
+251,CR_Sandy_Cohen,$2a$10$7D86i28DORzfGBXc7.EM9uogQ1PFk.ZfOuYHE.HrTQ8DaA8w3PMYW,"Sandy Cohen","263115, 337339",NULL
+252,CR_Jonathan_L._Fischer,$2a$10$OPb4Dky9pEtZxU4QrknNn.KgBByXNX8CMoOoAfb4G5z7Md1rA3qWa,"Jonathan L. Fischer",263115,NULL
+253,CR_Will_Leitch,$2a$10$JsW.2FP63tkyKv1uV7bQrucv9xfJXf5RaMbcUfUzCH8n.K.aEWfmS,"Will Leitch","337339, 273248","263115, 297761, 333484"
+254,CR_Cary_Darling,$2a$10$oIstelBMm6rHl2KQGRTPu.alMHp45L3EHWvjsPHqhx6zhdelXR9VW,"Cary Darling","263115, 337339, 281957","297761, 273248"
+255,CR_Brian_Tallerico,$2a$10$uIKxAOvsn.6vbXwwM0Ie1eSdlx374L0wlidypyeyh1JFWWAKudgeG,"Brian Tallerico","263115, 281957","337339, 333484"
+256,CR_Mark_Daniell,$2a$10$w4uZoAoqbZ5lo/YTu3yIFenQX9f9t7ZQRHKvTR8rT1.y4X00vDuaG,"Mark Daniell",263115,NULL
+257,CR_Sheri_Linden,$2a$10$rgtPJXPJQD5vutjpotTNDeNNgz/VCg.yEDD59KJXQhxooBRvjev4.,"Sheri Linden",263115,NULL
+258,CR_Andrew_Lapin,$2a$10$s4MaccMOkP5O7XAYYWGM7eKemt0UtBg09DuUbyCFXUr4hgzwNGfPe,"Andrew Lapin","277834, 269149",NULL
+259,CR_Dave_Calhoun,$2a$10$fDgmyUjxSMxssje4SZRZxezY/h3qrNZ180oLmEsFlYkYA/VPpgMd.,"Dave Calhoun","277834, 297761, 281957, 269149",NULL
+260,CR_Andrew_Parker,$2a$10$jIZ9Zm/WZJxnAuwyE5umEeybMq/NX20SnZQJD02Oq4fd9LDL1smsO,"Andrew Parker",277834,NULL
+261,CR_Jody_Mitori,$2a$10$iVM2kqXYZhT3chOts1qTZONgDy2FpEyZpX2j/QTez83aSiLVYyGzm,"Jody Mitori","277834, 295693","335797, 41513"
+262,CR_Bruce_Kirkland,$2a$10$V/2kO0xlTxOGG3xtb97WJ.q.esNuWj897AviZ7w/VXr31MccgyNFe,"Bruce Kirkland","277834, 297761, 273248, 281957, 269149",NULL
+263,CR_Caitlin_Moore,$2a$10$KNeWxjNyT66T29bl00yMvetM1eNKKHM56MzyAfD0dhbWz8C6ffbN6,"Caitlin Moore",277834,NULL
+264,CR_Devan_Coggan,$2a$10$8Qrc3K7USUKQwrLqCKpOTuP59gzde1966jEHBM1H3QeiDUUEjCLIW,"Devan Coggan","277834, 335797",NULL
+265,CR_Frances_Dickinson,$2a$10$4t68HxISFgTjjEOv8OdiCury3k5/ljs.p1QM4oqkeMZ0yIVvoL3.y,"Frances Dickinson",433,NULL
+266,CR_Jenn_Shreve,$2a$10$2kxJqQbz/DeHtF.I2xIgrepbis9CEDTR9OhTV4hti2DiAVenlhm5a,"Jenn Shreve",10674,NULL
+267,CR_Peter_Stack,$2a$10$OzdEZS9JkoajLgOeROTjLubVhzoAXXL6Qq8KrL9Sjgv6pZSpxRz.i,"Peter Stack","10674, 8587, 863",NULL
+268,CR_Andrea_Gronvall,$2a$10$w5XOqtu31RWekBNYp.ivhOeP7x/bzJr.idI/ygdltyexN5jwsxLUW,"Andrea Gronvall","335797, 333484, 38757, 2062",12429
+269,CR_Kate_Taylor,$2a$10$SFAMwpA0qeLIQBjMSXBJ1.ICGBz3nHNJfmNouxl5sE1POecsLD9/W,"Kate Taylor","335797, 273248, 281957",269149
+270,CR_Jocelyn_Noveck,$2a$10$E1iMdW5UAg7nFWoW5cSpVenWig2.9RPLEdsrcR3vlJZTLPnCTkx22,"Jocelyn Noveck",335797,NULL
+271,CR_Sarah_Miller,$2a$10$isTRPKOzDUqF7Xy6WlmsKOdI8uDQesdUTfLdpPzhYfVHEE/J/szfe,"Sarah Miller",335797,NULL
+272,CR_Edward_Douglas,$2a$10$uaWpqvck77C7HPf5YUbYXuWNaYBKvEFqqD7kaDiZHKuyZSBNEHJh2,"Edward Douglas",335797,NULL
+273,CR_Steve_Pond,$2a$10$JB1Y36A3WrHkEUR0GDOZcO4uXl2FlQS9i3FP/si3Y3uSFcRzDPvcC,"Steve Pond",335797,NULL
+274,CR_Leslie_Felperin,$2a$10$2KQIM23kdtZxs8wpIkVfkew5PNafRu5kZZq8TRUO7VhB3Mky1Ec9m,"Leslie Felperin",335797,NULL
+275,CR_John_Semley,$2a$10$6EdpSj9GTJCCO3Yjjs0NZ.sXDKkywmO0ym.ps52I5obpZCaiEJSyS,"John Semley",295693,297761
+276,CR_Jacob_Brogan,$2a$10$niqflE7b3eZprOxxPZ1SduRXyhPnABT3mLkjOIPkwUUpxRXZr9M6a,"Jacob Brogan",NULL,297761
+277,CR_Ignatiy_Vishnevetsky,$2a$10$NZy7v4/czqtoAa/ZfVNguOfJVyev6Gr9bLf.eDDMvLQObO8QMtcby,"Ignatiy Vishnevetsky",273248,"297761, 337339, 333484"
+278,CR_Edward_Douglas,$2a$10$A6f5PZiGCAJ5rFhAFFS5Pebb6EpgS3kpQKznmtPSZQiHbNVDwV/NW,"Edward Douglas",NULL,297761
+279,CR_Mark_Kennedy,$2a$10$/UXUbzEYPSvlqNkpqdb4F.L/LkUs377IyOZ.GBPtCtVcladG/AjmG,"Mark Kennedy",295693,NULL
+280,CR_Neil_Genzlinger,$2a$10$VvNeLA4/bg68OVTNXQIK.OrpeE.MhvW5dN4xHYWGpXx6DY.AYiHZ.,"Neil Genzlinger","295693, 41513, 269149",NULL
+281,CR_Kathryn_Laskaris,$2a$10$mBnXcMoSyZ81OsuDyt8zkedByMx.v.KVuns4YTFSGrQ8YnkOmLAQ6,"Kathryn Laskaris",295693,NULL
+282,CR_Darren_Franich,$2a$10$.V74B/VObhFX3bsGJjvLK.KRsQORFhxathTM9.JFwuC3E7YEBnjHK,"Darren Franich",NULL,295693
+283,CR_Pat_Padua,$2a$10$PE.JQz6ARzeTLCxcfdkoXuqO99KjLLZ8Vh7IZc.7.ZhR3ofrtdHSq,"Pat Padua",295693,NULL
+284,CR_Dawn_Burkes,$2a$10$CC8FK9QB590ZHQSYbhwIeeYmvriy1HMMAP.Jh4XYMIWhFIrSSM2Yy,"Dawn Burkes",295693,NULL
+285,CR_Katie_Rife,$2a$10$3Bxtqu9m4xvyyUPge9Pzv.ubU8fx43jJFfj9g87C9oQX0eeqzY2Wa,"Katie Rife",NULL,295693
+286,CR_Allen_Salkin,$2a$10$D9RcPPOLD20Xkd9RKBdVuezU/bt2DSgXdRLRrV6WZuH0tZ5PkLgHy,"Allen Salkin",295693,NULL
+287,CR_Pete_Vonder_Haar,$2a$10$wbVY413vmUVoQV/VsvmGb.Ok5IGVXf38b1OACYpuzuRRt7QA4EJES,"Pete Vonder Haar",NULL,295693
+288,CR_Jonathan_F._Richards,$2a$10$5MhKvTie3U67ECG8vpi.meA.xtZf3rqCq.VcKU/GLSuLvUFXIcINm,"Jonathan F. Richards",7445,NULL
+289,CR_Don_Druker,$2a$10$BYT81eGHwYYQLFcyraopb.G6flpKUAgewSiE8tjlCYL/3lBCR2LJu,"Don Druker","599, 3034",NULL
+290,CR_William_Brogdon,$2a$10$ObRBFU5P9ymd9mu63WWoL..SpH/hE.AA/q.cmrawjyDdIBM.5y1Fe,"William Brogdon",599,NULL
+291,CR_Geoff_Andrew,$2a$10$lD8X/yWve6cMnmnu.44SDuw0UcbBHupMV1Asyf85lnFD5trgNb89i,"Geoff Andrew","599, 3034, 863, 425",9482
+292,CR_Andrew_Sarris,$2a$10$HxmhtPNHObZ6ccoUL9iJgef03KYgDtyt6Ph49eoWL8dx4tVi.FMnW,"Andrew Sarris","599, 1092, 2062, 808",NULL
+293,CR_Thomas_M._Pryor,$2a$10$fdTAvfm8Jr8Gqnb71RHZG.kU53M0RW/tHKHxDwjMAXF9GbC3r7Fl6,"Thomas M. Pryor",599,NULL
+294,CR_Jim_Slotek,$2a$10$zxWW.Gtd71rPr8/KnLkzCuFSPWzARw302sd6YpjJ4lOHSSU7SdqBW,"Jim Slotek",337339,NULL
+295,CR_Kristen_Yoonsoo_Kim,$2a$10$5rlPNitn8IyNs6l2dxTWbuCnSt8h5khNNuQQ6/h1ci8xz/77BqgWa,"Kristen Yoonsoo Kim",337339,NULL
+296,CR_Emily_Yoshida,$2a$10$0EcvjizqkDWg26Lughict.TWDlEQ7.gH9c9n9rRHA9BkBewATfcVq,"Emily Yoshida",NULL,337339
+297,CR_Amy_Rowe,$2a$10$ElnCLweMkQuhFpfkDUSplex4p/UBe6VWuzDFoaHyZd.qNjZsxL2vK,"Amy Rowe",NULL,337339
+298,CR_John_DeFore,$2a$10$RnBDi.LrJ1lmXfIIW5/Gp.zE5AZModIWArtMKDkGDFqCsu66UD9nS,"John DeFore",337339,NULL
+299,CR_Dan_Callahan,$2a$10$S1DTo1e0VAFjfpJqUA/8CuO/yqMaAI3ZnFfF3J/mXjBsegtXOwC56,"Dan Callahan",NULL,337339
+300,CR_Tal_Rosenberg,$2a$10$sY2aQ5HjsdbhzcDF6e8lfu8ED6Y2QzhaQIo69YF3atPVqgSmg8ZPW,"Tal Rosenberg",NULL,273248
+301,CR_Joe_Dziemianowicz,$2a$10$hNDNh9s2eolzi0GWa3y2pe14lmvAgwYHwBg5RivvtjNGZ74Zz/paO,"Joe Dziemianowicz",273248,NULL
+302,CR_John_Wenzel,$2a$10$WCRWnlSn49IQJoTx2/TUvew5MFZWFhIi4Gz/bHOT4YHJVOmpV0evq,"John Wenzel",273248,NULL
+303,CR_John_Wenzel,$2a$10$sBTCW00BJynFimDfI6LpXO/9p6W6rE4m1VgIXnPTVnT7djZIfzn1e,"John Wenzel",NULL,333484
+304,CR_Aisha_Harris,$2a$10$LQ/O610bizozxAQEP.b1Y.QdHXmQGpbl0QwTrfhK.zTHxbS89HCiy,"Aisha Harris",333484,NULL
+305,CR_Robert_Abele,$2a$10$AHYhtrOf0OUMXrBiplfOLONIiRK.sAX141tRAI9ktuk5sVSgKFZQa,"Robert Abele",269149,333484
+306,CR_Desmond_Ryan,$2a$10$jK3tavUk6700oloYbc7lkeY6YgP8EccvebEkpV/H3zTDwHE992BuK,"Desmond Ryan","8587, 808",NULL
+307,CR_Terrence_Rafferty,$2a$10$RyU8QWVRIS1p/prE6f3apuCzQoHv0qqCJxQEA3xfpJAfFCUdIXM9e,"Terrence Rafferty",NULL,8587
+308,CR_Brian_Case,$2a$10$6NGeuQrshYWuFO.OWj54huIvpXyX2g1p40LSe/rRGL/8BeaGA1ENu,"Brian Case",8587,NULL
+309,CR_Glenn_Abel,$2a$10$OjSJppxFN2jK7PQGWW6U7uoPvICcnvLp7V7SxvYpkQiUbuokWSVwa,"Glenn Abel",8587,NULL
+310,CR_Philip_Wuntch,$2a$10$RMTDCByQ11cny3eJYtQL7up0gkwyO8U8K9zC1/zHOrvM3XU5n0ghq,"Philip Wuntch","8587, 425",NULL
+311,CR_Jeremy_Gerard,$2a$10$RGrcwO3A3SSHf8YnefePfu8N.aHeKgDJagq/kwXRp4mRDVscRTkty,"Jeremy Gerard",8587,NULL
+312,CR_Randy_Myers,$2a$10$n1PMGtXBA/wqQtfr5Kip.u9sguLzSlGKMhg71L7upEHWThLtFL6Om,"Randy Myers",281957,NULL
+313,CR_Robert_Abele,$2a$10$qcvTcD1IOgTYI2JtZSb1KOTlF/z4MVhW9ProGBFdhrw6bywjrk5ii,"Robert Abele",269149,NULL
+314,CR_Sean_O'Connell,$2a$10$1qoaHdncJMy9JLSFNIXlOec2hqC9JDeID6.5kkqsautywcb1Ixi52,"Sean O'Connell",NULL,41513
+315,CR_Nell_Minow,$2a$10$qVTrOwCF/omtBJcD54ril.1TtYqgzj152QZZvK8zyUqgokN..1ZdW,"Nell Minow",NULL,41513
+316,CR_Bruce_Demara,$2a$10$wGmyPcrny8RTRYa4EURaEucll8s/RHCY7FEEKYeJhEQjL9kZxoQiK,"Bruce Demara",41513,NULL
+317,CR_Scott_Bowles,$2a$10$Ojgu.nJV3S1Do.p66Y9G5e6gRjUpNfo4wHfetWqKbfna/oOgkaTha,"Scott Bowles",NULL,41513
+318,CR_Keith_Staskiewicz,$2a$10$amcXJo7XA9.ubfrA8450B.4ep6te3G5r8W1e5aPvyS.dYQJqwoUDG,"Keith Staskiewicz",NULL,41513
+319,CR_Mark_Feeney,$2a$10$whtJQE7hUD/cAipI9hHdNeKBwTr3NI4vhKmACXORDTze7Fc1OvN.i,"Mark Feeney",1092,NULL
+320,CR_Jeff_Millar,$2a$10$qzN6NumeqPum1FPeZXtHBOJCBG6lICRquMFbOz5sE76b/Fyb33BKW,"Jeff Millar","1092, 863",NULL
+321,CR_Robert_Horton,$2a$10$d7QtYLkjo6WsJV5mr60J2OJaGgdAW9vpMM9t4S2AwH55wZywtKnFK,"Robert Horton","1092, 863",NULL
+322,CR_Laura_Miller,$2a$10$xbdbTamBHvpmNz7uMFlAJu/chxj6uTdDrvRiGPxJMFEnp5rWrZO5W,"Laura Miller",1092,36586
+323,CR_Emanuel_Levy,$2a$10$DHfEulxgQ1bp414Bfg.XfeCigNCWuWrOzVbM.l1aRwHsbrfM7BbS.,"Emanuel Levy",11969,NULL
+324,CR_Richard_Harrington,$2a$10$TNlHp8W8.l/NCDe3UuyUgOEIf1G7eF4Qbn3QhYWDnYpdpvdU2bVou,"Richard Harrington",1487,11969
+325,CR_John_H._Dorr,$2a$10$0D8re/yMjeqAQDYlF3g1nu9ziWm2jxyO222GV169v7edqeunoDBRS,"John H. Dorr",NULL,3034
+326,CR_Pauline_Kael,$2a$10$vVg1StPxiBoIPIaYHstDxOJhfdE2io3qfPL8J5cBaOm.I.hPlw.bS,"Pauline Kael",3034,NULL
+327,CR_Gary_Goldstein,$2a$10$UdMF4nmm.Ng8qoKr3OSPZe7RVf7ykLqji6avOJJ9cYvGaRlvk3WQK,"Gary Goldstein",269149,NULL
+328,CR_Sarah_Bryan_Miller,$2a$10$UKz3XmLKAv0HOUuqLlVBcOLH9Yo6JD7UF3fUEF/saIGSDKUo1DC2q,"Sarah Bryan Miller",269149,NULL
+329,CR_Jen_Chaney,$2a$10$7JnJassFnx1cZJC.DUEba.dgCtvpjzXl/kXsz3RFje3LX5UWResG2,"Jen Chaney",269149,NULL
+330,CR_Katherine_Pushkar,$2a$10$FELtw6wDsWavZcQ3gXWw3OMsPAUgfv4tEFp1teBQjPXEjk7OYxhwK,"Katherine Pushkar",269149,NULL
+331,CR_Michelle_Orange,$2a$10$GbX9CsBnc09/du0p8b756eUFQQfpD1HxK.k3vG.rxy5iPjss/GMye,"Michelle Orange",269149,NULL
+332,CR_Jack_Mathews,$2a$10$tqnq4JzmV19XVPmDMqG0mOUM4Yotlq7KhUaQgXVibd3FzUN1vrY96,"Jack Mathews","1487, 2062",36586
+333,CR_Ted_Shen,$2a$10$RdK1LzVh87Od04iZEd72hezLdiKRLquFQ5NOLD/niXL3eM5P4zsBa,"Ted Shen",NULL,36586
+334,CR_David_Germain,$2a$10$h3913.G2mrLWdJUQspPGG.7xOIeCvP0B1tgUeRdrqEur7g2VKMVYG,"David Germain",NULL,"36586, 1487"
+335,CR_Mark_Holcomb,$2a$10$0S1Kz6OZodMc2f1F1T9BMeg4wMIaG4sb.FY1qI7MuzYg/miMyUMUu,"Mark Holcomb",NULL,36586
+336,CR_Paul_Clinton_(CNN.com),$2a$10$EYMHOWOpEHICsih1TV2MxeAqrlD2FcaL.pte07Y8n/1W.Z2.1KjSC,"Paul Clinton (CNN.com)","36586, 863, 425",NULL
+337,CR_Geoff_Pevere,$2a$10$rn4NAKgVOe8dBsRxdbJrxOiVHOckLRdFiUlZFmaAaC/7zZ.UGgEyS,"Geoff Pevere","36586, 1487",NULL
+338,CR_Melanie_McFarland,$2a$10$d/Qf/raK9ohZavCuNGod1.QV11KbRR/XZ83FsjZOnA4mCj/v15mJq,"Melanie McFarland",NULL,36586
+339,CR_Chris_Fujiwara,$2a$10$7A4UGVNGYh/10nFumwCPpOTWmS0eqawjx6rp.eC6Yp8MjhOHeUCmy,"Chris Fujiwara",NULL,36586
+340,CR_Elvis_Mitchell,$2a$10$OeZKhtfGFmAzamyF5BYwCOwMMnwng9glyhi78MihR2zpH/12n2cQu,"Elvis Mitchell","36586, 1487, 808",425
+341,CR_Kevin_Thomas,$2a$10$EmLw3m9mVwnvOL0y7a870eiGEgLhT803dTVo.OhbKb/aJ0aAnHSzu,"Kevin Thomas",36586,NULL
+342,CR_Tom_Maurstad,$2a$10$glaOYMrA.FWfPLjvTktlLuMmiALpWnRVivqt9ywqm/pj3KS6qky76,"Tom Maurstad",NULL,36586
+343,CR_Robert_K._Elder,$2a$10$i9j9It6qx8eMVuf2H2g.2eRrp1lI7XuJ5Zdhxb/HvToDtnOUYYPeW,"Robert K. Elder",NULL,36586
+344,CR_David_Hunter,$2a$10$WhgBHtQwpWjA1xzgC6F/iOl60Y0yAIs/cNVGiHHb4sZ89erziYrE6,"David Hunter",NULL,36586
+345,CR_Bruce_Diones,$2a$10$vL9w.8iDhl2uz627kpzPyeRb1vwxFa1I1ofJsCI6bTV.Nd7FgGAbS,"Bruce Diones","1487, 38757",NULL
+346,CR_Chris_Garcia,$2a$10$3LwFTo7w9UJNg75JTv1mu.ex108lqnqP.mkoM8u5gCayf/fNSJoUi,"Chris Garcia",1487,NULL
+347,CR_Jonathan_Foreman,$2a$10$FwB0nlWjVlMlM9S3pOWjCOX.ft4.9qdwNbVENAAgwRn/QHVL67yo2,"Jonathan Foreman","1487, 863",425
+348,CR_Robert_Denerstein,$2a$10$AQTkQmIicYnRO4oh/iUdAuJJee0qYHU6jvLfS3i8N6x0trgYgS4/K,"Robert Denerstein","1487, 863, 425",NULL
+349,CR_Gary_Dowell,$2a$10$ViayVgCT2nO.8gE/mGZdyevY00DTsvbjYwyOcmJAqJFU1k8pZWgo6,"Gary Dowell",1487,NULL
+350,CR_Mark_Caro,$2a$10$FS11xFtGfYGF16WfuawZh.pBTQG5aMIkQecFN/r5BlOFu/ROqPQZO,"Mark Caro",863,"1487, 808"
+351,CR_John_Patterson,$2a$10$OxKmopHgImOwK7GHMNuIyO4JQhxzAdETuowDbbXAfgzw64CPNT9g6,"John Patterson",1487,NULL
+352,CR_Caryn_James,$2a$10$Dw29aw6ixiFcFX8A8CxoTuMq9QnlhU8cH7EWkuFxIJ/DrDcvLnei.,"Caryn James",NULL,9482
+353,CR_Rita_Kempley,$2a$10$jPcuNvhhhuiDBhWGJDMNm.c5AVa7D8H6o5ld2bXZR7N4YfZaIVjd6,"Rita Kempley",NULL,9482
+354,CR_Ruth_Hessey,$2a$10$oiT3uyi88rDjOUEs2klW7uLg0H1G1FtKgQtOxBPJoqO9oeknxJN7C,"Ruth Hessey",12429,NULL
+355,CR_Ben_Lyons,$2a$10$Y2fyykf118lWwoyR9ln.Kurz0OHEodvsOTst0W5XGDAYniWXBV5/S,"Ben Lyons",12429,NULL
+356,CR_Ben_Mankiewicz,$2a$10$xE.qZDiqEuJsjOKOtCWquOlV3rkV5YNK.7HTvJDWzTXnVQZeCxCam,"Ben Mankiewicz",NULL,12429
+357,CR_Alan_Niester,$2a$10$Zwr2.sLTrU0WQZEZJBbGRedicw4tjjVMXyHOUFsyRuAhQ0GY15xvW,"Alan Niester",12429,NULL
+358,CR_Greg_Quill,$2a$10$sQCkjnis3/Q4qeEFFUqXfOwetYZmJOKdOAVxjJJiBmZ.WjNQui.6u,"Greg Quill",12429,NULL
+359,CR_Joanne_Kaufman,$2a$10$yzSNVrCFsdneSCAodKScr.zLQJOKIDeRKwBt.D5Ae7OiOLwRYwCTa,"Joanne Kaufman",12429,NULL
+360,CR_Ronnie_Scheib,$2a$10$KRJhREjvaBDMRbObXBy3m.A/RMEDlh110.RUFy4ysS1oUQGQK8EeK,"Ronnie Scheib",12429,NULL
+361,CR_Deborah_Young,$2a$10$pjbOh5l.VLm/ZFz/zERpCeqf8mvHS0Ub47278Z4IFJc/Mjv2F6IR.,"Deborah Young",12429,NULL
+362,CR_Aaron_Hillis,$2a$10$vfnAC1ofPRRFHVzWusaXRuW/9.oKcw9MfBNIuyUjssBO9atrsSLOm,"Aaron Hillis",12429,NULL
+363,CR_Jeannette_Catsoulis,$2a$10$zKTngapLp599TtT7s0.S8.m.b5XF6Kf2Ox/N461DeoxktnafWVQQ.,"Jeannette Catsoulis",11621,NULL
+364,CR_Claire_Martin,$2a$10$/5sYyjeBMhgVhEn0cJNPFe68JBUQDdVcfOf53q1S7lApRH/pZ1mFW,"Claire Martin",38757,NULL
+365,CR_Ted_Fry,$2a$10$.zbZG7QLNNOzljv5Hxc6N.3Im087idqkLdDekzBQJana/XREx8K0W,"Ted Fry",38757,NULL
+366,CR_Stephen_Becker,$2a$10$3vNKwNiLv9HQAZ4R1vbK8.OYssnyvH1qDz2hywG4mexRHayhdA9HW,"Stephen Becker",2062,NULL
+367,CR_Miriam_Di_Nunzio,$2a$10$SJyCqmSBGLfudvKIe6l8uet3T9scqe5EHvgIR5VgU32xGufo.Orke,"Miriam Di Nunzio",2062,NULL
+368,CR_Wally_Hammond,$2a$10$N7l7S2pcbGcANQlqARBeouUxd60wfIApIV/uENGQe5WpMd.egZ.dW,"Wally Hammond",2062,NULL
+369,CR_F.X._Feeney,$2a$10$Aqzn3YX39Sge.tP8wleFNOdRi1ZvP6ShfIVsoZurR52.IjohoSDgW,"F.X. Feeney",863,NULL
+370,CR_Jami_Bernard,$2a$10$LDA3uiKAgzYMC12XWFpPC.hDMmq7qgAxp.VyFMm9PTecUm5oHqNsS,"Jami Bernard","863, 808",NULL
+371,CR_Malcolm_Ritter,$2a$10$ihZJuTa8gnD2rgw0noF8oOnDwQI8tPBWPNYC3.DNWPh0.Bryx5Ztm,"Malcolm Ritter",863,NULL
+372,CR_Richard_Schickel,$2a$10$3BXUfdIRgjvY5.fQnNMau.Tanj51B97ghTeUsPMKiK571retjqUDK,"Richard Schickel","863, 808",NULL
+373,CR_Lisa_Alspector,$2a$10$81b5qNmxKiX0FXAqrN49uuCv9OAQRzP80Gk45kb/OxgtisRAIm86W,"Lisa Alspector","863, 808",NULL
+374,CR_Stephen_Thompson,$2a$10$Dr2pKFdNINsNLneUt28pjOn7xL3WhKehwH94CFqBg4YNHorO77PHW,"Stephen Thompson",863,NULL
+375,CR_Kevin_Maynard,$2a$10$g9NZtRjKTsdOQlMkfuMClOzfKSSuA7CMLC/uAUTNfX/WiEccUXnay,"Kevin Maynard",863,NULL
+376,CR_Janelle_Brown,$2a$10$187yXyFoMHluZvybAl9MJOW/oZaUXMvuMp5IdFvT.0FqfbkxWcRvK,"Janelle Brown",863,NULL
+377,CR_Hap_Erstein,$2a$10$9XP1SwW28/5DOHrtq66eD.HQ59DyXTXA1f/4FwW9MXb4w1Xil/Zii,"Hap Erstein",863,NULL
+378,CR_Eric_Hynes,$2a$10$xTvF.Qdmg.brH7.w/4LEkePMLfAydiYcy17VGkRkS..tjSnN9ZuoG,"Eric Hynes",10193,NULL
+379,CR_Ben_Walters,$2a$10$kYu3aIKyrbtzn93GmxdAEu8vaqK8dhyCzZUL7553u9oWuw5ybSZ8O,"Ben Walters",10193,NULL
+380,CR_James_Rocchi,$2a$10$Rb/Qxm3G8AQM7rvzSRTPXeFqO5xNywoxu2/Cjp7trYp0HmN1rJEi2,"James Rocchi",10193,NULL
+381,CR_Paul_Malcolm,$2a$10$CdSvDU81Z5xRh2S9fb30o.wUwwVhFmAQa59BAfCqejBd36D.WSOYm,"Paul Malcolm",808,NULL
+382,CR_Nick_Bradshaw,$2a$10$5DQ4RfjD48iZuMUSJ4xefuZS3NXfvtJcdKqDvU8ALp5kSkbo8zrxi,"Nick Bradshaw",NULL,808
+383,CR_Sean_P._Means,$2a$10$8Qm9zFf.db3M1axQ8SyqVuh5LHIuaJl0SnjnAZQ0lz0NDY.l2Ml5K,"Sean P. Means",808,NULL
+384,CR_Cody_Clark,$2a$10$g3xIaiQybtmshWKwRHoRGe8zLA0LgVnk0OliQkGAj6r/tk5O8AsOm,"Cody Clark",808,NULL
+385,CR_Jane_Sumner,$2a$10$tmoYrRmPw7nFq3hugYVZT.PXE0gtgJjc.J/vuvmFfk5QFEwdhRFUq,"Jane Sumner",808,NULL
+386,CR_Janice_Page,$2a$10$.7.Ry3Q4wp8N68yozQvAJeqEm9RTluH9/7EfFuQSj.e8SE0gpHnFa,"Janice Page",NULL,425
+387,CR_Daphne_Gordon,$2a$10$GwD0FYuMd4qeW8gKNwUYduhBVck243j51P8LY62F4cYlWBEo1oIkW,"Daphne Gordon",425,NULL
