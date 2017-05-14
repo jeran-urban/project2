@@ -1,3 +1,4 @@
+
 // Empty variables for recommendation posters
 var rec1;
 var rec2;
@@ -22,8 +23,6 @@ $(".movie-submit").on("click", function(event) {
     };
   }
 
-  console.log(newMovie);
-
   $.post("/api/new", newMovie, function(data) {
     // console.log(data);
     if (typeof data === "string") {
@@ -34,6 +33,7 @@ $(".movie-submit").on("click", function(event) {
       $(".rec3").hide();
       $(".view-trailer").hide();
       $(".view-sources").hide();
+      $(".also-liked").hide();
       // console.log(data);
       var row = $("<div>");
           row.addClass("movie");
@@ -47,16 +47,18 @@ $(".movie-submit").on("click", function(event) {
       $(".rec1").show();
       $(".rec2").show();
       $(".rec3").show();
+      $(".also-liked").show();
       guideID = data[0].guideBoxId;
       $(".moviePoster").show().attr("src", data[0].poster);
       $(".movieTitle").html(data[0].title);
       $(".movieYear").html(data[0].year);
       $(".movieGenre").html(data[0].genre);
       $(".moviePlot").html(data[0].plot);
-      $(".movieDirector").html(data[0].director);
-      $(".movieCast").html(data[0].actors);
+      $(".movieDirector").html("Director(s): " +data[0].director);
+      $(".movieCast").html("Cast: " + data[0].actors);
       $(".view-trailer").show();
       $(".view-sources").show();
+      $(".also-liked").html("<h3>People who liked this also liked... </h3>");
       // Recommendation Poster 1
       rec1 = data[0].rec1.split(",");
       $(".rec1").attr("src", rec1[2]);
@@ -77,6 +79,7 @@ $(".movie-submit").on("click", function(event) {
       $("#rec1").show();
       $("#rec2").show();
       $("#rec3").show();
+      $(".also-liked").show();
       guideID = data.guideBoxId;
       $(".moviePoster").show().attr("src", data.poster);
       $(".movieTitle").html(data.title);
@@ -87,6 +90,7 @@ $(".movie-submit").on("click", function(event) {
       $(".movieCast").html(data.actors);
       $(".view-trailer").show();
       $(".view-sources").show();
+      $(".also-liked").html("<h3>People who liked this also liked... </h3>");
       // Recommendation Poster 1
       rec1 = data.rec1.split(",");
       $(".rec1").attr("src", rec1[2]);
@@ -114,7 +118,6 @@ $(".view-sources").on("click", function(event) {
     $("#streamingTableBody").empty();
 
     if (data.purchase.length === 0) {
-      console.log("purchase missed");
       $("#purchaseTable").hide();
       $("#noPurchaseTable").show();
     }

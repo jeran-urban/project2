@@ -2,47 +2,60 @@
 
 <h1 class="text-center">Search</h1>
 
+<!-- Search Bar -->
 <div class="container search-button">
   <div class="row">
-    <div class="col-sm-6 col-xs-offset-2">
+    <div class="col-xs-6 col-xs-offset-2 text-center">
       <input class="form-control movie" type="text" placeholder="Enter a movie name">
     </div>
-    <button class="btn btn-lg movie-submit">Search</button>
-  </div>
-  <div class="row">
-    <div class="col-sm-8 col-sm-offset-2">
-      <hr>
-      <div id="movie-area"></div>
+    <div class="col-xs-4 text-center">
+      <button class="btn btn-lg movie-submit">Search</button>
     </div>
   </div>
+
+
+
+<!-- Movie Data -->
+
   <div class="row details">
-    <div class="col-md-3">
+    <div class="col-xs-6">
       <img class="img-responsive moviePoster">
     </div>
-    <div class="col-md-7 col-sm-offset-1">
-      <p class="movieTitle"></p>
-      <p class="movieYear"></p>
-      <p class="movieGenre"></p>
-      <p class="moviePlot"></p>
-      <div class="col-md-6"> <p class="movieDirector">  </p></div>
-      <div class="col-md-6"> <p class="movieCast"> </p></div>
-      <div class="col-md-8 recs">
-        <img class="rec1 movie-submit movie">
-        <img class="rec2 movie-submit movie">
-        <img class="rec3 movie-submit movie">
-      </div>
-      <div class="col-md-4">
-        <div class="bs-example row">
-          <!-- Button HTML (to Trigger Modal) -->
-          <p id="sources"><a href="#sourcesModal" class="btn btn-md btn-primary view-sources" data-toggle="modal">View Sources</a></p>
-        </div>
-        <div class="bs-example row">
-          <!-- Button HTML (to Trigger Modal) -->
-          <p><a href="#trailerModal" class="btn btn-md btn-primary view-trailer" data-toggle="modal">View Trailer</a></p>
-        </div>
-      </div>
+    <div class="col-xs-6">
+      <h2 class="movieTitle margin-botton"></h2>
+      <h4 class="movieYear margin-bottom"></h4>
+      <p class="movieGenre margin-bottom"></p>
+      <p class="moviePlot margin-bottom"></p>
+      <p class="movieDirector margin-bottom">  </p>
+      <p class="movieCast margin-bottom"> </p>
     </div>
   </div>
+
+    <div class="row">
+      <div class="col-xs-6 text-center">
+        <button class="btn btn-primary btn-lg active view-sources"><a href="#sourcesModal" data-toggle="modal">View Sources</a></button>
+      </div>
+      <div class="col-xs-6 text-center">
+        <button class="btn btn-primary btn-lg active view-trailer"><a href="#trailerModal" data-toggle="modal">View Trailer</a></button>
+      </div>
+    </div>
+
+        <div class="row also-liked">
+          <div>
+            <h3 class="also-liked"></h3>
+          </div>
+        </div>
+        <div class="row">
+        <div class="col-xs-12 recs">
+          <img class="rec1 movie-submit movie">
+          <img class="rec2 movie-submit movie">
+          <img class="rec3 movie-submit movie">
+        </div>
+      </div>
+
+    </div> <!-- Main Container -->
+
+
 
 <!-- Trailer Modal -->
   <div id="trailerModal" class="modal fade">
@@ -68,6 +81,8 @@
             <h4 class="modal-title">View Sources</h4>
         </div>
         <div class="modal-body">
+
+<!-- Purchase Table inside Modal -->
           <table id="purchaseTable">
             <thead>
               <tr class="title">
@@ -93,6 +108,7 @@
           </table>
 <!-- End -->
 
+<!-- Streaming Table inside Modale -->
           <table id="streamingTable">
             <thead>
               <tr class="title">
