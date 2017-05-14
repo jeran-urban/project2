@@ -1,3 +1,11 @@
+.owl-carousel .owl-video-tn {
+  position: relative;
+  height: 0;
+ background-size: cover;
+  padding-bottom: 56.25%;
+  overflow: hidden; }
+  
+.maxh {max-height: 100vh;}
 
 .cool-font {
   font-family: Roboto, sans-serif;
