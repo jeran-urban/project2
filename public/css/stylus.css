@@ -1,0 +1,200 @@
+.footer_help{
+  margin-top: 150px;
+}
+
+.center_text{
+  text-align: center;
+}
+.poster{
+  border: solid;
+
+}
+.nav>li>a:hover {
+    text-decoration: none;
+    color: #eabb37;
+   background-color: transparent;
+}
+
+a:focus, a:hover {
+    text-decoration: none;
+    color: #eabb37;
+   background-color: transparent;
+}
+
+.wrapper{
+  margin-top: 80px;
+}
+
+.black_text{
+  font-family: 'Roboto', sans-serif;
+  color:black;
+  text-align: center;
+}
+
+.text {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+}
+.btn{
+  font-family: 'Roboto', sans-serif;
+}
+.connect{
+  float:left;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.navbar{
+background-color: #111111;
+background-image: url("https://www.transparenttextures.com/patterns/worn-dots.png");
+width: 100%;
+position: absolute;
+left: 0;
+
+}
+
+.body_bar{
+  width: 100%;
+  height: 200px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #006A98;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:185px;
+  left: 0;
+}
+.body_barOne{
+  width: 100%;
+  height: 230px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+    background-color: #eabb37;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:165px;
+  left: 0;
+}
+.body_barTwo{
+  width: 100%;
+  height: 230px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+background-color: #006A98;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:650px;
+  left: 0;
+}
+.body_barThree{
+  width: 100%;
+  height: 230px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+background-color: #6D9F41;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:1100px;
+  left: 0;
+}
+.body_barFour{
+  width: 100%;
+  height: 230px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #D41B27;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:1565px;
+  left: 0;
+}
+.body_barFive{
+  width: 100%;
+  height: 230px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #D41B27;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:1565px;
+  left: 0;
+}
+
+.text{
+  text-align: center;
+}
+
+.rec{
+  width: 80px;
+  height: 120px;
+}
+.sizing{
+  width: 150px;
+  height: 200px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.btn-lg{
+  width: 45px;
+  height: 45px;
+  margin-right: 0px;
+  margin-left: 0px;
+  opacity: 0.2;
+}
+.options{
+  position: relative;
+  display: inherit;
+  top:-49px;
+  left: 24px;
+
+}
+ .display{
+  display: inline-block;
+  justify-content: center;
+  margin:auto;
+  float: left;
+
+}
+.video{
+  display:none;
+}
+.row__inner {
+  margin-top: 70px;
+  transition: 450ms transform;
+  font-size: 0;
+  padding-bottom: 10px;
+}
+.space{
+  margin-left: 12vw;
+}
+.tile {
+  position: relative;
+  display: inline-block;
+  float: left;
+  padding-right: 20px;
+  font-size: 20px;
+  transition: 450ms all;
+  transform-origin: inherit;
+}
+.tile__img {
+  width: 180px;
+  height: 290px;
+  object-fit: cover;
+}
+
+.row__inner:hover {
+  transform: translate3d(-62.5px, 0, 0);
+}
+.row__inner:hover .tile {
+  opacity: 0.0;
+}
+.row__inner:hover .tile:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+.tile:hover ~ .tile {
+  transform: translate3d(125px, 0, 0);
+}

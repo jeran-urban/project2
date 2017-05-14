@@ -3,7 +3,7 @@ var moviesSeed = ["Beauty and the Beast", "Blazing Saddles", "Blow", "Brute Forc
 $(".movie-submit").on("click", function(event) {
     event.preventDefault();
     var movieTitle
-
+  
     for (var i = 0; i < moviesSeed.length; i++) {
         var movie = moviesSeed[i]
         console.log(movie);
@@ -29,7 +29,7 @@ $(".movie-submit").on("click", function(event) {
                 row.append("<p>img link: " + JSON.parse(data).Poster + "<p>");
                 row.append("<p><img src='" + JSON.parse(data).Poster +  "'</img></p>");
                 $("#movie-area").prepend(row);
-            }
+            } 
         });
     }
 });

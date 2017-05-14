@@ -72,28 +72,10 @@ router.get("/api/user_data", function(req, res) {
 });
 
 router.get("/login", function(req, res) {
-
+  
   console.log("++++++++++++++++++++++++++++");
   console.log("status 1: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
-  // db.movie.findAll({}).then(function(result) {
-  //   fs.writeFile("./movie.json", JSON.stringify(result), function(err) {
-  //     // If an error was experienced we say it.
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //   });
-  //   db.user.findAll({}).then(function(result) {
-  //   fs.writeFile("./user.json", JSON.stringify(result), function(err) {
-
-  //     // If an error was experienced we say it.
-  //     if (err) {
-  //       console.log(err);
-  //     }
-  //   });
-
-  // });
-  // });
   res.render('login');
 });
 
@@ -102,51 +84,256 @@ router.get("/members", isAuthenticated, function(req, res) {
   console.log("status 4: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
   console.log("user ", req.user);
-  var user = {name: req.user.name}
-  db.movie.findAll({}).then(function(result) {
-    var action = [];
-    var comedy = [];
-    var drama = [];
-    var horror = [];
-    var animation = [];
+  console.log("sent to recommms");
 
-    for (var i = 0; i < result.length; i++) {
-      var genres = result[i].dataValues.genre.split(", ");
-
-      if (genres.indexOf("Action") !== -1){
-        action.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Comedy") !== -1){
-        comedy.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Drama") !== -1){
-        drama.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Horror") !== -1){
-        horror.push(result[i].dataValues);
-      }
-      else if (genres.indexOf("Animation") !== -1){
-        animation.push(result[i].dataValues);
-      }
+  db.user.findOne({
+    where: {id: req.user.id}
+  }).then(function(result1) {
+    if (result1.dataValues.likes !== null && result1.dataValues.dislikes !== null){
+      var recsForHtml = recommendation(req, res, req.user.id);
     }
-    // console.log("action: ", action.length);
-    // console.log("comedy: ", comedy.length);
-    // console.log("drama: ", drama.length);
-    // console.log("horror: ", horror.length);
-    // console.log("animation: ", animation.length);
-
-    var genreToHtml = {
-      action: action,
-      comedy: comedy,
-      drama: drama,
-      horror: horror,
-      animation: animation,
-      user: user
+    else {
+      genreCall(req, res)
     }
-    res.render('members', genreToHtml);
-  }).catch(function(err) {
-    console.log(err);
   });
+  function genreCall(req, res) {
+    var user = [req.user.name];
+    db.movie.findAll({}).then(function(result) {
+      var recs = [];
+      var action = [];
+      var comedy = [];
+      var drama = [];
+      var horror = [];
+      var animation = [];
+
+      for (var i = 0; i < result.length; i++) {
+
+        var genres = result[i].dataValues.genre.split(", ");
+
+        if (genres.indexOf("Action") !== -1){
+          action.push(result[i].dataValues);
+        }
+        else if (genres.indexOf("Comedy") !== -1){
+          comedy.push(result[i].dataValues);
+        }
+        else if (genres.indexOf("Drama") !== -1){
+          drama.push(result[i].dataValues);
+        }
+        else if (genres.indexOf("Horror") !== -1){
+          horror.push(result[i].dataValues);
+        }
+        else if (genres.indexOf("Animation") !== -1){
+          animation.push(result[i].dataValues);
+        }
+      }
+      console.log("recs from controller: ", recsForHtml);
+      var genreToHtml = {
+        recs: recsForHtml,
+        action: action,
+        comedy: comedy,
+        drama: drama,
+        horror: horror,
+        animation: animation,
+        user: user
+      }
+      res.render('members', genreToHtml);
+    }).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var allUsers = {};
+  var username;
+  var likes = [];
+  var dislikes = [];
+  var top5Users = [];
+  var recsForHtml = [];
+  var recommendationsForCallback = [];
+
+  var CurrentUser = function(userId, username, likes, dislikes) {
+    this.id = userId,
+    this.username = username,
+    this.likes = likes,
+    this.dislikes = dislikes,
+    this.top5Users = []
+  }
+
+  var ComparisonUser = function(compUserId, username, likes, dislikes) {
+    this.compUserId = compUserId,
+    this.username = username,
+    this.likes = likes,
+    this.dislikes = dislikes,
+    this.jcScore = 0
+  }
+
+  function recommendation(req, res, userId) {
+
+    db.user.findAll({}).then(function(result) {
+      allUsers = result;
+
+      if (Object.keys(allUsers).indexOf(String(userId))) {
+        var userDbInfo = Object.values(allUsers)[parseInt(Object.keys(allUsers).indexOf(String(userId))) -1];
+        let username = userDbInfo.userName;
+        let likes = userDbInfo.likes.split(", ");
+        let dislikes = userDbInfo.dislikes.split(", ");
+
+        currentUser = new CurrentUser(userId, username, likes, dislikes);
+      };
+    }).then(function() {
+
+      var allUsersSize = Object.keys(allUsers).length;
+
+        for (var i = 0; i < allUsers.length; ++i) {
+          if (allUsers[i].likes !== null && allUsers[i].dislikes !== null) {
+            if (allUsers[i].id !== userId && allUsers[i].likes.length > 4 && allUsers[i].dislikes.length > 4) {
+              let compUserId = allUsers[i].id;
+              let username = allUsers[i].userName;
+
+              if (allUsers[i].likes === null) {
+                  var likes = [];
+              }
+              else {
+                  var likes = allUsers[i].likes.split(", ");
+              }
+              if (allUsers[i].dislikes === null) {
+                  var dislikes = [];
+              }
+              else {
+                  var dislikes = allUsers[i].dislikes.split(", ");
+              }
+
+              comparisonUser = new ComparisonUser(compUserId, username, likes, dislikes);
+
+              // console.log("comparisonUser ", comparisonUser);
+              jaccardCoefficient(currentUser, comparisonUser);
+              calcFromTop5();
+            } // if
+          } // if
+        } //for
+        // console.log("OLD user top 5: ", currentUser.top5Users);
+        
+        var newCurrentUserArray = []
+        for (i =0; i < 5; i++) {
+          let comparisonArr = [];
+          for (iz =0; iz < currentUser.top5Users.length; iz++){
+            comparisonArr.push(parseFloat(currentUser.top5Users[iz][4]));
+          }
+          var maxIndex = comparisonArr.indexOf(Math.max(...comparisonArr));
+
+          newCurrentUserArray.push(currentUser.top5Users[maxIndex]);
+          currentUser.top5Users.splice(maxIndex, 1);
+        }
+        currentUser.top5Users = newCurrentUserArray;
+        // console.log("new current user top 5: ", currentUser);
+
+        for (i = 0; i < currentUser.top5Users.length; i++) {
+          if (currentUser.top5Users[i][2] !== null) {
+            for (ix = 0; ix < currentUser.top5Users[i][2].length; ix++) {
+              if (currentUser.likes.indexOf(currentUser.top5Users[i][2][ix]) < 0 && currentUser.dislikes.indexOf(currentUser.top5Users[i][2][ix]) < 0 && recommendationsForCallback.indexOf(currentUser.top5Users[i][2][ix]) < 0) {
+                recommendationsForCallback.push(currentUser.top5Users[i][2][ix]);
+
+                if (recommendationsForCallback.length >= 10) {
+                  break;
+                } // third if 
+              } // second if
+            } // second for
+          } // first if
+          if (recommendationsForCallback.length >= 10) {
+            break;
+          }
+        } // first for
+        db.movie.findAll(
+          {where : 
+            {tmdbId: [recommendationsForCallback]
+            }
+          }
+        ).then(function(result){
+          // console.log(result);
+          for (i=0; i < result.length; i++) {
+            recsForHtml.push(result[i].dataValues);
+          }
+          genreCall(req, res);
+          // console.log("recs from .js ", recsForHtml);  
+        });
+        console.log("send Back recs: ",recommendationsForCallback);
+    }); // end db call
+  }; // end recommendation function
+
+  function jaccardCoefficient(currentUser, comparisonUser) {
+    var similarity = 0;
+    var finalJaccard = 0;
+    var finalJaccardScore = 0;
+    var ratedInCommon = 0;
+
+    var user1LikedSet = currentUser.likes;
+    var user1DislikedSet = currentUser.dislikes;
+    var user2LikedSet = comparisonUser.likes;
+    var user2DislikedSet = comparisonUser.dislikes;
+
+    // retrieving a set of the users likes incommon
+    var results1 = sinter(user1LikedSet, user2LikedSet); 
+    // console.log("likes incommon ", results1);
+    // retrieving a set of the users dislike incommon
+    var results2 = sinter(user1DislikedSet, user2DislikedSet); 
+    // console.log("dislikes in common ", results2);
+    // retrieving a set of the users like and dislikes that they disagree on
+    var results3 = sinter(user1LikedSet, user2DislikedSet); 
+    // console.log("users likes and dislikes disagreed on ", results3);
+    // retrieving a set of the users like and dislikes that they disagree on
+    var results4 = sinter(user1DislikedSet, user2LikedSet); 
+    // console.log("user likes and dislikes they disagreed on ", results4);
+    // calculating the sum of the similarities minus the sum of the disagreements
+    similarity = (results1.length + results2.length - results3.length - results4.length);
+    // console.log("similarity ", similarity);
+    // calculating the number of movies rated incommon
+    ratedInCommon = (results1.length + results2.length + results3.length + results4.length);
+    // console.log("ratedInCommon ", ratedInCommon);
+    // calculating the the modified jaccard score. similarity / num of comparisons made incommon
+    if (similarity !== 0 && ratedInCommon !== 0) {
+        finalJaccardScore = similarity / ratedInCommon;
+    }
+    else {
+        finalJaccardScore = 0;
+    }
+    comparisonUser.jcScore = finalJaccardScore;
+    // console.log("final js score: ", finalJaccardScore);
+    // console.log("comp score: ", comparisonUser.jcScore);
+  }; // end Jaccard Coefficient
+
+  function sinter(user1array, user2array) {
+    // console.log("sinter ", user1array, user2array);
+    var cb = [];
+    for (i = 0; i < user1array.length; i++) {
+      if (user2array.indexOf(user1array[i]) !== -1) {
+        cb.push(user1array[i]);
+      }
+    }
+    // console.log("sinter cb: ", cb);
+    return cb;
+  }
+
+  function calcFromTop5() {
+    // comparisonUser.jcScore = Math.random() * 5;
+    if (currentUser.top5Users.length < 5) {
+      var arrayPush = [comparisonUser.compUserId, comparisonUser.username, comparisonUser.likes, comparisonUser.dislikes, comparisonUser.jcScore];
+      currentUser.top5Users.push(arrayPush);
+    }
+    else {
+      let comparisonArr = [];
+
+      for (ix = 0; ix < currentUser.top5Users.length; ix++) {
+        comparisonArr.push(parseFloat(currentUser.top5Users[ix][4]));
+        // console.log("top5: ", currentUser.top5Users[ix]);     
+      }
+      var minIndex = comparisonArr.indexOf(Math.min(...comparisonArr));
+
+      if (currentUser.top5Users[minIndex][4] < comparisonUser.jcScore) {
+        var replaceIndex = [comparisonUser.compUserId, comparisonUser.username, comparisonUser.likes, comparisonUser.dislikes, comparisonUser.jcScore];
+        currentUser.top5Users.splice(minIndex, 1, replaceIndex);
+        // console.log("new array: ", currentUser.top5Users);                    
+      }
+    } //else
+  }
 });
 
 router.get("/profile", isAuthenticated, function(req, res) {
@@ -157,32 +344,62 @@ router.get("/profile", isAuthenticated, function(req, res) {
   var user = {userName: req.user.userName};
   var likes = [];
   var dislikes = [];
-   var sendBackLike= [];
-   var sendBackDislike= [];
+  var sendBackLike= [];
+  var sendBackDislike= [];
+
   db.user.findOne({where: {userName: user.userName}}).then(function(result) {
 
     if(result.dataValues.likes !== null && result.dataValues.dislikes !== null){
       likes = result.dataValues.likes.split(", ");
       dislikes = result.dataValues.dislikes.split(", ");
-
+      
       db.movie.findAll({where: {tmdbId: likes }}).then(function(result){
 
         for (i=0; i < result.length; i++) {
           sendBackLike.push(result[i].dataValues)
         };
         console.log(sendBackLike);
-
+      
         db.movie.findAll({where: {tmdbId: dislikes }}).then(function(result){
           for (x=0; x < result.length; x++) {
             sendBackDislike.push(result[x].dataValues)
           };
 
-          var photos = {photoLike: sendBackLike, photoDislike: sendBackDislike};
+          var photos = {photoLike: sendBackLike, photoDislike: sendBackDislike, user: user};
           console.log("photos ", photos);
           res.render('profile', photos);
         });
       });
       // res.json(result);
+    }
+
+    else if (result.dataValues.likes !== null && result.dataValues.dislikes === null) {
+      likes = result.dataValues.likes.split(", ");
+      db.movie.findAll({where: {tmdbId: likes }}).then(function(result){
+
+        for (i=0; i < result.length; i++) {
+          sendBackLike.push(result[i].dataValues)
+        };
+        console.log(sendBackLike);
+        sendBackDislike = [];
+        var photos = {photoLike: sendBackLike, photoDislike: sendBackDislike};
+          console.log("photos ", photos);
+          res.render('profile', photos);
+        });
+    }
+    else if (result.dataValues.likes === null && result.dataValues.dislikes !== null) {
+      likes = result.dataValues.dislikes.split(", ");
+      db.movie.findAll({where: {tmdbId: dislikes }}).then(function(result){
+
+        for (i=0; i < result.length; i++) {
+          sendBackDislike.push(result[i].dataValues)
+        };
+        console.log(sendBackLike);
+        sendBackLike = [];
+        var photos = {photoLike: sendBackLike, photoDislike: sendBackDislike};
+          console.log("photos ", photos);
+          res.render('profile', photos);
+        });
     }
     else {
       res.render('profile');
@@ -205,9 +422,9 @@ router.get("/all", isAuthenticated, function(req, res) {
   db.user.findOne({where: {userName: user.userName}}).then(function(result) {
     if (result.dataValues.likes !== null){
       opinions = result.dataValues.likes;
-    }
+    } 
     if (result.dataValues.dislikes !== null) {
-      opinions += ", " + result.dataValues.dislikes;
+      opinions = opinions +  ", " + result.dataValues.dislikes;
     }
     if (opinions !== "") {
       likeOpinions = opinions.split(", ");
@@ -215,12 +432,12 @@ router.get("/all", isAuthenticated, function(req, res) {
         likeOpinions[x] = parseInt(likeOpinions[x]);
       };
       console.log("likes", likeOpinions);
-
+    
       db.movie.findAll(
-        {where :
-          {tmdbId:
-            { $and:
-              {
+        {where : 
+          {tmdbId: 
+            { $and: 
+              { 
                 $notIn: [likeOpinions]
               }
             }
@@ -271,9 +488,11 @@ router.post("/profile", function(req, res) {
   }).then(function(result1) {
     if (result1.dataValues.likes !== null){
       likes = result1.dataValues.likes.split(", ");
+      console.log("1 ", likes);
     }
     if (result1.dataValues.dislikes !== null){
       dislikes = result1.dataValues.dislikes.split(", ");
+      console.log("2 ", dislikes);
     }
     if (likes.indexOf(movieId) !== -1) {
       likeExist = true;
@@ -293,9 +512,11 @@ router.post("/profile", function(req, res) {
       if (opinion === "like") {
         if (result1.dataValues.likes !== null) {
             likesToPush = result1.dataValues.likes + ", " + movieId;
+            console.log("3 ", likesToPush);
         }
         else {
           likesToPush = movieId;
+          console.log("4 ", likesToPush);
         }
         db.user.update({
           likes: likesToPush},
@@ -311,9 +532,11 @@ router.post("/profile", function(req, res) {
       else {
         if (result1.dataValues.dislikes !== null) {
           dislikesToPush = result1.dataValues.dislikes + ", " + movieId;
+          console.log("5 ", dislikesToPush);
         }
         else {
           dislikesToPush = movieId;
+          console.log("6 ", dislikesToPush);
         }
         db.user.update({
           dislikes: dislikesToPush},
@@ -333,15 +556,18 @@ router.post("/profile", function(req, res) {
       likes.splice(ix, 1);
       if (likes.length !== 0) {
         likesToPush = likes.join(", ");
+        console.log("7 ", likesToPush);
       }
       else {
         likesToPush = null;
       }
       if (result1.dataValues.dislikes !== null) {
         dislikesToPush = result1.dataValues.dislikes + ", " + movieId;
+        console.log("8 ", dislikesToPush);
       }
       else {
         dislikesToPush = movieId;
+        console.log("9 ", dislikesToPush);
       }
       console.log(likesToPush);
       console.log(dislikesToPush);
@@ -364,15 +590,18 @@ router.post("/profile", function(req, res) {
       dislikes.splice(ix, 1);
       if (likes.length !== 0) {
         dislikesToPush = dislikes.join(", ");
+        console.log("10 ", dislikesToPush);
       }
       else {
         dislikesToPush = null;
       }
       if (result1.dataValues.likes !== null) {
           likesToPush = result1.dataValues.likes + ", " + movieId;
+          console.log("11 ", likesToPush);
       }
       else {
         likesToPush = movieId;
+        console.log("11 ", likesToPush);
       }
       console.log(likesToPush);
       console.log(dislikesToPush);
@@ -690,11 +919,14 @@ function getGuideboxID (imdbID) {
             if(JSON.parse(bod).recommendations.results.length !== 0) {
               poster = "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).poster_path;
               backdrop = "http://image.tmdb.org/t/p/original" + JSON.parse(bod).backdrop_path;
-              for(i = 0; i <3; i++) {
-                recommendations.push(
-                  JSON.parse(bod).recommendations.results[i].title + ", " +
-                  JSON.parse(bod).recommendations.results[i].id + ", " +
-                  "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).recommendations.results[i].poster_path);
+
+              for(i = 0; i < 3; i++) {
+                if (JSON.parse(bod).recommendations.results[i] !== undefined) {
+                  recommendations.push(
+                    JSON.parse(bod).recommendations.results[i].title + ", " +
+                    JSON.parse(bod).recommendations.results[i].id + ", " +
+                    "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).recommendations.results[i].poster_path);
+                }
               }
             }
             console.log("trailer " + trailer);
@@ -771,7 +1003,6 @@ router.post("/api/findmovie", function(req, res) {
         console.log("purchasewebprice: ", purchaseWebPrice);
         console.log("purchasewebtype: ", purchaseWebType);
     }
-
 
   // Retreiving 'Subscription Web Sources' - e.g Netflix, HBO Go, Hulu etc.
     for (var i = 0; i < info.subscription_web_sources.length; i++) {

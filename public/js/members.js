@@ -6,40 +6,7 @@ $(document).ready(function() {
   });
 });
 
-// Instantiate the Bootstrap carousel
-$('.multi-item-carousel').carousel({
-  interval: false
-});
-// Carousel Hover Scroll
-var i;
 
-$('.carousel-control').on("mouseover", function () {
-    var control = $(this),
-        interval = 500;
-
-    i = setInterval(function () {
-        control.trigger("click");
-    }, interval);
-})
-.on("mouseout", function () {
-    clearInterval(i);
-});
-
-// for every slide in carousel, copy the next slide's item in the slide.
-// Do the same for the next, next item.
-$('.multi-item-carousel .item').each(function(){
-  var next = $(this).next();
-  if (!next.length) {
-    next = $(this).siblings(':first');
-  }
-  next.children(':first-child').clone().appendTo($(this));
-
-  if (next.next().length>0) {
-    next.next().children(':first-child').clone().appendTo($(this));
-  } else {
-    $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-  }
-});
 
 // Populate data to modal
 $(".poster").on("click", function(event) {
