@@ -72,7 +72,7 @@ router.get("/api/user_data", function(req, res) {
 });
 
 router.get("/login", function(req, res) {
-  
+
   console.log("++++++++++++++++++++++++++++");
   console.log("status 1: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
@@ -91,7 +91,7 @@ router.get("/login", function(req, res) {
   //       console.log(err);
   //     }
   //   });
-    
+
   // });
   // });
   res.render('login');
@@ -164,14 +164,14 @@ router.get("/profile", isAuthenticated, function(req, res) {
     if(result.dataValues.likes !== null && result.dataValues.dislikes !== null){
       likes = result.dataValues.likes.split(", ");
       dislikes = result.dataValues.dislikes.split(", ");
-      
+
       db.movie.findAll({where: {tmdbId: likes }}).then(function(result){
 
         for (i=0; i < result.length; i++) {
           sendBackLike.push(result[i].dataValues)
         };
         console.log(sendBackLike);
-      
+
         db.movie.findAll({where: {tmdbId: dislikes }}).then(function(result){
           for (x=0; x < result.length; x++) {
             sendBackDislike.push(result[x].dataValues)
@@ -205,7 +205,7 @@ router.get("/all", isAuthenticated, function(req, res) {
   db.user.findOne({where: {userName: user.userName}}).then(function(result) {
     if (result.dataValues.likes !== null){
       opinions = result.dataValues.likes;
-    } 
+    }
     if (result.dataValues.dislikes !== null) {
       opinions += ", " + result.dataValues.dislikes;
     }
@@ -215,12 +215,12 @@ router.get("/all", isAuthenticated, function(req, res) {
         likeOpinions[x] = parseInt(likeOpinions[x]);
       };
       console.log("likes", likeOpinions);
-    
+
       db.movie.findAll(
-        {where : 
-          {tmdbId: 
-            { $and: 
-              { 
+        {where :
+          {tmdbId:
+            { $and:
+              {
                 $notIn: [likeOpinions]
               }
             }
@@ -436,6 +436,7 @@ router.post("/api/new", function(req, res) {
   var recommendations = [];
   var tmdbId = "";
   var poster = "";
+  var backdrop = "";
   var userArrayOfNamesForDb = [];
   var userArrayOfLikesForDb = [];
   var userArrayOfUserNamesForDb = [];
@@ -687,7 +688,8 @@ function getGuideboxID (imdbID) {
               trailer = "Sorry, No trailer is currently available";
             }
             if(JSON.parse(bod).recommendations.results.length !== 0) {
-              poster = "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).poster_path
+              poster = "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).poster_path;
+              backdrop = "http://image.tmdb.org/t/p/original" + JSON.parse(bod).backdrop_path;
               for(i = 0; i <3; i++) {
                 recommendations.push(
                   JSON.parse(bod).recommendations.results[i].title + ", " +
@@ -716,9 +718,11 @@ function getGuideboxID (imdbID) {
       title: JSON.parse(movieDetailsOmdb.omdb).Title,
       year: JSON.parse(movieDetailsOmdb.omdb).Year,
       genre: JSON.parse(movieDetailsOmdb.omdb).Genre,
+      rating: JSON.parse(movieDetailsOmdb.omdb).Rated,
       director: JSON.parse(movieDetailsOmdb.omdb).Director,
       actors: JSON.parse(movieDetailsOmdb.omdb).Actors,
       poster: poster,
+      backdrop: backdrop,
       trailer: trailer,
       plot: JSON.parse(movieDetailsOmdb.omdb).Plot,
       rec1: recommendations[0],

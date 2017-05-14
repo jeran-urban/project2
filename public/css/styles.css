@@ -91,13 +91,34 @@ footer {
 
 .moviePoster {
   display: none;
-  margin-left: 25%;
   border-style: none;
-  height: 400px;
-
+  height: 75%;
+  width: 75%;
+}
+.parent-backdrop {
+    position: relative;
+    z-index: 1;
+}
+.parent-backdrop .backdrop {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(test.jpg) center center;
+    opacity: .4;
+    width: 100%;
+    height: 100%;
+}
+.movie-title-hr {
+  display: none;
 }
 .view-trailer, .view-sources {
   display: none;
+}
+a {
+color: white;
 }
 
 .margin-bottom{
@@ -107,10 +128,46 @@ footer {
   margin-top: 25px;
   margin-bottom: 25px;
 }
+.movie-title-hr {
+  height: 30px;
+  border-style: solid;
+  border-color: #8c8b8b;
+  border-width: 1px 0 0 0;
+  border-radius: 20px;
+  margin-bottom: 0px;
+}
+.movie-title-hr:before {
+  display: block;
+  content: "";
+  height: 30px;
+  margin-top: -31px;
+  border-style: solid;
+  border-color: black;
+  border-width: 0 0 5px 0;
+  border-radius: 20px;
+}
+.movieTitle {
+  font-family: Roboto, sans-serif;
+  font-size: 60px;
+}
+.movieYear {
+  font-family: Roboto, sans-serif;
+  font-size: 30px;
+  margin-top: 0px;
+}
+.movieGenre, .moviePlot, .movieDirector, .movieCast {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  margin-top: 0px;
+}
 
 /* ============================ */
 /* SEARCH PAGE MODAL            */
 /* ============================ */
+.search-text {
+  font-family: Roboto, sans-serif;
+  font-size: 50px;
+}
 th, td {
   font-weight:normal;
   padding:5px;
@@ -137,6 +194,10 @@ table, th, td {
 }
 .also-liked {
   margin-left: 25px;
+}
+.liked-text {
+  font-family: Roboto, sans-serif;
+  font-size: 50px;
 }
 tr {
   color: black;

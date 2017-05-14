@@ -1,6 +1,6 @@
 {{> headerUser}}
 
-<h1 class="text-center">Search</h1>
+<h1 class="text-center search-text">Cinema Search</h1>
 
 <!-- Search Bar -->
 <div class="container search-button">
@@ -9,20 +9,21 @@
       <input class="form-control movie" type="text" placeholder="Enter a movie name">
     </div>
     <div class="col-xs-4 text-center">
-      <button class="btn btn-lg movie-submit">Search</button>
+      <button class="btn btn-primary btn-lg active movie-submit">Search</button>
     </div>
   </div>
 
 
 
 <!-- Movie Data -->
-
-  <div class="row details">
+  <div class="row details parent-backdrop">
+    <div class="backdrop"></div>
     <div class="col-xs-6">
       <img class="img-responsive moviePoster">
     </div>
     <div class="col-xs-6">
       <h2 class="movieTitle margin-botton"></h2>
+      <hr class="movie-title-hr">
       <h4 class="movieYear margin-bottom"></h4>
       <p class="movieGenre margin-bottom"></p>
       <p class="moviePlot margin-bottom"></p>
@@ -33,13 +34,14 @@
     </div>
   </div>
 
+
         <div class="row also-liked">
           <div>
-            <h3 class="also-liked"></h3>
+            <h3 class="liked-text"></h3>
           </div>
         </div>
         <div class="row">
-        <div class="col-xs-6 col-md-8 text-center recs">
+        <div class="col-xs-12 recs">
           <img class="rec1 movie-submit movie">
           <img class="rec2 movie-submit movie">
           <img class="rec3 movie-submit movie">

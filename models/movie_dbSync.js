@@ -42,6 +42,13 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
+    rating: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
     director: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -57,6 +64,13 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     poster: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    backdrop: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
