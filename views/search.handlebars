@@ -34,7 +34,7 @@
       <div class="col-md-4">
         <div class="bs-example row">
           <!-- Button HTML (to Trigger Modal) -->
-          <p id="sources"><a href="#sourcesModal" class="btn btn-md btn-primary view-sources" data-toggle="modal">View Purchase Sources</a></p>
+          <p id="sources"><a href="#sourcesModal" class="btn btn-md btn-primary view-sources" data-toggle="modal">View Sources</a></p>
         </div>
         <div class="bs-example row">
           <!-- Button HTML (to Trigger Modal) -->
@@ -68,22 +68,54 @@
             <h4 class="modal-title">View Sources</h4>
         </div>
         <div class="modal-body">
-          <!-- <p class="purchase-modal-text"> </p> -->
-          <table>
+          <table id="purchaseTable">
             <thead>
               <tr class="title">
                 <th colspan="3">Purchase Sources</th>
-                <th colspan="1">Streaming Sources</th>
               </tr>
               <tr>
                 <th>Source</th>
                 <th>Price</th>
                 <th>Rent/Purchase</th>
+              </tr>
+            </thead>
+            <tbody id="purchaseTableBody"></tbody>
+          </table>
+
+<!-- Table for when Purchase Sources do not exist -->
+          <table id="noPurchaseTable" style="display: none">
+            <thead>
+              <tr class="title">
+                <th colspan="6">No Purchase Sources</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+<!-- End -->
+
+          <table id="streamingTable">
+            <thead>
+              <tr class="title">
+                <th colspan="3">Streaming Sources</th>
+              </tr>
+              <tr>
                 <th>Source</th>
               </tr>
             </thead>
-            <tbody id="modalTable"></tbody>
+            <tbody id="streamingTableBody"></tbody>
           </table>
+
+<!-- Table for when Streaming Sources do not exist -->
+            <table id="noStreamingTable" style="dislay: none">
+              <thead>
+                <tr class="title">
+                  <th colspan="6">No Streaming Sources</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+<!-- End -->
+
         </div>
       </div>
     </div>
