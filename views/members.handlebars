@@ -3,73 +3,66 @@
   <br>
   <h3 class="member-welcome">Logged in as {{user.name}}</h3>
 
-    <div class= "body_barOne">
-  </div>
-      <div class= "body_barTwo">
-  </div>
-      <div class= "body_barThree">
-  </div>
-      <div class= "body_barFour">
-  </div>
-        <div class= "body_barFive">
-  </div>
-    <div class="row">
+  <div class= "body_barOne"></div>
+  <div class= "body_barTwo"></div>
+  <div class= "body_barThree"></div>
+  <div class= "body_barFour"></div>
+  <div class= "body_barFive"></div>
 
+  <div class="row">
     <h3 id="genreTitle"> Recommendations </h3>
-  <div class="col-md-12 members-col-12">
-      <div class="owl-carousel owl-theme">
-      {{#each recs}}
-      <div class="connect">
-          <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "optionsOne">
-            <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-            <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
-            </div>
-            </div>
-      {{/each}}
-        </div>
-        </div>
-          <div class="row">
-    <h3 id="genreTitle" class="owlFix"> Action </h3>
-
     <div class="col-md-12 members-col-12">
       <div class="owl-carousel owl-theme">
-        
-          {{#each action}}
-<div class="connect">
+      {{#each recs}}
+        <div class="connect">
           <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "optionsOne">
+          <div class= "optionsOne">
             <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
             <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
             <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <h3 id="genreTitle" class="owlFix"> Action </h3>
+    <div class="col-md-12 members-col-12">
+      <div class="owl-carousel owl-theme">
+        {{#each action}}
+          <div class="connect">
+            <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
+            <div class= "optionsOne">
+              <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+              <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+              <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
             </div>
-            </div>
+          </div>
           {{/each}}
        </div>
-       </div>
-       </div>
+    </div>
+  </div>
 
 
 <!-- Comedy Carousel -->
   <div class="row">
     <h3 id="genreTitle" class="owlFix"> Comedy </h3>
-<div class="col-md-12 members-col-12">
+    <div class="col-md-12 members-col-12">
       <div class="owl-carousel owl-theme">
-
-          {{#each comedy}}
-<div class="connect">
-          <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "optionsOne">
-            <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-            <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+        {{#each comedy}}
+          <div class="connect">
+            <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
+            <div class= "optionsOne">
+              <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+              <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+              <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
             </div>
-            </div>
-          {{/each}}
-        </div>
+          </div>
+        {{/each}}
       </div>
-      </div>
+    </div>
+  </div>
 
 <!-- Drama Carousel -->
   <div class="row">
