@@ -255,6 +255,7 @@ router.get("/members", isAuthenticated, function(req, res) {
           }
         } // first for
         if (recommendationsForCallback.length !== 0) {
+          console.log("why============================================", recommendationsForCallback);
         db.movie.findAll(
           {where : 
             {tmdbId: [recommendationsForCallback]
@@ -264,6 +265,7 @@ router.get("/members", isAuthenticated, function(req, res) {
           // console.log(result);
           for (i=0; i < result.length; i++) {
             recsForHtml.push(result[i].dataValues);
+            console.log("pushed to recs++++++++++++++++++++++++++++++++++");
           }
           genreCall(req, res);
           // console.log("recs from .js ", recsForHtml);  
