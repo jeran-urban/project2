@@ -274,7 +274,7 @@ router.get("/members", isAuthenticated, function(req, res) {
       else {
         console.log("got to else");
         noRecs = true;
-        genreCall(req, res)
+        genreCall(req, res);
       }
         console.log("send Back recs: ",recommendationsForCallback);
     }); // end db call

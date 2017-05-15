@@ -28,14 +28,14 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     likes: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
       validate: {
         len: [1]
       }
     },
     dislikes: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
       validate: {
         len: [1]
