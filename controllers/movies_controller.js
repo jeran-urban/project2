@@ -178,7 +178,13 @@ router.get("/members", isAuthenticated, function(req, res) {
 
       if (Object.keys(allUsers).indexOf(String(userId))) {
         var ixUser = parseInt(Object.keys(allUsers).indexOf(String(userId))) -1;
-        var userDbInfo = Object.values(allUsers)[ixUser];
+        // var userDbInfo = Object.values(allUsers)[ixUser];
+        var vals = Object.keys(allUsers).map(function(key) {
+            console.log("key ", allUsers[ixUser]);
+            return allUsers[ixUser];
+        });
+        // console.log("vals ", vals[0].dataValues);
+        var userDbInfo = vals[0].dataValues;
         let username = userDbInfo.userName;
         let likes = userDbInfo.likes.split(", ");
         let dislikes = userDbInfo.dislikes.split(", ");
