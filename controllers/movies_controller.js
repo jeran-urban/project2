@@ -923,21 +923,21 @@ function getGuideboxID (imdbID) {
             console.log(tmdbId);
             console.log("bod ", bod);
             if (JSON.parse(bod).videos.results.length !== 0) {
-            trailer = "http://www.youtube.com/embed/" + JSON.parse(bod).videos.results[0].key + "?rel=0&autoplay=1";
+            trailer = "https://www.youtube.com/embed/" + JSON.parse(bod).videos.results[0].key + "?rel=0&autoplay=1";
             }
             else {
               trailer = "Sorry, No trailer is currently available";
             }
             if(JSON.parse(bod).recommendations.results.length !== 0) {
-              poster = "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).poster_path;
-              backdrop = "http://image.tmdb.org/t/p/original" + JSON.parse(bod).backdrop_path;
+              poster = "https://image.tmdb.org/t/p/w500" + JSON.parse(bod).poster_path;
+              backdrop = "https://image.tmdb.org/t/p/original" + JSON.parse(bod).backdrop_path;
 
               for(i = 0; i < 3; i++) {
                 if (JSON.parse(bod).recommendations.results[i] !== undefined) {
                   recommendations.push(
                     JSON.parse(bod).recommendations.results[i].title + ", " +
                     JSON.parse(bod).recommendations.results[i].id + ", " +
-                    "http://image.tmdb.org/t/p/w500" + JSON.parse(bod).recommendations.results[i].poster_path);
+                    "https://image.tmdb.org/t/p/w500" + JSON.parse(bod).recommendations.results[i].poster_path);
                 }
               }
             }
