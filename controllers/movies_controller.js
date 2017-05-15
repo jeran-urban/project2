@@ -131,7 +131,7 @@ router.get("/members", isAuthenticated, function(req, res) {
             recsForHtml.push(result[i].dataValues);
         }
       }
-      console.log("recs from controller: ", recsForHtml);
+      // console.log("recs from controller: ", recsForHtml);
       var genreToHtml = {
         recs: recsForHtml,
         action: action,
@@ -180,7 +180,7 @@ router.get("/members", isAuthenticated, function(req, res) {
         var ixUser = parseInt(Object.keys(allUsers).indexOf(String(userId))) -1;
         // var userDbInfo = Object.values(allUsers)[ixUser];
         var vals = Object.keys(allUsers).map(function(key) {
-            console.log("key ", allUsers[ixUser]);
+            // console.log("key ", allUsers[ixUser]);
             return allUsers[ixUser];
         });
         // console.log("vals ", vals[0].dataValues);
