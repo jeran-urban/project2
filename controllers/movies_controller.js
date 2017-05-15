@@ -270,6 +270,7 @@ router.get("/members", isAuthenticated, function(req, res) {
         });
       }
       else {
+        console.log("got to else");
         noRecs = true;
         genreCall(req, res)
       }
