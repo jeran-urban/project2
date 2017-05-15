@@ -254,6 +254,7 @@ router.get("/members", isAuthenticated, function(req, res) {
             break;
           }
         } // first for
+        if (recommendationsForCallback.length !== 0) {
         db.movie.findAll(
           {where : 
             {tmdbId: [recommendationsForCallback]
@@ -267,6 +268,11 @@ router.get("/members", isAuthenticated, function(req, res) {
           genreCall(req, res);
           // console.log("recs from .js ", recsForHtml);  
         });
+      }
+      else {
+        noRecs = true;
+        genreCall(req, res)
+      }
         console.log("send Back recs: ",recommendationsForCallback);
     }); // end db call
   }; // end recommendation function
