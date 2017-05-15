@@ -475,10 +475,10 @@ router.get("/all", isAuthenticated, function(req, res) {
           sendBack.push(result[i].dataValues);
           // console.log("sendBack", sendBack);
         }
+        var photos = {photo: sendBack};
+        console.log("photos ", photos);
+        res.render('allopinions', photos);
       });
-      var photos = {photo: sendBack};
-    console.log("photos ", photos);
-    res.render('allopinions', photos);
     }
 
   }).catch(function(err) {
