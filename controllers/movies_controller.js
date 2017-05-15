@@ -483,141 +483,143 @@ router.post("/profile", function(req, res) {
   var dislikesToPush = "";
   var likeExist = false;
   var dislikeExist = false;
-  db.user.findOne({
-    where: {id: userId}
-  }).then(function(result1) {
-    if (result1.dataValues.likes !== null){
-      likes = result1.dataValues.likes.split(", ");
-      console.log("1 ", likes);
-    }
-    if (result1.dataValues.dislikes !== null){
-      dislikes = result1.dataValues.dislikes.split(", ");
-      console.log("2 ", dislikes);
-    }
-    if (likes.indexOf(movieId) !== -1) {
-      likeExist = true;
-    }
-    else if (dislikes.indexOf(movieId) !== -1) {
-      dislikeExist = true;
-    }
+  if (movieID !== ""){
+    db.user.findOne({
+      where: {id: userId}
+    }).then(function(result1) {
+      if (result1.dataValues.likes !== null){
+        likes = result1.dataValues.likes.split(", ");
+        console.log("1 ", likes);
+      }
+      if (result1.dataValues.dislikes !== null){
+        dislikes = result1.dataValues.dislikes.split(", ");
+        console.log("2 ", dislikes);
+      }
+      if (likes.indexOf(movieId) !== -1) {
+        likeExist = true;
+      }
+      else if (dislikes.indexOf(movieId) !== -1) {
+        dislikeExist = true;
+      }
 
-    if (opinion === "like" && likeExist === true) {
-      //do nothing
-    }
-    else if (opinion === "dislike" && dislikeExist === true) {
-      //do nothing
-    }
-    else if (likeExist === false && dislikeExist === false) {
-      //add opinion of movie id wherever
-      if (opinion === "like") {
-        if (result1.dataValues.likes !== null) {
-            likesToPush = result1.dataValues.likes + ", " + movieId;
-            console.log("3 ", likesToPush);
+      if (opinion === "like" && likeExist === true) {
+        //do nothing
+      }
+      else if (opinion === "dislike" && dislikeExist === true) {
+        //do nothing
+      }
+      else if (likeExist === false && dislikeExist === false) {
+        //add opinion of movie id wherever
+        if (opinion === "like") {
+          if (result1.dataValues.likes !== null) {
+              likesToPush = result1.dataValues.likes + ", " + movieId;
+              console.log("3 ", likesToPush);
+          }
+          else {
+            likesToPush = movieId;
+            console.log("4 ", likesToPush);
+          }
+          db.user.update({
+            likes: likesToPush},
+            {
+            where: {
+              id: userId
+            }
+          }).then(function(results) {
+            // `results` here would be the newly created chirp
+            res.json(results);
+          });
         }
         else {
-          likesToPush = movieId;
-          console.log("4 ", likesToPush);
-        }
-        db.user.update({
-          likes: likesToPush},
-          {
-          where: {
-            id: userId
+          if (result1.dataValues.dislikes !== null) {
+            dislikesToPush = result1.dataValues.dislikes + ", " + movieId;
+            console.log("5 ", dislikesToPush);
           }
-        }).then(function(results) {
-          // `results` here would be the newly created chirp
-          res.json(results);
-        });
+          else {
+            dislikesToPush = movieId;
+            console.log("6 ", dislikesToPush);
+          }
+          db.user.update({
+            dislikes: dislikesToPush},
+            {
+            where: {
+              id: userId
+            }
+          }).then(function(results) {
+            // `results` here would be the newly created chirp
+            res.json(results);
+          });
+        }
       }
-      else {
+      else if (opinion === "dislike" && likeExist === true) {
+        //take out from like and add to dislike
+        var ix = likes.indexOf(movieId);
+        likes.splice(ix, 1);
+        if (likes.length !== 0) {
+          likesToPush = likes.join(", ");
+          console.log("7 ", likesToPush);
+        }
+        else {
+          likesToPush = null;
+        }
         if (result1.dataValues.dislikes !== null) {
           dislikesToPush = result1.dataValues.dislikes + ", " + movieId;
-          console.log("5 ", dislikesToPush);
+          console.log("8 ", dislikesToPush);
         }
         else {
           dislikesToPush = movieId;
-          console.log("6 ", dislikesToPush);
+          console.log("9 ", dislikesToPush);
         }
+        console.log(likesToPush);
+        console.log(dislikesToPush);
         db.user.update({
-          dislikes: dislikesToPush},
-          {
-          where: {
-            id: userId
-          }
+            dislikes: dislikesToPush,
+            likes: likesToPush},
+            {
+            where: {
+              id: userId
+            }
         }).then(function(results) {
           // `results` here would be the newly created chirp
           res.json(results);
         });
       }
-    }
-    else if (opinion === "dislike" && likeExist === true) {
-      //take out from like and add to dislike
-      var ix = likes.indexOf(movieId);
-      likes.splice(ix, 1);
-      if (likes.length !== 0) {
-        likesToPush = likes.join(", ");
-        console.log("7 ", likesToPush);
-      }
-      else {
-        likesToPush = null;
-      }
-      if (result1.dataValues.dislikes !== null) {
-        dislikesToPush = result1.dataValues.dislikes + ", " + movieId;
-        console.log("8 ", dislikesToPush);
-      }
-      else {
-        dislikesToPush = movieId;
-        console.log("9 ", dislikesToPush);
-      }
-      console.log(likesToPush);
-      console.log(dislikesToPush);
-      db.user.update({
-          dislikes: dislikesToPush,
-          likes: likesToPush},
-          {
-          where: {
-            id: userId
-          }
-      }).then(function(results) {
-        // `results` here would be the newly created chirp
-        res.json(results);
-      });
-    }
 
-    else if (opinion === "like" && dislikeExist === true) {
-      //take out from dislike and add to like
-      var ix = dislikes.indexOf(movieId);
-      dislikes.splice(ix, 1);
-      if (likes.length !== 0) {
-        dislikesToPush = dislikes.join(", ");
-        console.log("10 ", dislikesToPush);
-      }
-      else {
-        dislikesToPush = null;
-      }
-      if (result1.dataValues.likes !== null) {
-          likesToPush = result1.dataValues.likes + ", " + movieId;
+      else if (opinion === "like" && dislikeExist === true) {
+        //take out from dislike and add to like
+        var ix = dislikes.indexOf(movieId);
+        dislikes.splice(ix, 1);
+        if (likes.length !== 0) {
+          dislikesToPush = dislikes.join(", ");
+          console.log("10 ", dislikesToPush);
+        }
+        else {
+          dislikesToPush = null;
+        }
+        if (result1.dataValues.likes !== null) {
+            likesToPush = result1.dataValues.likes + ", " + movieId;
+            console.log("11 ", likesToPush);
+        }
+        else {
+          likesToPush = movieId;
           console.log("11 ", likesToPush);
+        }
+        console.log(likesToPush);
+        console.log(dislikesToPush);
+        db.user.update({
+            dislikes: dislikesToPush,
+            likes: likesToPush},
+            {
+            where: {
+              id: userId
+            }
+        }).then(function(results) {
+          // `results` here would be the newly created chirp
+          res.json(results);
+        });
       }
-      else {
-        likesToPush = movieId;
-        console.log("11 ", likesToPush);
-      }
-      console.log(likesToPush);
-      console.log(dislikesToPush);
-      db.user.update({
-          dislikes: dislikesToPush,
-          likes: likesToPush},
-          {
-          where: {
-            id: userId
-          }
-      }).then(function(results) {
-        // `results` here would be the newly created chirp
-        res.json(results);
-      });
-    }
-  });
+    });
+  }
 });
 
 router.post("/api/login", passport.authenticate("local"), function(req, res) {
