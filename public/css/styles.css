@@ -207,6 +207,16 @@ tr {
   padding-bottom: 50px;
 }
 
+.modal-content-trailer {
+    background-color: black;
+    width: 80%; /* Full width */
+    height: 100%; /* Full height */
+    margin: auto;
+    border: 1px solid #888;
+    width: 105%;
+    text-align: left;
+}
+
 #purchaseTable, #noPurchaseTable, #streamingTable, #noStreamingTable {
   margin: auto;
   margin-bottom: 20px;

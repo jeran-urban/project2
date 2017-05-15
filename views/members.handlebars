@@ -1,7 +1,6 @@
 
 {{> headerUser}}
 <!-- Action Carousel -->
-<div class="container">
   <h3 class="member-welcome">Logged in as {{user}}</h1>
 
     <div class= "body_barOne">
@@ -21,17 +20,17 @@
       {{#each recs}}
       <div class="connect">
           <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "options">
-            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+              <div class= "optionsOne">
+            <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
             </div>
             </div>
       {{/each}}
         </div>
         </div>
           <div class="row">
-    <h3 id="genreTitle"> Action </h3>
+    <h3 id="genreTitle" class="owlFix"> Action </h3>
 
     <div class="col-md-12 members-col-12">
       <div class="owl-carousel owl-theme">
@@ -39,10 +38,10 @@
           {{#each action}}
 <div class="connect">
           <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "options">
-            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+              <div class= "optionsOne">
+            <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
             </div>
             </div>
           {{/each}}
@@ -53,17 +52,17 @@
 
 <!-- Comedy Carousel -->
   <div class="row">
-    <h3 id="genreTitle"> Comedy </h3>
+    <h3 id="genreTitle" class="owlFix"> Comedy </h3>
 <div class="col-md-12 members-col-12">
       <div class="owl-carousel owl-theme">
 
           {{#each comedy}}
 <div class="connect">
           <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "options">
-            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+              <div class= "optionsOne">
+            <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
             </div>
             </div>
           {{/each}}
@@ -79,10 +78,10 @@
           {{#each drama}}
 <div class="connect">
           <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "options">
-            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+              <div class= "optionsOne">
+            <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
             </div>
             </div>
           {{/each}}
@@ -92,17 +91,17 @@
 
 <!-- Animation Carousel -->
   <div class="row">
-    <h3 id="genreTitle"> Animation </h3>
+    <h3 id="genreTitle" class="owlFix"> Animation </h3>
     <div class="col-md-12 members-col-12">
 <div class="col-md-12 members-col-12">
       <div class="owl-carousel owl-theme">
           {{#each animation}}
 <div class="connect">
           <img src="{{poster}}"  class="item poster" id="{{tmdbId}}" value="{{tmdbId}}"> 
-              <div class= "options">
-            <button type="button" class="liked btn btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
-            <button type="button" class="notseen btn btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
-            <button type="button" class="disliked btn btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
+              <div class= "optionsOne">
+            <button type="button" class="liked btn btnFix btn-success btn-lg" id="{{tmdbId}}" value="like"><i class="fa fa-thumbs-up"></i></button>
+            <button type="button" class="notseen btn btnFix btn-warning btn-lg" id="{{tmdbId}}" value="pass"><i class="fa fa-chevron-right"></i></button>
+            <button type="button" class="disliked btn btnFix btn-danger btn-lg" id="{{tmdbId}}" value="dislike"><i class="fa fa-thumbs-down"></i></button>
             </div>
             </div>
 
@@ -116,24 +115,21 @@
 </div>
 </div>
 
-  <!-- Poster Modal -->
-  <div id="posterModal" class="modal fade">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                  <h4 id="posterModalTitle"></h4>
-              </div>
-              <div class="modal-body">
-                  <p id="posterModalYear"></p>
-                  <p id="posterModalPlot"></p>
-                  <p id="posterModalGenre"></p>
-                  <p id="posterModalDirector"></p>
-                  <p id="posterModalCast"></p>
-              </div>
-          </div>
-      </div>
-  </div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content parent-backdrop">
+        <span class="close">&times;</span>
+        <div class="backdrop"></div>
+        <div class="movie-details">
+        <div class="row">
+          <div class="modal-poster-movie col-md-3"></div>
+          <div class="modal-details-movie col-md-8"></div>
+          <div class="modal-actors-movie col-xs-3"></div>
+          <div class="modal-director-movie col-sm-3"></div>
+        </div>
+        </div>
+    </div>
 </div>
 <script type="text/javascript" src="js/members.js"> </script>
 <script type="text/javascript">
@@ -175,32 +171,47 @@ $(".btn").on("click", function(event) {
 
   });
 });
-$(".options").on("mouseenter", function(){
+$(".optionsOne").on("mouseenter", function(){
   $(this).children().css("opacity", 0.9);
 
 });
-$(".options").on("mouseleave", function(){
+$(".optionsOne").on("mouseleave", function(){
   $(this).children().css("opacity", 0.2)
 });
-// $(".poster").on("click", function(event) {
+$(".poster").on("click", function(event) {
 
-//   var movieId = {id: this.id};
-//   console.log(movieId);
 
-//   $.post("/api/find", movieId, function(data) {
-//     }).then(function(data) {
-//         var movieTrailer = data[0].title;
-//         var movieYear = data[0].year;
-//         var moviePlot = data[0].plot;
-//         var movieGenre = data[0].genre;
-//         var movieActors = data[0].actors;
-//         var movieDirector = data[0].director;
-//         $("#posterModalTitle").text(movieTrailer);
-//         $("#posterModalYear").text(movieYear);
-//         $("#posterModalPlot").text(moviePlot);
-//         $("#posterModalGenre").text(movieGenre);
-//         $("#posterModalDirector").text("Director: " + movieDirector);
-//         $("#posterModalCast").text("Cast: " + movieActors);
-//     });
-// });
+  var movieId = {id: this.id};
+  console.log(movieId);
+
+  $.post("/api/find", movieId, function(data) {
+    }).then(function(data) {
+
+      var movieTitle = data[0].title;
+      var movieRating = data[0].rating
+      var moviePlot = data[0].plot;
+      var movieActors = data[0].actors;
+      var movieYear = data[0].year;
+      var movieDirector = data[0].director;
+      var movieBackdrop = data[0].backdrop;
+      var moviePoster = data[0].poster;
+      
+      $('.backdrop').css('background-image', 'url(' + data[0].backdrop + ')');
+      $(".modal-poster-movie").html("<img class='modal-poster' src='" + moviePoster + "'>");
+      $(".modal-details-movie").html("<p>Title: " + movieTitle + 
+                                   "</p><p>Rating: " + movieYear + " / " + movieRating + 
+                                   "</p><hr><p>Plot: " + moviePlot + 
+                                   "</p><hr>");
+      $(".modal-actors-movie").html("<p>Actors: <br>" + movieActors + "</p>");
+      $(".modal-director-movie").html("<p>Director: <br>" + movieDirector + "</p>");
+      $(".modal").css("display", "block");
+    });
+});
+
+// close modal on clicking x
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = "none";
+}
 </script>

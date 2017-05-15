@@ -45,13 +45,8 @@ $(".movie-submit").on("click", function(event) {
     }
     else if (data.length !== undefined) {
       $("#movie-area").hide();
-      $(".details").show();
-      $(".rec1").show();
-      $(".rec2").show();
-      $(".rec3").show();
-      $(".also-liked").show();
-      $(".movie-title-hr").show();
       guideID = data[0].guideBoxId;
+      $(".details").show();
       $('.backdrop').css('background-image', 'url(' + data[0].backdrop + ')');
       $(".moviePoster").show().attr("src", data[0].poster);
       $(".movieTitle").html(data[0].title);
@@ -75,17 +70,19 @@ $(".movie-submit").on("click", function(event) {
       rec3 = data[0].rec3.split(",");
       $(".rec3").attr("src", rec3[2]);
       $(".rec3").attr("id", rec3[0]);
+
       $("#movieTrailer").attr("src", data[0].trailer);
+      
+      $(".rec1").show();
+      $(".rec2").show();
+      $(".rec3").show();
+      $(".also-liked").show();
+      $(".movie-title-hr").show();
     }
     else if (data.length === undefined) {
       $("#movie-area").hide();
-      $(".details").show();
-      $("#rec1").show();
-      $("#rec2").show();
-      $("#rec3").show();
-      $(".also-liked").show();
-      $(".movie-title-hr").show();
       guideID = data.guideBoxId;
+      $(".details").show();
       $('.backdrop').css('background-image', 'url(' + data.backdrop + ')');
       $(".moviePoster").show().attr("src", data.poster);
       $(".movieTitle").html(data.title);
@@ -110,6 +107,13 @@ $(".movie-submit").on("click", function(event) {
       $(".rec3").attr("src", rec3[2]);
       $(".rec3").attr("id", rec3[0]);
       $("#movieTrailer").attr("src", data.trailer);
+
+      
+      $("#rec1").show();
+      $("#rec2").show();
+      $("#rec3").show();
+      $(".also-liked").show();
+      $(".movie-title-hr").show();
     }
   });
 }

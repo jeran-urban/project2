@@ -1,0 +1,306 @@
+
+
+
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px) {
+.col-xs-6 {width: 100%; text-align: center; margin: 0;}
+.moviePlot {padding: 10px;}
+.search-text {font-size: 25px; margin-right: 20px;}
+.form-control {width: 100%; margin: 0; margin-top: 10px}
+.movie-submit {width: 210px; margin-left: 40px !important;}
+}
+
+
+
+
+
+ .owlFix{
+ 	margin-left: 20px;
+ }
+
+
+ .member-welcome{
+ 	height: 66px;
+ 	margin-top: 0px;
+ }
+
+ .btnFix{
+ 	color:white;
+ 	border-color:black;
+ }
+
+.options{
+	top:-55px;
+
+}
+.optionsOne{
+  position: relative;
+  display: inherit;
+  top:-55px;
+  left: 40px;
+
+}
+
+}
+footer{
+	z-index:1000;
+}
+.main_text{
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+.body_bar{
+  width: 100%;
+  height: 250px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #006A98;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:185px;
+  left: 0;
+}
+.body_barOne{
+  width: 100%;
+  height: 240px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+    background-color: #eabb37;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:165px;
+  left: 0;
+}
+.body_barTwo{
+  width: 100%;
+  height: 240px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+background-color: #006A98;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:690px;
+  left: 0;
+}
+.body_barThree{
+  width: 100%;
+  height: 240px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+background-color: #6D9F41;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:1230px;
+  left: 0;
+}
+.body_barFour{
+  width: 100%;
+  height: 240px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #D41B27;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:1769px;
+  left: 0;
+}
+.body_barFive{
+  width: 100%;
+  height: 240px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: #7a3a70;
+  background-image: url("https://www.transparenttextures.com/patterns/white-diamond-dark.png");
+  position: absolute;
+  top:2305px;
+  left: 0;
+}
+@media screen and (max-width: 1199px){
+.optionsOne{
+  position: relative;
+  display: inherit;
+  top:-58px;
+  left: 21px;
+
+}
+
+.body_bar{
+	top:175px;
+	height: 205px;
+
+}
+.body_barOne{
+	top:165px;
+	height: 190px;
+
+}
+.body_barTwo{
+	top:623px;
+	height: 190px;
+
+}
+.body_barThree{
+	top:1105px;
+	height: 190px;
+
+}
+.body_barFour{
+	top:1582px;
+	height: 190px;
+
+}
+.body_barFive{
+	top:2055px;
+	height: 190px;
+
+}
+}
+@media screen and (max-width: 991px){
+	.optionsOne{
+  position: relative;
+  display: inherit;
+  top:-58px;
+  left: 42px;
+
+}
+	.body_bar{
+	top:165px;
+	height: 170px;
+
+}
+.body_barOne{
+	top:165px;
+	height: 268px;
+
+}
+.body_barTwo{
+	top:728px;
+	height: 268px;
+
+}
+.body_barThree{
+	top:1303px;
+	height: 268px;
+
+}
+.body_barFour{
+	top:1862px;
+	height: 268px;
+
+}
+.body_barFive{
+	top:2415px;
+	height: 268px;
+
+}
+}
+@media screen and (max-width: 768px){
+		.sizing{
+			margin-left: 10px;
+			margin-right:10px;
+		}
+			.options {
+    left: 16px;
+}
+
+
+	}
+@media screen and (max-width: 767px){
+
+	.body_bar{
+	top:145px;
+	height: 170px;
+
+}
+.body_barOne{
+	top:156px;
+	height: 268px;
+
+}
+.body_barTwo{
+	top:704px;
+	height: 268px;
+
+}
+.body_barThree{
+	top:1256px;
+	height: 268px;
+
+}
+.body_barFour{
+	top:1810px;
+	height: 268px;
+
+}
+.body_barFive{
+	top:2350px;
+	height: 268px;
+
+}
+}
+
+@media screen and (max-width: 375px){
+
+
+
+	.indexFix{
+		margin-bottom: 20px;
+	}
+	.options {
+    left: 107px;
+}
+	.sizing{
+		width: 200px;
+		height: 300px;
+		margin-left: 83px;
+	}
+
+.optionsOne{
+
+  position: relative;
+  display: inherit;
+  top:-58px;
+  left: 96px;
+
+}
+	.body_bar{
+	top:155px;
+	height: 170px;
+
+}
+	.body_barOne{
+
+	display: none;
+	top:206px;
+	height: 400px;
+
+}
+.body_barTwo{
+	display: none;
+	top:904px;
+	height: 400px;
+
+}
+.body_barThree{
+	display: none;
+	top:1556px;
+	height: 400px;
+
+}
+.body_barFour{
+	display: none;
+	top:2110px;
+	height: 400px;
+
+}
+.body_barFive{
+	display: none;
+	top:2650px;
+	height: 400px;
+
+}
+

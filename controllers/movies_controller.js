@@ -80,12 +80,12 @@ router.get("/login", function(req, res) {
 });
 
 router.get("/members", isAuthenticated, function(req, res) {
+  var noRecs = false;
   console.log("++++++++++++++++++++++++++++");
   console.log("status 4: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
   console.log("user ", req.user);
   console.log("sent to recommms");
-
   db.user.findOne({
     where: {id: req.user.id}
   }).then(function(result1) {
@@ -93,6 +93,7 @@ router.get("/members", isAuthenticated, function(req, res) {
       var recsForHtml = recommendation(req, res, req.user.id);
     }
     else {
+      noRecs = true;
       genreCall(req, res)
     }
   });
@@ -124,6 +125,10 @@ router.get("/members", isAuthenticated, function(req, res) {
         }
         else if (genres.indexOf("Animation") !== -1){
           animation.push(result[i].dataValues);
+        }
+        else if (noRecs) {
+            console.log("got to if");
+            recsForHtml.push(result[i].dataValues);
         }
       }
       console.log("recs from controller: ", recsForHtml);
@@ -414,17 +419,20 @@ router.get("/all", isAuthenticated, function(req, res) {
   console.log("++++++++++++++++++++++++++++");
   console.log("status 2: " + res.statusCode);
   console.log("++++++++++++++++++++++++++++");
-  var user = {userName: req.user.userName};
+  var user = {id: req.user.id};
   var likeOpinions = [];
   var dislikeOpinions=[];
   var sendBack=[];
   var opinions = "";
-  db.user.findOne({where: {userName: user.userName}}).then(function(result) {
-    if (result.dataValues.likes !== null){
+  db.user.findOne({where: {id: user.id}}).then(function(result) {
+    if (result.dataValues.likes !== null && result.dataValues.dislikes !== null) {
+      opinions = result.dataValues.likes + ", " + result.dataValues.dislikes;
+    }
+    else if (result.dataValues.likes !== null){
       opinions = result.dataValues.likes;
     } 
-    if (result.dataValues.dislikes !== null) {
-      opinions = opinions +  ", " + result.dataValues.dislikes;
+    else if (result.dataValues.dislikes !== null) {
+      opinions = result.dataValues.dislikes;
     }
     if (opinions !== "") {
       likeOpinions = opinions.split(", ");
@@ -448,6 +456,9 @@ router.get("/all", isAuthenticated, function(req, res) {
           sendBack.push(result[i].dataValues);
           // console.log("sendBack", sendBack);
         }
+        var photos = {photo: sendBack};
+    console.log("photos ", photos);
+    res.render('allopinions', photos);
       });
     }
 
@@ -458,11 +469,10 @@ router.get("/all", isAuthenticated, function(req, res) {
           // console.log("sendBack", sendBack);
         }
       });
-    }
-
-    var photos = {photo: sendBack};
+      var photos = {photo: sendBack};
     console.log("photos ", photos);
     res.render('allopinions', photos);
+    }
 
   }).catch(function(err) {
     console.log(err);
@@ -483,7 +493,7 @@ router.post("/profile", function(req, res) {
   var dislikesToPush = "";
   var likeExist = false;
   var dislikeExist = false;
-  if (movieID !== ""){
+  if (movieId !== "") {
     db.user.findOne({
       where: {id: userId}
     }).then(function(result1) {
@@ -991,15 +1001,21 @@ router.post("/api/findmovie", function(req, res) {
     for (var i = 0; i < info.purchase_web_sources.length; i++) {
       var purchaseWebSources = info.purchase_web_sources[i].display_name;
       var purchaseWebLink = info.purchase_web_sources[i].link;
-      console.log("purchasewebsource: ", purchaseWebSources);
+      
       purchasewebsource:
       console.log("purchaseweblink: ", purchaseWebLink);
-        if (info.purchase_web_sources[i].formats.length !== 0 && purchaseWebSources === "iTunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)" || purchaseWebSources === "Cinemax (Via Amazon Prime)") {
+        if (purchaseWebSources.indexOf("(Via Amazon Prime)") !== -1) {
+          purchaseWebSources = "Prime";
+        }
+        console.log("purchasewebsource: ", purchaseWebSources);
+
+        if (info.purchase_web_sources[i].formats.length !== 0 && purchaseWebSources === "iTunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "Prime") {
             var purchaseWebPrice = info.purchase_web_sources[i].formats[0].price;
             var purchaseWebType = info.purchase_web_sources[i].formats[0].type;
             purchase.push(purchaseWebSources + ", " + purchaseWebLink + ", " + purchaseWebPrice + ", " + purchaseWebType);
         }
-        else if (purchaseWebSources === "itunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "HBO (Via Amazon Prime)" || purchaseWebSources === "Cinemax (Via Amazon Prime)"){
+        
+        else if (purchaseWebSources === "itunes" || purchaseWebSources === "Amazon" || purchaseWebSources === "VUDU" || purchaseWebSources === "Google Play" || purchaseWebSources === "YouTube" || purchaseWebSources === "Prime"){
           purchase.push(purchaseWebSources + ", " + purchaseWebLink);
         }
         console.log("purchasewebprice: ", purchaseWebPrice);
@@ -1011,8 +1027,13 @@ router.post("/api/findmovie", function(req, res) {
       if (info.subscription_web_sources[i].length !== 0) {
         var subWebSource = info.subscription_web_sources[i].display_name;
         var subWebLink = info.subscription_web_sources[i].link;
+        if (subWebSource.indexOf("(Via Amazon Prime)") !== -1) {
+          subWebSource = "Prime";
+        }
+
         subscribe.push(subWebSource + ", " + subWebLink);
       }
+
       console.log("web source: ", subWebSource);
       console.log("web link: ", subWebLink);
     }
