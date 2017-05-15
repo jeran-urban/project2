@@ -98,7 +98,7 @@ router.get("/members", isAuthenticated, function(req, res) {
     }
   });
   function genreCall(req, res) {
-    var user = [req.user.name];
+    var user = {name: req.user.name};
     db.movie.findAll({}).then(function(result) {
       var recs = [];
       var action = [];
@@ -177,7 +177,8 @@ router.get("/members", isAuthenticated, function(req, res) {
       allUsers = result;
 
       if (Object.keys(allUsers).indexOf(String(userId))) {
-        var userDbInfo = Object.values(allUsers)[parseInt(Object.keys(allUsers).indexOf(String(userId))) -1];
+        var ixUser = parseInt(Object.keys(allUsers).indexOf(String(userId))) -1;
+        var userDbInfo = Object.values(allUsers)[ixUser];
         let username = userDbInfo.userName;
         let likes = userDbInfo.likes.split(", ");
         let dislikes = userDbInfo.dislikes.split(", ");

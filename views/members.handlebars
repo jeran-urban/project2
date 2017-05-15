@@ -1,7 +1,7 @@
 
 {{> headerUser}}
-<!-- Action Carousel -->
-  <h3 class="member-welcome">Logged in as {{user}}</h1>
+  <br>
+  <h3 class="member-welcome">Logged in as {{user.name}}</h3>
 
     <div class= "body_barOne">
   </div>
@@ -14,7 +14,8 @@
         <div class= "body_barFive">
   </div>
     <div class="row">
-    <h3 id="genreTitle"> Reccomendations </h3>
+
+    <h3 id="genreTitle"> Recommendations </h3>
   <div class="col-md-12 members-col-12">
       <div class="owl-carousel owl-theme">
       {{#each recs}}
