@@ -730,7 +730,7 @@ router.post("/api/new", function(req, res) {
 
   // run a request to the OMDB API with the movie specified
   function omdbCall (req, res) {
-    var queryUrl = "http://www.omdbapi.com/?t=" + movieNameOmdbandTmdb + "&y=&plot=short&r=json";
+    var queryUrl = "http://www.omdbapi.com/?apikey=e87c89cd&t=" + movieNameOmdbandTmdb + "&y=&plot=short&r=json";
 
   // Then create a request to the queryUrl
     request(queryUrl, function(error, response, body) {
